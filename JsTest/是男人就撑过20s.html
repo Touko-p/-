@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>是男人就撑过20s</title>
+	</head>
+	<body onLoad="load();" onkeydown="press(event);" onkeyup="release(event);" >
+    <canvas id="myCanvas" width="600" height="600" style=" border:2px solid green; left:30%; position:absolute;  margin: 10px;" >
+		 </canvas>
+		  <div id="message" style="border: 1px solid green; width: 400px; margin-top: 20px;">
+    		上下左右移动使用 ↑↓←→键来控制<br>
+    		按住ctrl键来加速<br><br>
+    		你已坚持了:
+    		<span id="time" style="border: 1.5px solid red; margin-left: 360px;"></span>秒
+   		  </div>
+   		  <div style="border: 1px solid yellow; margin-top:50px ;margin-left: 300px;width: 100px;background-color:tan ;" id="bgm" onclick="playBgm()"> 音乐：关</div>
+			<audio id="bgmAudio" src="bgm/bgm2.mp3" loop="loop"></audio>
+		 <!--<div style="border: 2px solid green; width:100px;margin-left: 300px;margin-top:50px; " id="play" onclick="replay()">重来</div>-->
+   		  <script type="text/javascript" charset="utf-8">
+          //定义键盘值
+var KEY = {RIGHT:39, UP:38, LEFT:37, DOWN:40, QUICK:91};
+//定义输入对象
+var input = {
+    right   : false,
+    up      : false,
+    left    : false,
+    down    : false,
+    quick   : false
+};
+//小球对象
+var player = {
+    speed   : 1,//初始速度
+    qspeed  : 5,//加速
+    left    : 0,//play的x坐标
+    top     : 0,//y坐标
+    xleft   : 0,
+    xtop    : 0,
+    dleft   : 0,//play的距离左边边框的距离
+    dtop    : 0,
+    r       : 5
+}
+//play的出生位置
+player.init = function(){
+    this.xleft = this.r;
+    this.xtop = this.r;
+    this.dleft = $("myCanvas").width-this.r;//play的距离左边边框的距离
+    this.dtop = $("myCanvas").height-this.r;
+    this.left = $("myCanvas").width/2;
+    this.top = $("myCanvas").height/2;
+}
+
+player.getSpeed = function(){
+    return (input.quick?this.qspeed:this.speed);
+}
+//play的重绘
+player.update = function(){ 
+    if (input.right)    player.left+=player.getSpeed();
+    if (input.left)     player.left-=player.getSpeed();
+    if (input.down)     player.top+=player.getSpeed();
+    if (input.up)       player.top-=player.getSpeed();
+    if (player.left>player.dleft)    player.left=player.dleft;
+    if (player.left<player.xleft)    player.left=player.xleft;
+    if (player.top>player.dtop)      player.top=player.dtop;
+    if (player.top<player.xtop)      player.top=player.xtop;
+    var canvas=$("myCanvas");
+    var cxt=canvas.getContext("2d");     
+    cxt.fillStyle="red";
+    cxt.beginPath();
+    cxt.arc(player.left,player.top,player.r,0,Math.PI * 2,true);//画圆
+    cxt.closePath();
+    cxt.fill();
+}
+//移动的点
+var star = function(){
+    this.x = 0;
+    this.y = 0;
+    this.r = 5;
+    this.c = "black";
+    this.ax = 0;//4个方向移动的量
+    this.ay = 0;
+    this.rAngle = 0;//获得一个0-90的角度，用来改变
+    this.speed = 0;
+    this.isAddX = true;//增加的
+    this.isAddY = true;
+    
+    this.init = function(){
+        var lon = ($("myCanvas").width+$("myCanvas").height)*2;
+        var rlon = Math.floor(Math.random()*(lon+1));
+        this.rAngle = Math.floor(Math.random()*90);
+        if(rlon<$("myCanvas").width){//从上面出现 。从上边框开始判断，每条边框都要有移动的点出现，
+            this.x = rlon;
+            this.y = 0;
+        }else if(rlon<$("myCanvas").width+$("myCanvas").height){//右
+            this.x = $("myCanvas").width;
+            this.y = rlon-$("myCanvas").width;
+        }else if(rlon<$("myCanvas").width*2+$("myCanvas").height){//下
+            this.x = $("myCanvas").width - (rlon-$("myCanvas").width-$("myCanvas").height);
+            this.y = $("myCanvas").height;
+        }else{//左
+            this.x = 0;
+            this.y = $("myCanvas").height-(rlon-$("myCanvas").width*2-$("myCanvas").height);
+        }
+        if(rlon<$("myCanvas").width/2 || rlon>$("myCanvas").width*2+$("myCanvas").height+$("myCanvas").height/2){//左上
+            this.isAddX = true;
+            this.isAddY = true;
+        }else if(rlon<$("myCanvas").width+$("myCanvas").height/2){//右上
+            this.isAddX = false;
+            this.isAddY = true;
+        }else if(rlon<$("myCanvas").width+$("myCanvas").height+$("myCanvas").width/2){//右下
+            this.isAddX =false;
+            this.isAddY = false;
+        }else{//左下
+            this.isAddX = true;
+            this.sAddY = false;
+        }
+        this.ax = Math.sin(Math.PI/180*this.rAngle)*star.speed;
+        //console.log(this.ax);
+        //console.log(this.x);
+        this.ax = this.isAddX?this.ax:0-this.ax;//赋值一个负值，使得引动物往地图里面走
+        this.ay = Math.cos(Math.PI/180*this.rAngle)*star.speed;
+        this.ay = this.isAddY?this.ay:0-this.ay;
+      
+    }
+    this.update = function(){//更新
+        this.x=this.x+this.ax;
+        this.y=this.y+this.ay;
+        if((this.isAddX && this.x>$("myCanvas").width) || (!this.isAddX && this.x<0) || (this.isAddY && this.y>$("myCanvas").height) || (!this.isAddY && this.y<0)){
+            this.init();
+            return;
+        }
+        var canvas=$("myCanvas");
+        var cxt=canvas.getContext("2d");     
+        cxt.fillStyle=this.c;
+        cxt.beginPath();
+        cxt.arc(this.x,this.y,this.r,0,Math.PI * 2,true);
+        cxt.closePath();
+        cxt.fill();
+    }
+    this.iscollide = function(){//判断是否被撞到
+        var x = Math.abs(player.left-this.x);//取绝对值
+        var y = Math.abs(player.top-this.y);
+        var R = this.r+player.r;
+        if(R < x+y){//用三角形第三条边小于任意两边之和
+            return true;
+        }
+        return false;
+    }
+}
+star.speed = 1;
+
+//键盘按下
+var press = function(event){
+    var ev = event || window.event;
+    code = ev.keyCode;
+    console.log(code);
+    switch(code) {
+        case KEY.RIGHT:input.right = true; break;
+        case KEY.UP:input.up = true; break;
+        case KEY.LEFT: input.left = true; break;
+        case KEY.DOWN: input.down = true; break;
+        case KEY.QUICK: input.quick = true; break;
+    }
+    console.log(input.right);
+    console.log(input.left);
+    console.log(input.top);
+    console.log(input.down);
+    console.log(input.quick);
+}
+
+//键盘松开
+var release = function(event) {
+    input.right = false
+    input.up = false
+    input.left=false
+    input.down=false
+    input.quick=false
+    // var ev = event || window.event;
+    // code = ev.keyCode;
+    // switch(code) {
+    //     case KEY.RIGHT: input.right = false; break;
+    //     case KEY.UP: input.up = false; break;
+    //     case KEY.LEFT: input.left = false; break;
+    //     case KEY.DOWN: input.down = false; break;
+    //     case KEY.QUICK: input.quick = false; break;
+    // }
+}
+var stars = new Array();
+var myInter;
+var begin;
+var time = 0;
+//加载事件
+var load = function(){
+    player.init();
+    for(i=0;i<120;i++){
+        var s = new star();
+        s.init();
+        stars[i] = s;
+    }
+    begin = new Date();//开始的时间
+    myInter = setInterval(function(){update();},20);
+}
+var $ = function(id){
+    return document.getElementById(id);
+}
+
+//更新时间
+var updatetime = function(){    
+    var end = new Date();//游戏结束的时间
+    var time = Math.round((end-begin)/1000);
+    star.speed = Math.round(time/8);
+    $("time").innerHTML = time;
+}
+//判断是否死了
+var isDead = function(){
+  var time=$("time").innerHTML;
+    for(i=0;i<stars.length;i++){
+        var flag = stars[i].iscollide();
+        if(flag==false){
+            clearInterval(myInter);
+            if(time<20){
+               alert("挑战失败！你坚持了"+time+"秒");
+            }
+            else{
+              alert("你是真男人！你坚持了"+time+"秒");
+            }
+            return;
+        }
+    }
+}
+//更新方法
+var update = function(){
+    var c=$("myCanvas");
+    c.width = c.width; // 清空画布，清楚轨迹
+    player.update(); //再次重绘出来
+    for(i=0;i<stars.length;i++){
+        stars[i].update();
+    }
+    updatetime();//时间显示
+    isDead();//判断是否死了
+}
+var bgm=document.getElementById("bgm");
+var bgmPlay=false;
+var playBgm=function(){
+  var bgmAudio = document.getElementById("bgmAudio");
+  bgmAudio.volume=0.15;//音量
+  if(bgmPlay){
+    bgmPlay = false;
+    bgmAudio.pause();
+    bgm.innerText = "音乐：关";
+  }else{
+    bgmPlay = true;
+    bgmAudio.play();
+    bgm.innerText = "音乐：开";
+  }
+}
+//var play=document.getElementById("play");
+//var playre=false;
+//
+//var replay=function(){
+//  if(playre){
+//    play.innerText="重来"
+//  }
+//  else{
+//    playre=true;
+//    play.innerText="加油"
+//    if(playre){
+//      
+//      this.load();
+//      this.update();
+//    }
+//    playre=false;
+//    
+//  }   
+//}
+        </script>
+   		 
+   		 
+	</body>
+</html>

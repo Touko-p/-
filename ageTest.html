@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function getNumber(id) {
+            return parseInt(document.getElementById(id).value);
+        }
+        var a=new Date();
+        var b=a.getFullYear();
+        var c=a.getMonth()+1;
+        var d=a.getDay();
+        function f(){
+            var year=parseInt(b)-getNumber("year");
+            var month=parseInt(c)-getNumber("month");
+            var day=parseInt(d)-getNumber("day");
+            if(month>=0&&day>=0)
+                alert("凑弟弟你今年"+year+"了");
+            else
+                alert("凑弟弟你今年"+(year-1)+"了");
+        }
+    </script>
+</head>
+<body>
+    <span>请输入出生年月日</span><br>
+    <span>年份</span>
+    <select id="year">
+        <script>
+            for (i=1991;i<2021;i++){
+                document.write("<option>"+i+"</option><br>");
+            }
+        </script>
+    </select>
+    <span>月份</span>
+    <select id="month">
+        <script>
+            for (i=1;i<13;i++){
+                document.write("<option>"+i+"</option><br>");
+            }
+        </script>
+    </select>
+    <span>日</span>
+    <select id="day">
+        <script>
+            for (i=1;i<32;i++){
+                document.write("<option>"+i+"</option><br>");
+            }
+        </script>
+    </select>
+    <br>
+    <input type="button" value="计算年龄" onclick="f()">
+</body>
+</html>

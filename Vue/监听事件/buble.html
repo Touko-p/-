@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0 auto;
+            text-align: center;
+            line-height: 40px;
+        }
+        div{
+            width: 200px;
+            cursor: pointer;
+        }
+        #grandFather{
+            background-color: yellow;
+        }
+        #father{
+            background-color: #5bc0de;
+        }
+        #me{
+            background-color: #95ff7d;
+        }
+        #son{
+            background-color: #2e6da4;
+        }
+    </style>
+    <script src="../vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div id="grandFather" @click.self="count"><!--事件修饰符 只有自己能触发，子元素无法触发.self -->
+            grandFather
+            <div id="father" @click.capture="count"><!--事件修饰符 优先触发 .capture 子类点击优先触发-->
+                father
+                <div id="me" @click.stop="count"><!--事件修饰符 阻止冒泡 .stop 冒泡强行结束-->
+                    me
+                    <div id="son" @click.once="count"><!--事件修饰符 只能提交一次 .once  父类还会触发-->
+                        son
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            id:''
+        },
+        methods:{
+            count:function () {
+                this.id=event.currentTarget.id;
+                alert(this.id)
+            }
+        }
+    })
+</script>
+</body>
+</html>

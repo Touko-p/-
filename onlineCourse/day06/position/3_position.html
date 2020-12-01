@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			div{
+				width: 100px;
+				height: 100px;
+				/*1.同级元素之间 互不干扰 会被覆盖
+				 最后写的在最上面*/
+				position: absolute;
+				/*float: left;
+				margin: 0 15px;*/
+			}
+			.box1{
+				background-color: tan;
+				/*top: 400px;*/
+				left: 240px;
+			}
+			.box2{
+				background-color: teal;
+				left: 0px;
+			}
+			.box3{
+				background-color: thistle;
+				left: 120px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="box2"></div>
+		<div class="box3"></div>
+		<div class="box1"></div>
+	</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jq/jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            background: rgb(26, 91, 111);
+        }
+        #app{
+            width: 100%;
+            min-width: 1200px;
+        }
+        .head{
+            width: 1200px;
+            height: 50px;
+            margin: 0 auto;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            font-size: 30px;
+            font-weight: bold;
+            font-family: Algerian;
+            text-decoration: underline;
+            background: rgb(26,91,111);
+        }
+        .body{
+            width: 1200px;
+            height: 559px;
+            margin: 0 auto;
+            background-color: white;
+        }
+        .body div{
+            float: left;
+        }
+        .left{
+            width: 100px;
+            height: 559px;
+            background: whitesmoke;
+        }
+        .app{
+            width: 80px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            padding-left: 10px;
+            margin-top: 60px;
+            position: relative;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: Algerian;
+        }
+        .base1 {
+            width: 80px;
+            height: 40px;
+            background: rgb(26,91,111);
+            color: black;
+        }
+
+        .base2{
+            width: 80px;
+            height: 40px;
+            background: black;
+            color: whitesmoke;
+        }
+        .mask{
+            height: 40px;
+            position: absolute;
+            overflow: hidden;
+            top:0;
+            width: 0;
+        }
+        .center{
+            width: 1000px;
+            height: 559px;
+            background: #5bc0de;
+            overflow: hidden;
+            position: relative;
+            background: url("img/think.jpg") no-repeat;
+        }
+        .centerLeft{
+            width: 1000px;
+            height: 559px;
+            background: #a6e1ec;
+            position: absolute;
+            top: -559px;
+            background: url("img/bird.jpg") no-repeat;
+        }
+        .centerRight{
+            width: 1000px;
+            height: 559px;
+            background: #a6e1ec;
+            position: absolute;
+            top: 559px;
+            background: url("img/fz1024.jpg") no-repeat;
+        }
+        .right{
+            width: 100px;
+            height: 559px;
+            background: rgba(97,223,255,0.59)
+        }
+        .right input{
+            width: 80px;
+            height: 40px;
+            margin-top: 60px;
+            margin-left: 10px;
+        }
+        .bottom{
+            width: 1200px;
+            margin: 0 auto;
+            background-color: rgb(12,80,80);
+        }
+        .bottom-b{
+            width: 1000px;
+            margin: 0 auto;
+        }
+        .bottom-b input{
+            width: 120px;
+            height: 30px;
+            margin: 10px;
+        }
+        .bottom-t{
+            width: 1000px;
+            margin: 0 auto;
+        }
+        table{
+            border-collapse:collapse;
+            width:100%;
+        }
+        tr{
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-bottom-color: white;
+            height:35px;
+        }
+        thead tr{
+            background-color: #95ff7d;
+        }
+        tbody tr{
+            background-color: #5bc0de;
+        }
+        td{
+            width:20%;
+            text-align:center;
+        }
+        td:first-child{
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="head">WiSH LIST</div>
+        <div class="body">
+            <div class="left">
+                <div class="app">
+                    <div class="base1">LEVEL</div>
+                    <div class="mask">
+                        <div class="base2">LEVEL</div>
+                    </div>
+                </div>
+                <div class="app">
+                    <div class="base1">TIME</div>
+                    <div class="mask">
+                        <div class="base2">TIME</div>
+                    </div>
+                </div>
+                <div class="app">
+                    <div class="base1">PLACE</div>
+                    <div class="mask">
+                        <div class="base2">PLACE</div>
+                    </div>
+                </div>
+                <div class="app">
+                    <div class="base1">NUMBER</div>
+                    <div class="mask">
+                        <div class="base2">NUMBER</div>
+                    </div>
+                </div>
+                <div class="app">
+                    <div class="base1">MONEY</div>
+                    <div class="mask">
+                        <div class="base2">MONEY</div>
+                    </div>
+                </div>
+            </div>
+            <div class="center">
+                <div class="centerLeft"></div>
+                <div class="centerRight"></div>
+            </div>
+            <div class="right">
+                <input type="text" class="level" onblur="level()">
+                <input type="text" class="time">
+                <input type="text" class="place">
+                <input type="text" class="number" onblur="Number()">
+                <input type="text" class="money" onblur="Money()">
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="bottom-b">
+                <center>
+                    <input type="button" value="查询" id="search">
+                    <input type="button" value="添加" id="add">
+                    <input type="button" value="清空" id="clean">
+                </center>
+            </div>
+            <div class="bottom-t">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>级别</th>
+                            <th>时间</th>
+                            <th>地点</th>
+                            <th>人数</th>
+                            <th>金钱</th>
+                        </tr>
+                    </thead>
+                    <tbody class="body-t">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $('.center').mouseenter(function () {
+                $(this).children('.centerLeft').stop().animate({top:0},1500);
+                $(this).children('.centerRight').stop().animate({top:-559},1500);
+            }).mouseleave(function () {
+                $(this).children('.centerRight').stop().animate({top:0},1500);
+                $(this).children('.centerLeft').stop().animate({top:-559},1500);
+            })
+            $(".app").mouseenter(function () {
+                $(this).children(".mask").stop().animate({width:150},200)
+            }).mouseleave(function () {
+                $(this).children(".mask").stop().animate({width:0},200)
+            })
+        })
+        function level(){
+            let level=$('.level').val();
+            let regExp=/^[A-Z]{1}$/;
+            if(!regExp.test(level)){
+                alert("只能输入一位大写字母")
+                $('.level').val("");
+            }
+        }
+        function Number(){
+            let number=$('.number').val();
+            let regExp=/^(?!0)[0-9]{1,3}$/;
+            if (!regExp.test(number)){
+                alert("请输入不以0开头的1-3位数字")
+                $('.number').val("");
+            }
+        }
+        function Money(){
+            let money=$('.money').val();
+            let regExp=/^(?!0)[0-9]{1,10}$/;
+            if (!regExp.test(money)){
+                alert("请输入不以0开头的1-10位数字")
+                $('.money').val("");
+            }
+        }
+        $("#add").click(function () {
+            var level=$(".level").val(),
+                time=$(".time").val(),
+                place=$('.place').val(),
+                number=$('.number').val(),
+                money=$('.money').val();
+            var mes={"level": level, "time": time, "place": place, "number": number, "money": money};
+            if(level.length==0||time.length==0||place.length==0||number.length==0||money.length==0){
+                alert("请输入完整数据")
+            }
+            else {
+                $.get('mes',function (date) {
+                    $("#clean").click();
+                    date.push(mes);
+                    var html="";
+                    for(var i=0;i<date.length;i++){
+                        html+='<tr>';
+                        for(var key in date[i]){
+                            html+='<td>'+date[i][key]+'</td>';
+                        }
+                        html+='</tr>';
+                    }
+                    $('.body-t').append(html);
+                },'json');
+                alert("信息添加完成！")
+                $(".right input").val("");
+            }
+        })
+        $("#clean").click(
+            function () {
+                $(".body-t").empty();
+            }
+        )
+        $("#search").click(function () {
+            $("#clean").click();
+            $.get('mes',function (date) {
+                var html="";
+                for(var i=0;i<date.length;i++){
+                    html+='<tr>';
+                    for(var key in date[i]){
+                        html+='<td>'+date[i][key]+'</td>';
+                    }
+                    html+='</tr>';
+                }
+                $('.body-t').append(html);
+            },'json');
+            alert("查询如下");
+        })
+    </script>
+</body>
+</html>

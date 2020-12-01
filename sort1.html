@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function getValue(id,value) {
+            return document.getElementById(id).value=value;
+        }
+        function getString(id) {
+            return document.getElementById(id).value;
+        }
+        function f() {
+            var s=getString("s1");
+            var y=s.split(" ");
+            for(i=0;i<y.length;i++){
+                for(j=i+1;j<y.length;j++){
+                    if(y[i].charCodeAt(0)>y[j].charCodeAt(0)){
+                        z=y[i];
+                        y[i]=y[j];
+                        y[j]=z;
+                    }
+                }
+            }
+            var z=y.join(" ");
+            getValue("s2",z);
+            var a=z.split(" ");
+            a.reverse();
+            var b=a.join(" ");
+            getValue("s3",b);
+        }
+        function f1() {
+            var a=getString("s1");
+            var b=a.split(" ");
+            var c=b.join("");
+            var d=c.split("");
+            for(i=0;i<d.length;i++){
+                for(j=i+1;j<d.length;j++){
+                    if(d[i].charCodeAt(0)>d[j].charCodeAt(0)){
+                        z=d[i];
+                        d[i]=d[j];
+                        d[j]=z;
+                    }
+                }
+            }
+            var e=d.join("");
+            getValue("s2",e);
+            d.reverse();
+            var f=d.join("");
+            getValue("s3",f);
+
+        }
+    </script>
+</head>
+<body>
+    <span>随机输入英文字符串：</span>
+    <input type="text" id="s1">
+    <br>
+    <span>正排序结果:</span>
+    <input type="text" id="s2">
+    <br>
+    <span>倒排序结果:</span>
+    <input type="text" id="s3">
+    <br>
+    <input type="button" value="按字母排序" onclick="f1()">
+    <input type="button" value="按单词排序" onclick="f()">
+</body>
+</html>

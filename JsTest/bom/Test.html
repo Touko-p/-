@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <center>
+        <input type="button" value="打开窗口" onclick="openWin()">
+        <input type="button" value="调整窗口位置和大小" onclick="changeWin()">
+    </center>
+    <script>
+        var myWindow;
+        function openWin() {
+            myWindow=window.open('','newWin','width=200,height=200');
+            getPosSize();
+        }
+        function changeWin() {
+            myWindow.moveBy(250,250);   //将newWin窗口下移250px,右移250px
+            myWindow.focus();           //获取移动后的newWin窗口的焦点
+            myWindow.resizeTo(500,350); //将newWin窗口的宽度修改为500，高度350
+            getPosSize();
+        }
+        function getPosSize() {         //获取窗口信息
+            var x=myWindow.screenLeft,
+                y=myWindow.screenTop,
+                inH=myWindow.innerHeight,
+                inW=myWindow.innerWidth,
+                outH=myWindow.outerHeight,
+                outW=myWindow.outerWidth;
+
+            myWindow.document.write('<p>相对屏幕窗口的坐标：('+x+','+y+')</p>')
+            myWindow.document.write('<p>文档的高度和宽度：'+inH+','+inW+'</p>')
+            myWindow.document.write('<p>窗口的高度和宽度：'+outH+','+outW+'</p>')
+        }
+    </script>
+</body>
+</html>

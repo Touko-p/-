@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .info{
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 24px;
+            color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div class="numberInfo">
+            <input type="number" class="num">
+            <input type="number" class="num">
+            <input type="number" class="num">
+            <input type="number" class="num">
+            <input type="number" class="num">
+        </div>
+        <div class="show">
+            <input type="button" value="计算" onclick="count()">
+            <div class="info">
+
+            </div>
+        </div>
+    </div>
+    <script>
+        function count() {
+            var number=document.getElementsByClassName("num"),
+                info=document.getElementsByClassName("info"),
+                oSum=0,
+                eSUm=0,
+                sum=0,
+                max=0;
+            for (var i=0;i<number.length;i++){
+                sum+=Number(number[i].value);
+                if(Number(number[i].value)>max)
+                    max=Number(number[i].value);
+                if(Number(number[i].value)%2==0){
+                    eSUm+=Number(number[i].value);
+                }
+                if (Number(number[i].value)%2!=0){
+                    oSum+=Number(number[i].value);
+                }
+            }
+            info[0].innerText="总和："+sum+"奇数和"+oSum+"偶数和"+eSUm+"最大数"+max;
+        }
+    </script>
+</body>
+</html>

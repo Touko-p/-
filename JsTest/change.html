@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div{
+            width: 300px;
+            height: 450px;
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+        function f() {
+            let p2 = document.getElementById("p2");
+            if(p2.src.match("a1"))
+                p2.src="img/a2.jpg";
+            else
+                p2.src="img/a1.jpg";
+        }
+    </script>
+</head>
+<body>
+    <div id="div">
+        <img src="img/a1.jpg" onclick="f()" id="p2">
+    </div>
+</body>
+</html>

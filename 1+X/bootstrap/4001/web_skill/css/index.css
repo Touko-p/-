@@ -1,0 +1,44 @@
+﻿body {	font-size: 20px;}
+.navbar-dark .navbar-nav .nav-link{
+	color: white;
+}
+.navbar {
+	position: absolute;
+	top:0px;
+	width: 100%;
+	z-index: 99;
+}
+.brand {
+	color: white;
+	/* 盒模型 */
+	border: 1px solid white;/* 边框1px，白色，实线 */
+	padding: 5px;/* 内边距5px */
+	margin: 5px;/* 外边距5px */
+}
+.brand:hover {
+	color: white;
+	text-decoration: none;
+}
+#introduction {
+	background: linear-gradient(to bottom,black,white);/* 背景从上到下颜色渐变 */
+	width:100%;
+	height:400px;
+	color: rgba(255,255,255,0.9);/* 字体颜色 */
+}
+#content {
+	position: absolute;
+	top: 16%;
+	left: 16%;
+	width: 68%;
+	text-align: center;
+}
+#content h2:hover {
+	font-size: 2.25rem;/* 设置字体大小为根元素大小的2.25倍 */
+	transition: font-size 1s;/* 使用过渡，1s内标题字号变大 */
+}
+.card{
+	margin: 10px;
+	box-shadow: 1px 1px 5px black;/* 盒阴影 */
+	text-align: center;
+	align-items: center;
+}

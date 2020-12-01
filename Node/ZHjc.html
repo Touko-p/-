@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function f() {
+            var a=document.getElementById("text").value;
+            if(a.charAt(0)=="A"||a.charAt(0)=="a")
+                document.getElementById("sp").innerHTML="账号已经被使用";
+            else
+                document.getElementById("sp").innerHTML="账号可以使用";
+        }
+        function f1() {
+            var img=document.getElementById("img");
+            img.src="https://how2j.cn/study/gareen.jpg";
+        }
+        function f2() {
+            var img=document.getElementById("img");
+            img.attributes["src"].nodeValue="https://how2j.cn/study/katarina.jpg";
+        }
+        function f3() {
+            var num=document.getElementById("num").value;
+            if(parseInt(num)==num)
+                alert("是整数")
+            else
+                alert("不是整数")
+        }
+    </script>
+</head>
+<body>
+    <div id="al">
+        <input type="text" id="text">
+        <button onclick="f()">验证</button>
+        <span id="sp" style="color: red"></span>
+    </div>
+    <div>
+        <br>
+        <button onclick="f1()">通过src节点切换图片1</button>
+        <button onclick="f2()">通过属性节点切换图片2</button>
+        <br>
+        <img id="img" src="https://how2j.cn/study/katarina.jpg">
+    </div>
+    <input type="text" id="num">
+    <button onclick="f3()">判断</button>
+</body>
+</html>

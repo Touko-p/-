@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        #app{
+            min-width: 1200px;
+        }
+        .head{
+            width: 999px;
+            height: 60px;
+            margin: 0 auto;
+            background-color: pink;
+        }
+        .head ul{
+            list-style: none;
+        }
+        .head ul li{
+            width: 111px;
+            height: 60px;
+            float: left;
+            position: relative;
+            overflow: hidden;
+        }
+        .head ul li a{
+            position: absolute;
+            text-decoration: none;
+            line-height: 60px;
+            font-size: 20px;
+            text-align: center;
+            color: black;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+        }
+        .head ul li span{
+            position: absolute;
+            display: block;
+            width: 111px;
+            height: 60px;
+            top:-60px;
+            background-color: yellow;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function () {
+            $(".head li").mouseenter(function () {
+                    $(this).children("span").stop().animate({top:0})
+                    $(this).children("a").css("color","red")
+                    var idx=$(this).index();
+                    $("audio").get(idx).load();
+                    $("audio").get(idx).play();
+                }
+            ).mouseleave(function () {
+                $(this).children("span").stop().animate({top:-60})
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="app">
+        <div class="head">
+            <ul>
+                <li><a href="#">导航一</a><span></span></li>
+                <li><a href="#">导航二</a><span></span></li>
+                <li><a href="#">导航三</a><span></span></li>
+                <li><a href="#">导航四</a><span></span></li>
+                <li><a href="#">导航五</a><span></span></li>
+                <li><a href="#">导航六</a><span></span></li>
+                <li><a href="#">导航七</a><span></span></li>
+                <li><a href="#">导航八</a><span></span></li>
+                <li><a href="#">导航九</a><span></span></li>
+            </ul>
+        </div>
+        <div>
+            <audio src="MP3/1.mp3"></audio>
+            <audio src="MP3/2.mp3"></audio>
+            <audio src="MP3/3.mp3"></audio>
+            <audio src="MP3/4.mp3"></audio>
+            <audio src="MP3/5.mp3"></audio>
+            <audio src="MP3/6.mp3"></audio>
+            <audio src="MP3/4.mp3"></audio>
+            <audio src="MP3/3.mp3"></audio>
+            <audio src="MP3/5.mp3"></audio>
+        </div>
+    </div>
+</body>
+</html>

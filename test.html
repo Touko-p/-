@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        input{
+            width: 40px;
+        }
+    </style>
+    <script>
+        function f() {
+            var num1=document.getElementById("num1").value;
+            var num2=document.getElementById("num2").value;
+            var txt=document.getElementById("ks").value;
+            if(num1.length==0||num2.length==0){
+                alert("数值不应为空，请输入完整数据")
+                return;
+            }
+            if(parseFloat(num1)!=num1||parseFloat(num2)!=num2){
+                alert("请输入数字")
+                return;
+            }
+            num1=parseFloat(num1);
+            num2=parseFloat(num2);
+            var result=num1+txt+num2;
+            document.getElementById("result").value=eval(result);
+        }
+        function f1() {
+            var num = prompt("请输入金字塔的层数(单击确定之后会看到*组成的金字塔)");
+            for(var i=1;i<=num;i++){
+                for(var j=1;j<=num-i;j++){
+                    document.write("&nbsp");
+                }
+                for (var k=1;k<=2*i-1;k++){
+                    document.write("*");
+                }
+                document.write("<br>")
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>四则运算计算器</h1>
+    <input type="text" id="num1">
+    <select id="ks">
+        <option>+</option>
+        <option>-</option>
+        <option>*</option>
+        <option>/</option>
+    </select>
+    <input type="text" id="num2">=
+    <input type="text" id="result">
+    <input type="button" value="运算" onclick="f()">
+    <button onclick="f1()">金字塔</button>
+    <div id="div"></div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border-collapse:collapse;
+        }
+        tr{
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-bottom-color: lightgray;
+            height:35px;
+        }
+
+        td{
+            width:16%;
+            text-align:center;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>全选<input type="checkbox" class="checkAll"></th>
+                    <th>商品</th>
+                    <th>单价</th>
+                    <th>数量</th>
+                    <th>小计</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody class="body">
+                <tr>
+                    <td><input type="checkbox" class="ck"></td>
+                    <td>JavaScript实战</td>
+                    <td><span class="price">45.80</span></td>
+                    <td><input type="button" value="-" class="reduce"><input type="text" value="0" class="number" nid="1"><input type="button" value="+" class="add"></td>
+                    <td class="money" mid="5">0</td>
+                    <td><a href="#" class="remove">删除</a></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="ck"></td>
+                    <td>PHP基础案例教程</td>
+                    <td><span class="price">49.80</span></td>
+                    <td><input type="button" value="-" class="reduce"><input type="text" value="0" class="number" nid="2"><input type="button" value="+" class="add"></td>
+                    <td class="money" mid="6">0</td>
+                    <td><a href="#" class="remove">删除</a></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="ck"></td>
+                    <td>HTML+CSS网页制作</td>
+                    <td><span class="price">45.20</span></td>
+                    <td><input type="button" value="-" class="reduce"><input type="text" value="0" class="number" nid="3"><input type="button" value="+" class="add"></td>
+                    <td class="money" mid="7">0</td>
+                    <td><a href="#" class="remove">删除</a></td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox" class="ck"></td>
+                    <td>Java基础入门</td>
+                    <td><span class="price">45.00</span></td>
+                    <td><input type="button" value="-" class="reduce"><input type="text" value="0" class="number" nid="4"><input type="button" value="+" class="add"></td>
+                    <td class="money" mid="8">0</td>
+                    <td><a href="#" class="remove">删除</a></td>
+                </tr>
+                <tr>
+                    <td colspan="6">
+                        已选择<span id="num">0</span>件商品：总计：<span id="money">0.00</span>
+                        <input type="button" value="提交订单">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <script>
+            // $('.remove').on('click',function () {
+            //     $(this).parent().parent().remove();
+            // })
+            var a=document.getElementsByClassName("remove");
+            for (i=0;i<a.length;i++){
+                a[i].onclick=function () {
+                    var b =  confirm("确定删除？")
+                    if(!b)
+                        return;
+                    this.parentNode.parentNode.remove();
+                }
+            }
+            $('.checkAll').click(
+                function () {
+                    $(".body input").prop("checked",$(this).prop("checked"))
+                    sumPriceAndNumber()
+                }
+            )
+            $(".body .ck").click(
+                function () {
+                    var sum=4;
+                    var num=$(".body input:checked").length;
+                    if(sum==num){
+                        $(".checkAll").prop("checked",true);
+                    }else {
+                        $(".checkAll").prop("checked",false);
+                    }
+                    sumPriceAndNumber();
+                }
+            )
+            var reduce=document.getElementsByClassName('reduce');
+            var add=document.getElementsByClassName('add');
+            var number=document.getElementsByClassName('number');
+            var price=document.getElementsByClassName('price');
+            var ck=document.getElementsByClassName('ck');
+            var money=document.getElementsByClassName('money');
+            var num=document.getElementById('num');
+            var sumMoney=document.getElementById('money');
+            for (i=0;i<add.length;i++){
+                add[i].onclick=function () {
+                    var num=$(this).prev().val();
+                    var price=$(this).parent().prev().find('span').text();
+                    var sumPrice;
+                    // num=new Number(num);
+                    num++;
+                    $(this).prev().val(num);
+                    sumPrice=num*price;
+                    $(this).parent().next().text(sumPrice.toFixed(2));
+                }
+                reduce[i].onclick=function () {
+                    var num=$(this).next().val();
+                    var price=$(this).parent().prev().find('span').text();
+                    var sumPrice;
+                    // num=new Number(num);
+                    num--;
+                    if(num<0)
+                        num=0;
+                    $(this).next().val(num);
+                    sumPrice=num*price;
+                    $(this).parent().next().text(sumPrice.toFixed(2));
+                }
+            }
+            function sumPriceAndNumber() {
+                var sumPrice=0;
+                var n=0;
+                for(i=0;i<ck.length;i++){
+                    if(ck[i].checked){
+                       n+=Number($(this).parent().next().next().next().children('input').eq(1).val());
+                       alert(n)
+                    }
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>

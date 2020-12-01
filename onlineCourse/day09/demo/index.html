@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>
+				<a class="img">
+					<img src="img/ias_4ca8f531-2018-4766-8452-4566b7838aa5_570x273_90.jpg"/>
+					<img src="img/black_136x70_90.png"/>
+				</a>
+				<a class="favorite"></a>
+			</li>
+		</ul>
+		
+		<style type="text/css">
+			ul{
+				width: 570px;
+				height: 273px;
+				list-style: none;
+			}
+			ul li{
+				width: 570px;
+				height: 273px;
+				background-color: tan;
+				position: relative;
+			}
+			ul li a.img{
+				display: block;
+				width: 570px;
+				height: 273px;
+				position: absolute;
+			}
+			ul li a.img img{
+				position: absolute;
+			}
+			ul li a.img img:last-child{
+				left: 217px;
+				bottom: 30px;
+			}
+			
+			ul li a.favorite{
+				display: block;
+				width: 100px;
+				height: 30px;
+				background-color: pink;
+				position: absolute;
+				right: 20px;
+				bottom: 20px;
+				display: none;
+			}
+			
+			ul li:hover a.favorite{
+				display: block;
+			}
+			
+			ul li a.favorite:hover{
+				background: red;
+			}
+		</style>
+		
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				
+				/*文本对齐方式 center居中*/
+				text-align: center;
+				/*行高  前提用行高做上下居中时 只允许是一行文本*/
+				line-height: 100px;
+				/*加粗 比其他的形式更粗一点*/
+				/*font-weight: bold;*/
+				/*加粗*/
+				font-weight: bolder;
+				/*倾斜*/
+				font-style: oblique;
+				/*文字间的间隙*/
+				letter-spacing: 2px;
+				/*上划线*/
+				/*text-decoration: overline;*/
+				/*下划线*/
+				/*text-decoration: underline;*/
+				/*删除线*/
+				text-decoration: line-through;
+				color: darkgray;
+				
+				/*过渡效果 all所有属性 1s事件  linear线性变换*/
+				transition:all .2s linear;
+				
+			}
+			
+			div:hover{
+				/*第一个值x轴的偏移量  第二个值指的是y轴偏移量
+				 第三个值 虚化的程度 第四个颜色*/
+				box-shadow:0px 0px 20px lightgray ;
+				margin-top: -5px;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">我是box</div>
+	</body>
+</html>

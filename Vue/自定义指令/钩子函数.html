@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-xar="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-xar:hello.a.b="message"></div>
+    </div>
+    <script>
+        Vue.directive('xar', {
+            bind: function (el, binding, vnode) {
+                var s = JSON.stringify
+                el.innerHTML =
+                    'name: '       + s(binding.name) + '<br>' +
+                    'value: '      + s(binding.value) + '<br>' +
+                    'expression: ' + s(binding.expression) + '<br>' +
+                    'argument: '   + s(binding.arg) + '<br>' +
+                    'modifiers: '  + s(binding.modifiers) + '<br>' +
+                    'vnode keys: ' + Object.keys(vnode).join(', ')
+            },
+
+            update: function (newValue, oldValue) {
+                // 值更新时的工作
+                // 也会以初始值为参数调用一次
+            },
+            unbind: function () {
+                // 清理工作
+                // 例如，删除 bind() 添加的事件监听器
+            }
+        })
+        new Vue({
+            el:'#app',
+            data:{
+                message:'hello vue.js'
+            }
+        })
+    </script>
+</body>
+</html>

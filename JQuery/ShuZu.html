@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        var a = new Array(53,2,4,2,44,3,1,4,2,5);
+        document.write($.inArray(2,a)+"<br>");
+        a.sort();
+        $.unique(a);
+        $.each( a, function(i, n){
+            document.write( "元素[" + i + "] : " + n + "<br>" );
+        })
+        document.close();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

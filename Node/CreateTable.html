@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #t1 {
+            width: 90%;
+            height: 180px;
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        #t1 td {
+            width: 25%;
+        }
+
+        #t1 tr{
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-bottom-color: lightgray;
+        }
+    </style>
+    <script>
+        var dates=[
+            ["id","名称","血量","伤害"],
+            ["1","gareen","340","58"],
+            ["2","teemo","320","76"],
+            ["3","annie","380","38"],
+            ["4","deadbrother","400","90"]];
+        function f() {
+            var id = document.createAttribute("id");
+            id.nodeValue="t1";
+            var table = document.createElement("table");
+            table.setAttributeNode(id);
+            for(i in dates){//创建tr,长度根据dates数组的一维数组长度(i=0;i<dates.length;i++)
+                var tr = document.createElement("tr");
+                table.appendChild(tr);
+                for(var j in dates[i]){//创建td,长度根据dates数组的二维数组长度,并填充值
+                    // (var j=0;j<dates[i].length;j++)
+                    var td = document.createElement("td");
+                    if(i==0){
+                        var a=document.createElement("a");
+                        var connect=document.createTextNode(dates[0][j]);
+                        a.appendChild(connect);
+                        var href=document.createAttribute("href");
+                        a.setAttributeNode(href);
+                        td.appendChild(a);
+                    }
+                    else
+                        td.innerHTML = dates[i][j];
+                        tr.appendChild(td);
+                }
+            }
+           /* var body = document.getElementsByTagName("body")[0];
+            body.appendChild(table);*/
+           var div=document.getElementById("kf");
+           div.appendChild(table);
+        }
+    </script>
+</head>
+<body>
+    <div id="kf">
+        MY Table!!!
+    </div>
+    <button onclick="f()">创建表格</button>
+</body>
+</html>

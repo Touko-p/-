@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			span{
+				background-color: red;
+				width: 200px;
+				height: 100px;
+				float: left;
+				/*利  浮动之后该标签脱离了原有的标准流 所以
+				 以前的规则就不在限制于此标签*/
+			}
+			
+			.box1{
+				border: 1px solid black;
+			}
+			.box2{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				float: right;
+				/*高度塌陷  弊端
+				 当子元素设置了浮动后 父集元素不能再自适应子元素的高度
+				 
+				 清浮动
+				 * */
+			}
+			.clear{
+				clear: both;
+			} 
+			/*解决前面浮动对后面产生的影响*/
+			.navBar{
+				width: 100%;
+				height: 200px;
+				background-color: yellow;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!--内联元素-->
+		<!--<span>内联元素</span>-->
+		
+		<div class="box1">
+			<div class="box2"></div>
+			<!--<div class="clear"></div>-->
+		</div>
+		<div class="clear"></div>
+		<div class="navBar">
+			
+		</div>
+	</body>
+</html>

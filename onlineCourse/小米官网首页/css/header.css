@@ -1,0 +1,175 @@
+.header{
+	width: 100%;
+	height: 260px;
+	background-color: lightgray;
+}
+.header .yiqing{
+	width: 100%;
+	height: 120px;
+	background-color: red;
+}
+/*a 行级非替换元素  不可以直接通过宽高改变大小*/
+.header .yiqing a{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	/*背景图*/
+	background: url(../img/yiqing.jpg);
+	/*背景尺寸 auto宽度自适应 120px高度*/
+	background-size: auto 120px;
+	/*不允许平铺*/
+	background-repeat: no-repeat;
+	/*背景定位*/
+	background-position: center 0px;
+	/*鼠标样式  pointer小手样式*/
+	cursor: pointer;
+}
+
+/*包含选择器 后代选择器 派生选择器*/
+.header .head{
+	width: 100%;
+	height: 40px;
+	background-color: #333333;
+}
+.header .head .content{
+	width: 1226px;
+	height: 100%;
+	/*background-color: red;*/
+	/*auto左右自适应 0上下为0*/
+	/*a 上下左右  a b a上下 b左右  a上 b左右 c下
+	 * a上 b右 c下 d左 */
+	margin: 0 auto;
+}
+.header .head .content .leftUL{
+	/*列表样式无*/
+	list-style: none;
+	/*background-color: yellow;*/
+	/*浮动*/
+	float: left;
+}
+
+.header .head .content .leftUL li{
+	font-size: 9.3px;
+	line-height: 40px;
+	float: left;
+	color: rgb(61,61,61);
+}
+.header .head .content .leftUL li a{
+	margin: 0 5px;
+	color: rgb(141,141,141);
+	cursor: pointer;
+}
+/*li:nth-child(n) 在父级元素中找到第n个并且标签名为li的子标签*/
+.header .head .content .leftUL li:first-child a{
+	margin-left: 0px;
+}
+
+.header .head .content .rightUL{
+	float: right;
+	list-style: none;
+}
+.header .head .content .rightUL li{
+	float: right;
+	font-size: 9.3px;
+	line-height: 40px;
+	color: rgb(61,61,61);
+}
+.header .head .content .rightUL li a{
+	color: rgb(141,141,141);
+	margin: 0 5px;
+	cursor: pointer;
+}
+.header .head .content .rightUL li.shopCar{
+	width: 100px;
+	height: 40px;
+	background-color: rgb(65,65,65);
+	margin-left: 20px;
+}
+.header .head .content .rightUL li.shopCar a{
+	background: url(../img/img/car1.png);
+	background-size: 20px 16px;
+	background-repeat: no-repeat;
+	padding-left: 25px;
+	box-sizing: border-box;
+}
+
+/*过度*/
+.header .head .content ul li a:hover{
+	color: white;
+}
+.header .head .content .rightUL .shopCar:hover a{
+	color: rgb(246,115,33);
+	background: url(../img/newImage/shaoSelect.png);
+	background-size: 20px 16px;
+	background-repeat: no-repeat;
+}
+.header .head .content .rightUL .shopCar:hover{
+	background-color: white;
+}
+
+.header .navBar{
+	width: 100%;
+	height: 100px;
+	/*background-color: red;*/
+}
+.header .navBar .content{
+	width: 1226px;
+	height: 100%;
+	/*background-color: tan;*/
+	margin: 0 auto;
+	position: relative;
+}
+
+.header .navBar .content .icon{
+	position: absolute;
+	left: 0;
+	top: 22.5px;
+	width: 55px;
+	height: 55px;
+	background-color: rgb(253,104,33);
+	/*超出部分隐藏*/
+	overflow: hidden;
+}
+.header .navBar .content .icon .images{
+	width: 200%;
+	height: 100%;
+	position: absolute;
+	left: -55px;
+	top: 0px;
+	/*background-color: teal;*/
+	/*transition过度效果 all代表所有属性 1s时间 linear线性变化*/
+	transition: all 0.5s linear; 
+}
+.header .navBar .content .icon .images a{
+	width: 55px;
+	height: 55px;
+	display: inline-block;
+	background: url(../img/newImage/mi-home.png);
+	float: left;
+}
+
+.header .navBar .content .icon .images a:last-child{
+	background: url(../img/newImage/mi-logo.png);
+}
+.header .navBar .content .icon:hover .images{
+	left: 0px;	
+}
+
+.header .navBar .content .title{
+	height: 100px;
+	/*background-color: teal;*/
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 250px;
+	line-height: 100px;
+}
+.header .navBar .content .title a{
+	float: left;
+	color: rgb(75,75,75);
+	margin: 0 10px;
+	cursor: pointer;
+}
+.header .navBar .content .title a:hover{
+	color: rgb(253,104,33);
+}

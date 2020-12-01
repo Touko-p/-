@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.1.0-10/css/all.css" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 100vh;
+            background: #c56cf0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .search{
+            height: 40px;
+            background: #ffcccc;
+            padding: 10px;
+            border-radius: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .search-input{
+            background: none;
+            border: none;
+            outline: none;
+            color: white;
+            font-size: 20px;
+            width: 0px;
+            transition: 2s;
+        }
+        .search-btn{
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #c56cf0;
+            text-decoration: none;
+            font-size: 20px;
+            border-radius: 50%;
+        }
+        .search:hover .search-input{
+            width: 250px;
+        }
+        .search:hover .search-btn{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div class="search">
+            <input type="text" class="search-input">
+            <a href="#" class="search-btn">
+                <i class="fas fa-search" aria-hidden="true"></i>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

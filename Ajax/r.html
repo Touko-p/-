@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #keyword{
+            margin-left: 500px;
+        }
+        ul{
+            margin-top: 30px;
+            margin-left: 500px;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <input type="text" id="keyword">
+    <input type="button" value="查询" id="btn">
+    <div >
+        <ul id="list"> </ul>
+    </div>
+    <script>
+        var A=new Array(9);
+        $(function () {
+            $.get('books.json',function (data) {
+                for (var i=0;i<data.length;i++){
+                    for (var key in data[i]){
+                        A.push(data[i][key]);
+                    }
+                }
+            },'json');
+        })
+        $('#btn').click(function () {
+            var str=document.getElementById('keyword').value;
+            for(let i in A){
+                if(A[i].search(str)!=-1){
+                    // var app=document.getElementById("app");
+                    // var value=app.innerText;
+                    // app.innerText=value+array[i];
+                    $.getScript('createEle.js',function () {
+                        var style={
+                            width:'240px',
+                            height:'30px',
+                            background:'yellow',
+                            listStyle:'none',
+                            borderBottom:'1px solid black'
+                        }
+                        var divBox=createEle('li',style);
+                        var text=document.createTextNode(A[i]);
+                        divBox.appendChild(text);
+                        $('#list').append(divBox);
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+</html>

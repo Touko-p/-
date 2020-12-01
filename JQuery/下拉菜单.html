@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #app{
+            min-width: 1200px;
+        }
+        ul{
+            list-style: none;
+        }
+        .top{
+            width: 1000px;
+            height: 40px;
+            margin: 0 auto;
+        }
+        li{
+            width: 140px;
+            height: 40px;
+            line-height: 40px;
+            float: left;
+            text-align: center;
+            background-color: #95ff7d;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .list{
+            display: none;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <ul class="top">
+            <li class="box">
+                <a href="#">首页</a>
+                <ul class="list">
+                    <li><a href="#">韩流时尚</a></li>
+                    <li><a href="#">日系森女</a></li>
+                    <li><a href="#">英伦帅气</a></li>
+                    <li><a href="#">欧美风尚</a></li>
+                </ul>
+            </li>
+            <li class="box">
+                <a href="#">女装</a>
+                <ul class="list">
+                    <li><a href="#">韩流时尚</a></li>
+                    <li><a href="#">日系森女</a></li>
+                    <li><a href="#">英伦帅气</a></li>
+                    <li><a href="#">欧美风尚</a></li>
+                </ul>
+            </li>
+            <li class="box">
+                <a href="#">美妆</a>
+                <ul class="list">
+                    <li><a href="#">韩流时尚</a></li>
+                    <li><a href="#">日系森女</a></li>
+                    <li><a href="#">英伦帅气</a></li>
+                    <li><a href="#">欧美风尚</a></li>
+                </ul>
+            </li>
+            <li class="box">
+                <a href="#">国际</a>
+                <ul class="list">
+                    <li><a href="#">韩流时尚</a></li>
+                    <li><a href="#">日系森女</a></li>
+                    <li><a href="#">英伦帅气</a></li>
+                    <li><a href="#">欧美风尚</a></li>
+                </ul>
+            </li>
+            <li class="box">
+                <a href="#">运动</a>
+                <ul class="list">
+                    <li><a href="#">韩流时尚</a></li>
+                    <li><a href="#">日系森女</a></li>
+                    <li><a href="#">英伦帅气</a></li>
+                    <li><a href="#">欧美风尚</a></li>
+                </ul>
+            </li>
+            <li class="box">
+                <a href="#">母婴</a>
+                <ul class="list">
+                    <li><a href="#">韩流时尚</a></li>
+                    <li><a href="#">日系森女</a></li>
+                    <li><a href="#">英伦帅气</a></li>
+                    <li><a href="#">欧美风尚</a></li>
+                </ul>
+            </li>
+            <li class="box">
+                <a href="#">鞋包</a>
+                <ul class="list">
+                    <li><a href="#">韩流时尚</a></li>
+                    <li><a href="#">日系森女</a></li>
+                    <li><a href="#">英伦帅气</a></li>
+                    <li><a href="#">欧美风尚</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <script>
+        $('.box').mouseenter(function () {
+            $(this).find('.list').stop().slideDown(500);
+            $(this).css({"background-color":"yellow"});
+        })
+        $('.box').mouseleave(function () {
+            $(this).find('.list').stop().slideUp(500);
+            $(this).css({"background-color":"#95ff7d"});
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .app{
+            width: 130px;
+            height: 300px;
+            border: 1px solid black;
+            background-color: gray;
+            margin: 0 auto;
+        }
+        table{
+            margin-left: 10px;
+            line-height: 25px;
+        }
+        #reverse{
+            color: orange;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var reverse=document.getElementById("reverse");
+            var input=document.getElementsByTagName("input");
+            var k=document.getElementById("k");
+            var isCheckAll=function () {
+                for (var i=1,n=0;i<input.length;i++){
+                    input[i].checked&&n++;
+                }
+                input[0].checked=n==input.length-1;
+                k.innerHTML=input[0].checked ? "全不选" : "全选";
+            }
+            input[0].onclick=function(){
+                for (var i=1 in input){
+                    input[i].checked=this.checked;
+                }
+                isCheckAll();
+            }
+            reverse.onclick=function () {
+                for (var i=1 in input){
+                    input[i].checked=!input[i].checked;
+                }
+                isCheckAll();
+            }
+            for (var i = 1; i < input.length; i++){
+                input[i].onclick=function () {
+                    isCheckAll();
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="app">
+        <table>
+            <thead>
+            <tr>
+                <th><input type="checkbox"></th>
+                <th id="k">全选</th>
+                <th id="reverse">反选</th>
+            </tr>
+            </thead>
+            <tbody id="body">
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>选项1</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>选项2</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>选项3</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>选项4</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>选项5</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>选项6</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>选项7</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>选项8</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>选项9</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>选项10</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

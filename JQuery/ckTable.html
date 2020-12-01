@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#all").click(
+                function () {
+                    $("#body input").prop("checked",$(this).prop("checked"))
+                }
+            )
+            $("#body input").click(
+                function () {
+                    var sum=$("#body input").length;
+                    var num=$("#body input:checked").length;
+                    if(sum==num){
+                        $("#all").prop("checked",true);
+                    }else {
+                        $("#all").prop("checked",false);
+                    }
+                }
+            )
+        })
+    </script>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th><input type="checkbox" id="all"></th>
+                <th>序号</th>
+            </tr>
+        </thead>
+        <tbody id="body">
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>2</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

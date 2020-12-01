@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.min.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        <div v-xar>好好学习，天天向上</div>
+    </div>
+
+    <script>
+
+        Vue.directive('xar',function (el) {
+            el.innerHTML=el.innerHTML+'(x-art)'
+            el.style.color='blue'
+        })
+
+        new Vue({
+            el:'#app'
+        })
+    </script>
+</body>
+</html>

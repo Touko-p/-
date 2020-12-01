@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.min.js"></script>
+    <script src="../axios.min.js"></script>
+</head>
+<body>
+    <div class="app">
+        <input type="button" value="获取笑话" @click="getJoke">
+        <p>{{joke}}</p>
+    </div>
+    <script>
+        new Vue({
+            el:'.app',
+            data:{
+                joke:'未完待续'
+            },
+            methods:{
+                getJoke:function (){
+                    var that=this;
+                    axios.get("https://autumnfish.cn/api/joke").then(function (response) {
+                        that.joke=response.data
+                    })
+                }
+            }
+        })
+    </script>
+</body>
+</html>

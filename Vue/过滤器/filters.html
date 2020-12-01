@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table tr td{
+            border:1px solid gray;
+            padding:10px;
+
+        }
+        table{
+            border-collapse:collapse;
+            width:800px;
+            table-layout:fixed;
+            margin: 0 auto;
+        }
+        tr:first-child{
+            background-color: lightGray;
+        }
+    </style>
+    <script src="../vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <table>
+            <tr>
+                <td>输入数据</td>
+                <td>过滤后的结果</td>
+            </tr>
+            <tr>
+                <td><input v-model="str"></td>
+                <td> {{ str|capitalize|capitalizeLastLetter}}</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        Vue.filter('capitalize', function (value) {
+            if (!value) return ''
+            value = value.toString()
+            return value.charAt(0).toUpperCase() + value.slice(1)
+        })
+
+        Vue.filter('capitalizeLastLetter', function (value) {
+            if (!value) return '' //如果为空，则返回空字符串
+            value = value.toString()
+            return value.substring(0,value.length-1)+ value.charAt(value.length-1).toUpperCase()
+        })
+
+        new Vue({
+            el: '#app',
+            data: {
+                str:''
+            }
+        })
+        // new Vue({
+        //     el:'#app',
+        //     data:{
+        //         str:''
+        //     },
+        //     filters:{
+        //         capitalize:function (value) {
+        //             if(!value) return ''
+        //             value=value.toString()
+        //             return  value.charAt(0).toUpperCase()+value.substring(1)
+        //         },
+        //         capitalizeLastLetter:function(value) {
+        //             if (!value) return '' //如果为空，则返回空字符串
+        //             value = value.toString()
+        //             return value.substring(0,value.length-1)+ value.charAt(value.length-1).toUpperCase()
+        //         }
+        //     }
+        // })
+    </script>
+</body>
+</html>

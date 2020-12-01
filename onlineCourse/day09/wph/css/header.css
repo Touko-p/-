@@ -1,0 +1,282 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+body{
+	width: 100%;
+	height: 100%;
+}
+.header{
+	min-width: 1000px;
+	height: 173px;
+	/*需要注释掉*/
+	background-color: tan;
+}
+
+.top_nav{
+	min-width: 1000px;
+	height: 30px;
+	background-color: #f5f5f5;
+}
+
+.header .top_nav .content{
+	width: 1000px;
+	height: 100%;
+	/*需要注释掉*/
+	/*background-color: teal;*/
+	margin: 0 auto;
+}
+.header .top_nav .content .left{
+	width: 86px;
+	height: 30px;
+	/*需要注释掉*/
+	/*background-color: thistle;*/
+	float: left;
+	padding-left: 10px;
+	box-sizing: border-box;
+}
+.header .top_nav .content .left p{
+	width: 46px;
+	height: 27px;
+	line-height: 27px;
+	color: #333333;
+	font-size: 12px;
+	float: left;
+}
+.header .top_nav .content .left img{
+	float: left;
+	margin-top: 7px;
+}
+
+.header .top_nav .content ul{
+	display: inline-block;
+	height: 30px;
+	float: right;
+	list-style: none;
+	/*需要注释掉*/
+	/*background-color: teal;*/
+}
+.header .top_nav .content ul li{
+	line-height: 30px;
+	float: right;
+	font-size: 12px;
+	color: lightgray;
+	position: relative;
+}
+.header .top_nav .content ul li a{
+	color: #666666;
+	margin: 0 20px 0 13px;
+}
+
+.header .top_nav .content ul li a:focus{
+	color: red;
+}
+
+
+.header .top_nav .content ul li.huiyuan ul{
+	width: 100%;
+	height: 300%;
+	border:1px solid  #333333;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+	background-color: darkgray;
+}
+
+.header .top_nav .content ul li.huiyuan:hover ul{
+	display: block;
+}
+
+.header .top_nav .content ul li.huiyuan ul li{
+	width: 100%;
+	height: 33.33%;
+	text-align: center;
+	line-height: 30px;
+	list-style: none;
+}
+
+
+.header .center{
+	width: 100%;
+	height: 100px;
+	background-color: white;
+}
+.header .center .content{
+	width: 1000px;
+	height: 100px;
+	/*需要注释掉*/
+	/*background-color: teal;*/
+	margin: 0 auto;
+}
+.header .center .content .left{
+	width: 440px;
+	height: 100px;
+	float: left;
+	/*需要注释掉*/
+	/*background-color: thistle;*/
+}
+.header .center .content .left a{
+	display: block;
+	float: left;
+	width: 100px;
+	height: 100px;
+/*	margin-left: 1px;
+*/	/*需要注释掉*/
+	/*background-color: tomato;*/
+}
+.header .center .content .left a:nth-child(1){
+	width: 140px;
+}
+.header .center .content .left a:nth-child(1) img{
+	width: 140px;
+	height: 100px;
+}
+
+.header .center .content .left a:nth-child(2){
+	background-image: url(../img/icon.png);
+	background-size: 300px 100px;
+}
+.header .center .content .left a:nth-child(3){
+	background-image: url(../img/icon.png);
+	background-size: 300px 100px;
+	background-position: -100px 0px;
+}
+.header .center .content .left a:nth-child(4){
+	background-image: url(../img/icon.png);
+	background-size: 300px 100px;
+	background-position: -200px 0px;
+}
+
+.header .center .content .right{
+	display: inline-block;
+	height: 100px;
+	float: right;
+	/*需要注释掉*/
+	/*background-color: thistle;*/
+}
+
+.header .center .content .right .shop{
+	float: right;
+	width: 95px;
+	height: 36px;
+	border: 1px solid rgb(204,204,204);
+	margin-top: 31px;
+	color: #333333;
+	line-height: 36px;
+	font-size: 12px;
+	padding-left: 25px;
+	box-sizing: border-box;
+	background-color: rgb(246,247,249);
+}
+.header .center .content .right .shop span:nth-child(1){
+	display: block;
+	width: 12px;
+	height: 17px;
+	background-image: url(../img/shop.png);
+	background-size: 12px 17px;
+	float: left;
+	margin-left: -15px;
+	margin-top: 9px;
+}
+
+.header .center .content .right .shop span:nth-child(2){
+	width: 24px;
+	height: 16px;
+	background-color: #f00581;
+	font-size: 12px;
+	color: white;
+	line-height: 16px;
+	text-align: center;
+	float: right;
+	margin-top: 10px;
+	margin-right: 3px;
+	border-radius: 12px;
+}
+
+.header .center .content .right .search{
+	width: 391px;
+	height: 56px;
+	/*需要注释掉*/
+	/*background-color: turquoise;*/
+	float: right;
+	margin-right: 10px;
+	margin-top: 31px;
+}
+.header .center .content .right .search form{
+	height: 32px;
+	border: 2px solid #FA2A83;
+}
+.header .center .content .right .search form input{
+	border: none;
+	outline: none;
+	float: left;
+}
+.header .center .content .right .search form input:first-child{
+	height: 32px;
+	width:355px;
+	padding-left: 10px;
+	box-sizing: border-box;
+}
+.header .center .content .right .search form input:last-child{
+	width: 32px;
+	height: 32px;
+	background-color: #FA2A83;
+}
+.header .center .content .right .search ul{
+	height: 20px;
+	list-style: none;
+	/*需要注释掉*/
+	/*background-color: tan;*/
+}
+.header .center .content .right .search ul li{
+	line-height: 20px;
+	color: #cccccc;
+	font-size: 12px;
+	float: left;
+}
+.header .center .content .right .search ul li a{
+	color: #999999;
+	margin: 0 10px;
+}
+
+
+.navBar{
+	width: 100%;
+	height: 43px;
+	/*需要改成白色*/
+	background-color: white;
+}
+.navBar .content{
+	width: 1000px;
+	height: 43px;
+	/*需要注释掉*/
+	/*background-color: thistle;*/
+	margin: 0 auto;
+}
+.navBar .content a{
+	display: block;
+	float: left;
+	font-size: 16px;
+	color: #333333;
+	height: 43px;
+	line-height: 43px;
+	padding: 0 10px;
+	text-decoration: none;
+}
+.navBar .content a:first-child{
+	width: 153px;
+	text-align: center;
+	color: white;
+	background: #F00581 url(../img/threeLine.png) no-repeat 32px center;
+}
+
+.navBar .content a:nth-child(2){
+	color: #F00581;
+	margin-left: 30px;
+}
+.navBar .content a:last-child{
+	width: 60px;
+	margin-left: 30px;
+	background: url(../img/下箭头.png) no-repeat 50px center;
+}

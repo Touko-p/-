@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var a=10;
+        function test() {
+            var a=5;
+            b=20;
+            alert(a);
+        }
+        test();
+        alert(a);
+        alert(b);
+        var menus=["门户首页","办公系统","教务系统"];
+        for(let i=0;i<menus.length;i++){
+            document.write(menus[i]);
+            document.write('&nbsp;&nbsp;');
+        }
+        alert(menus.length);
+        for(let x in menus){
+            document.write(x);
+            document.write(menus[x]);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

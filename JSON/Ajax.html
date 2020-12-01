@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var xmlhttp;
+        function f() {
+            var name=document.getElementById("name").value;
+            var url="https://how2j.cn/study/checkName.jsp?name="+name;
+            xmlhttp=new XMLHttpRequest();//创建XHR对象
+            xmlhttp.onreadystatechange=checkResult;//设置响应函数
+            xmlhttp.open("GET",url,true);
+            xmlhttp.send(null);
+        }
+        function checkResult() {
+            if(xmlhttp.readyState==4&&xmlhttp.status==200)
+                document.getElementById("string").innerHTML=xmlhttp.responseText;
+        }
+    </script>
+</head>
+<body>
+    <span>输入账号：</span>
+    <input type="text" id="name" onkeyup="f()">
+    <span id="string"></span>
+</body>
+</html>

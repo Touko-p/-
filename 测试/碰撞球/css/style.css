@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    background: #2c3e50;
+}
+.container div{
+    width: 100px;
+    height: 100px;
+    background: #ecf0f1;
+    border-radius: 50%;
+    float: left;
+    text-align: center;
+    line-height: 100px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.ball1{
+    transform: translateX(200px) translateY(400px);
+}

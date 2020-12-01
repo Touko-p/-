@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../神奇宝贝/jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .kele{
+            background-image: url("kele/bizhi.png");
+            background-repeat: repeat-x;
+            background-position: 0 10px;
+            animation: bg 5s linear infinite;
+        }
+        @keyframes bg {
+            from{
+                background-position: 0 10px;
+            }
+            to{
+                background-position: -537px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="kele">
+        <img src="kele/body.png">
+    </div>
+<script>
+
+</script>
+</body>
+</html>

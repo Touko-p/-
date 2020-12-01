@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        textarea{
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+    <script src="../jquery.min.js"></script>
+</head>
+<body>
+    <textarea></textarea>
+    <button>send</button>
+<script>
+    $(function () {
+        $("button").click(function () {
+            if($("textarea").val().length>5){
+                alert("1")
+            }else if($("textarea").val().length==0){
+                alert("2")
+            }else
+                alert("3");
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+        td{
+            border: 1px solid gray;
+            padding: 5px;
+        }
+        input#js{
+            width: 200px;
+        }
+    </style>
+    <script>
+        function f() {
+            var num1=getNumber("initmoney");
+            var num2=getNumber("rate");
+            var num3=getNumber("year");
+            var num4=getNumber("each");
+            var sum1=num1*num3;
+            var sum3=num1;
+            for (var i=1;i<=num3;i++){
+                if(i==1){
+                    sum3=sum3*(1+num2/100)
+                }
+                else{
+                    sum3=(sum3+num4)*(1+num2/100);
+                }
+            }
+            var sum2=sum3-sum1;
+            getValue("sum1",sum1);
+            getValue("sum2",sum2);
+            getValue("sum3",sum3);
+        }
+        function getNumber(id) {
+            return parseFloat(document.getElementById(id).value);
+        }
+        function getValue(id,value) {
+            return document.getElementById(id).value=value;
+        }
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>起始资金</td>
+            <td><input type="text" id="initmoney">￥</td>
+        </tr>
+        <tr>
+            <td>每年收益</td>
+            <td><input type="text" id="rate">%</td>
+        </tr>
+        <tr>
+            <td>复利年数</td>
+            <td><input type="text" id="year">年</td>
+        </tr>
+        <tr>
+            <td>每年追加资金</td>
+            <td><input type="text" id="each">￥</td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center"><input type="button" id="js" value="计算" onclick="f()"></td>
+        </tr>
+        <tr>
+            <td>本金和</td>
+            <td><input type="text" id="sum1" disabled="disabled">￥</td>
+        </tr>
+        <tr>
+            <td>利息和</td>
+            <td><input type="text" id="sum2" disabled="disabled">￥</td>
+        </tr>
+        <tr>
+            <td>本息和</td>
+            <td><input type="text" id="sum3" disabled="disabled">￥</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			.box1{
+				width: 200px;
+				height: 200px;
+				/*border: 1px solid tomato;*/
+				background-color: yellow;
+				margin: 50px;
+				float: left;
+			}
+			.box1 p{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				/*在默认情况下 当子元素设置向上的外边距时 会传递给
+				 父级元素  父级元素会执行这个外边距的操作
+				 * 
+				 * 这种情况怎么解决 
+				 * 1.给父级元素设置边框(不现实 我们没这要求)
+				 * 2.我们可以给父级元素 或者元素本身一个float属性
+				 * */
+				/*float: left;*/
+				margin-top: 150px;
+				margin-left: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<p>今天中午不吃饭</p>
+		</div>
+	</body>
+</html>

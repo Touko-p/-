@@ -1,0 +1,598 @@
+.headbox{
+	height: 103px;
+	width: 100%;
+	background-color: #fff;
+	border-bottom: 4px solid #ed435b;
+	position: fixed;
+	top: 0;
+} 
+.headbox .box1{
+	width: 1200px;
+	height: 103px;
+	margin: 0 auto;
+	min-width: 1200px; 
+/* 	background-color: tan; */	
+}
+.headbox .box1 .headlogo{
+	width: 215px;
+	height:70px;
+	float: left;
+	background: url(../img/拼多多_爱心扶贫/pdd_logo_v2.png);
+	min-width: 180px;
+	background-size: 90%;
+	background-repeat: no-repeat;
+	margin-top: 23px;
+	cursor: pointer;
+}
+.headbox .box1 .navbar{
+	width: 980px;
+	float: left;
+}
+.headbox .box1 .navbar ul li{
+	list-style: none;
+	float: right;
+	margin-top: 41.5px;
+	font-size: 18px;
+	line-height: 20px;
+	margin-left: 15px;
+	padding-right: 15px;
+	border-right: 1px solid gray;
+}
+.headbox .box1 .navbar ul li a{
+	outline:none;
+	background: none;
+	text-decoration: none;
+	color: rgb(108,108,108);
+}
+ .headbox .box1 .navbar ul li a:active{
+	 color: red;
+ }
+.headbox .box1 .navbar ul li:first-child{
+	border: none;
+	padding-right: 0;
+}
+/* 轮播图****************************************************** */
+.lunboimg{
+	width: 1200px;
+	height: 450px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 106px;
+	background-color: tan;
+	background: url(../img/拼多多_爱心扶贫/4.jpg);
+	background-repeat: no-repeat;
+	transition: all 1s linear ;
+}
+.lunboimg:hover{
+	background: url(../img/拼多多_爱心扶贫/1.jpg);
+	opacity: 1;
+	
+}
+.lunboimg visited{
+	background: url(../img/拼多多_爱心扶贫/2.jpg);
+}
+/* 展示图****************************************************** */
+.zhanshitu{
+	width: 1200px;
+	height: 396px;
+	margin: 20px auto;
+	/* 要注释的内容 */
+/* 	background-color: tan; */
+}
+.zhanshitu .pearimg{
+	width: 700px;
+	height: 396px;
+	float: left;
+	background: url(../img/拼多多_爱心扶贫/pear.png);
+	background-repeat: no-repeat;
+}
+.zhanshitu .pearimg .pear{
+	width: 195px;
+	height: 196px;
+/* 	background-color: tan; */
+	background: url(../img/拼多多_爱心扶贫/pear_video-play.png) no-repeat;
+	margin:100px auto;
+	cursor: pointer;
+}
+.zhanshitu .pearimg .peartxt{
+	width: 700px;
+	height: 70px;
+	color: #FFFFFF;
+	font-size: 26px;
+	padding-left: 20px;
+	box-sizing: border-box;
+	line-height: 70px;
+	float: left;
+	background-color: rgba(0, 0, 0, 0.5);
+	margin-top: -70px;
+}
+.zhanshitu .santu{
+	width: 180px;
+	height: 396px;
+	float: left;
+	margin-left: 10px;
+	overflow: auto;
+	padding-top: 20px;
+	box-sizing: border-box;
+	border-top: 1px solid darkgray;
+	overflow-x:hidden;
+}
+.zhanshitu .you{
+	width: 170px;
+	height: 396px;
+	float: left;
+	overflow: hidden;
+}
+.zhanshitu .santu .santu1{
+	background-color: #FFFFFF;
+	width: 170px;
+	height: 130px;
+	cursor: pointer;
+}
+.zhanshitu .santu .img1 .img01{
+	width: 170px;
+	height: 108px;
+}
+.zhanshitu .santu  .peartxt02{
+	padding-left: 10px;
+	color: #949494;
+	font-size: 14px;
+}
+.zhanshitu .santu .santu2{
+	width: 170px;
+	height: 120px;
+	margin-top: 15px;
+	cursor: pointer;
+}
+.zhanshitu .santu .img2{
+	width: 170px;
+	height: 90px;
+	background: url(../img/拼多多_爱心扶贫/agriculture-scgj-s.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.zhanshitu .santu  .orange{
+	width: 170px;
+	height: 30px;
+	padding-left: 10px;
+	padding-top: 5px;
+	box-sizing: border-box;
+	color: #FFFFFF;
+	background-color:black;
+	font-size: 14px;
+}
+.zhanshitu .santu .santu3{
+	width: 170px;
+	height: 120px;
+	margin-top: 15px;
+	cursor: pointer;
+}
+.zhanshitu .santu .img3{
+	width: 170px;
+	height: 90px;
+	background: url(../img/拼多多_爱心扶贫/agriculture-gxbxg-s.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.zhanshitu .santu  .people{
+	width: 170px;
+	height: 30px;
+	padding-left: 10px;
+	padding-top: 5px;
+	box-sizing: border-box;
+	color: #FFFFFF;
+	background-color:black;
+	font-size: 14px;
+}
+.zhanshitu .santu .santu4{
+	width: 170px;
+	height: 120px;
+	margin-top: 15px;
+	cursor: pointer;
+}
+.zhanshitu .santu .img4{
+	width: 170px;
+	height: 90px;
+	background: url(../img/拼多多_爱心扶贫/agriculture-ynxlg-s.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.zhanshitu .santu  .people4{
+	width: 170px;
+	height: 30px;
+	padding-left: 10px;
+	padding-top: 5px;
+	box-sizing: border-box;
+	color: #FFFFFF;
+	background-color:black;
+	font-size: 14px;
+}
+.zhanshitu .santu .santu5{
+	width: 170px;
+	height: 120px;
+	margin-top: 15px;
+	cursor: pointer;
+}
+.zhanshitu .santu .img5{
+	width: 170px;
+	height: 90px;
+	background: url(../img/拼多多_爱心扶贫/agriculture-gspg-s.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.zhanshitu .santu  .people5{
+	width: 170px;
+	height: 30px;
+	padding-left: 10px;
+	padding-top: 5px;
+	box-sizing: border-box;
+	color: #FFFFFF;
+	background-color:black;
+	font-size: 14px;
+}
+.zhanshitu .santu .santu6{
+	width: 170px;
+	height: 120px;
+	margin-top: 15px;
+	cursor: pointer;
+}
+.zhanshitu .santu .img6{
+	width: 170px;
+	height: 90px;
+	background: url(../img/拼多多_爱心扶贫/agriculture-scmht-s.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.zhanshitu .santu  .people6{
+	width: 170px;
+	height: 30px;
+	padding-left: 10px;
+	padding-top: 5px;
+	box-sizing: border-box;
+	color: #FFFFFF;
+	background-color:black;
+	font-size: 14px;
+}
+.zhanshitu .santu .santu7{
+	width: 170px;
+	height: 120px;
+	margin-top: 15px;
+	cursor: pointer;
+}
+.zhanshitu .santu .img7{
+	width: 170px;
+	height: 90px;
+	background: url(../img/拼多多_爱心扶贫/agriculture-gxmy-s.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.zhanshitu .santu  .people7{
+	width: 170px;
+	height: 30px;
+	padding-left: 10px;
+	padding-top: 5px;
+	box-sizing: border-box;
+	color: #FFFFFF;
+	background-color:black;
+	font-size: 14px;
+}
+.zhanshitu .santu .santu8{
+	width: 170px;
+	height: 120px;
+	margin-top: 15px;
+	cursor: pointer;
+}
+.zhanshitu .santu .img8{
+	width: 170px;
+	height: 90px;
+	background: url(../img/拼多多_爱心扶贫/agriculture-scmht-s.png);
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.zhanshitu .santu  .people8{
+	width: 170px;
+	height: 30px;
+	padding-left: 10px;
+	padding-top: 5px;
+	box-sizing: border-box;
+	color: #FFFFFF;
+	background-color:black;
+	font-size: 14px;
+}
+.zhanshitu .news{
+	width: 310px;
+	height: 396px;
+	float: right;
+	/* border: 1px solid red; */
+	background-color: #FFFFFF;
+}
+.zhanshitu .news .fupingnews{
+	width: 310px;
+	height: 53px;
+	background-color: #FC475D;
+	color: #FFFFFF;
+	font-size: 28px;
+	line-height: 53px;
+	padding-left: 22px;
+	box-sizing: border-box;
+}
+.zhanshitu .news .fupinguL{
+	width: 310px;
+	height: 343px;
+	overflow: auto;
+	overflow-x: hidden;
+}
+.zhanshitu .news .fupinguL ul{
+	font-size: 14.5px;
+	margin-top: 15px;
+	padding: 0 32px;
+	line-height: 40px;
+	color:#686868;
+	box-sizing: border-box;
+}
+.zhanshitu .news .fupinguL ul li{
+	width: 235px;
+	/* 不换行 */
+	white-space: nowrap;
+	/* 多出来的字以省略号显示 */
+	 text-overflow: ellipsis; 
+	 /* （多出的文字，隐藏） */
+	 overflow: hidden; 
+	 cursor: pointer;
+}
+/* 爱心商品**************************************************/
+.aiximzhamshiimg{
+	width: 1139px;
+	height: 35px;
+	background: url(../img/拼多多_爱心扶贫/agriculture_title_display.png);
+	margin: 50px auto;
+}
+.shangping{
+	width: 1200px;
+	height: 1790px;
+/* 	background-color: tan; */
+	margin: 0 auto;
+}
+/*****/
+.shangping .box1{
+	width: 285px;
+	height: 418px;
+	background-color: #FFFFFF;
+	margin-right: 20px;
+	margin-bottom: 20px;
+	float: left;
+}
+.shangping .box1:hover{
+	/* background-color: #E8EAED; */
+	box-shadow: grey 4px 4px 10px;
+}
+
+/**/
+.shangping .box1:nth-child(4n){
+	float: right;
+	margin-right: 0;
+}
+/**/
+.shangping .box1 .xlg{
+		width: 285px;
+		height: 285px;
+		
+}
+.shangping .box1 .text{
+	margin: 10px auto;
+	padding: 10px 15px 10px 20px;
+	box-sizing: border-box;
+	font-size: 17.5px;
+	color: #636363;
+	overflow: hidden;
+}
+.shangping .box1 .price{
+	text-align: center;
+	color: #FC475D;
+	font-size: 25px;
+	margin-top: -15px;
+}
+.shangping .box1 .price span{
+	font-size: 32px;
+}
+/*尾部上***************************************************************************************/
+.white{
+	background-color: #FFFFFF;
+}
+.last{
+	width: 1200px;
+	height: 455px;
+	/* background-color: teal; */
+	margin: 0 auto;
+}
+.last .lastone{
+	
+	width: 1200px;
+	height: 455px;
+}
+.last .lastone .left{
+	width: 775px;
+	height: 235px;
+	float: left;
+	margin-top: 80px;
+	border-right: 1px solid black;
+}
+.last .lastone .left img{
+	width: 162px;
+	height: 162px;
+	margin-top: 15px ;
+	margin-right: 60px;
+	margin-bottom: 5px;
+}
+.last .lastone .left img:hover{
+	transform: scale(1.01);
+}
+.last .lastone .left img:first-child{
+	margin-left: 85px;
+}
+.last .lastone .left img:last-child{
+	height: 162px;
+}
+.last .lastone .left p{
+	float: left;
+	font-size: 16px;
+}
+.last .lastone .left .one{
+	margin-left: 100px;
+}
+.last .lastone .left .two{
+	margin-left: 80px;
+}
+.last .lastone .left .three{
+	margin-left: 80px;
+}
+.last .lastone .right{
+	margin-top: 80px;
+	float: right;
+	width: 370px;
+	height: 235px;
+/* 	background-color: tan; */
+	line-height: 34px;
+	color: #4d4d4d;
+	font-size: 15px;
+}
+.last .lastone .right ul li{
+	list-style: none;
+}
+.last .lastone .right ul li:first-child{
+	font-size: 24px;	
+}
+.last .lastone .right ul li:nth-child(3){
+	margin-left:120px;
+}
+.last .lastone .bottom{
+	width: 1200px;
+	height: 20.8px;
+	margin: 0 auto;
+/* 	background-color: tan; */
+	float: left;
+	margin-bottom: 58px;
+	margin-top: 60px;
+	text-align: center;
+	
+}
+.last .lastone .bottom ul li{
+	float: left;
+	list-style: none;
+	font-size: 16px;
+	color: #6c6c6c;
+	border-right: 1px solid lightgray;
+	box-sizing: border-box;
+	padding: 0 7px;
+}
+.last .lastone .bottom ul li:hover{
+	text-decoration: underline;
+}
+.last .lastone .bottom ul li:last-child{
+	border-right:0;
+}
+.last .lastone .bottom ul li:first-child{
+	margin-left: 50px;
+}
+.last .lastone .bottom ul li:hover{
+	cursor: pointer;
+	color: #FD6F5D;
+}
+.last .white{
+	height: 455px;
+	background-color: #FFFFFF;
+}
+/* 尾部中************************************************************** */
+.black{
+	height: 130px;
+	background-color: #3F3E3E;
+}
+.black .beian{
+	width: 1200px;
+	height: 130px;
+/* 	background-color: yellow; */
+	margin: 0 auto;
+	text-align: center;
+	color: #b1b1b1;
+	font-size: 14px;
+	padding-top: 25px;
+	box-sizing: border-box;
+	line-height: 30px;
+}
+.black .beian ul li{
+	list-style: none;
+	float: left;
+	box-sizing: border-box;
+	padding-right:20px;
+}
+.black .beian ul li:first-child{
+	padding-right: 2px;
+	margin-left: 220px;
+}
+.black a{
+	cursor: pointer;
+}
+/* 尾部下********************************************************** */
+.bottomlast{
+	height: 70px;
+	background-color: #FFFFFF;
+}
+.bottomlast .box{
+	width: 1200px;
+	height: 70px;
+	margin: 0 auto;
+}
+.bottomlast .box ul li{
+	list-style: none;
+	float: left;
+	margin-top: 10px;
+	margin-right: 30px;
+}
+.bottomlast .box ul li a{
+	cursor: pointer;
+}
+.bottomlast .box ul li .one{
+	width: 100px;
+	height: 50px;
+	margin-left:170px;
+	
+}
+.bottomlast .box ul li .two{
+	width: 100px;
+	height: 50px;
+}
+.bottomlast .box ul li .three{
+	width: 76px;
+	height: 50px;
+}
+.bottomlast .box ul li .four{
+	width: 137px;
+	height: 29px;
+	margin-top: 10px;
+}
+.bottomlast .box ul li .five{
+	width: 81px;
+	height: 50px;
+}
+.bottomlast .box ul li .sex{
+	width: 81px;
+	height: 50px;
+}
+.bottomlast .box ul li .seven{
+	width: 83px;
+	height: 47px;
+}
+.news .fupinguL ul li:hover{
+	color: orangered;
+}
+#app .top a img{
+	width: 30px;
+	height: 30px;
+	margin-top: 540px;
+	position:fixed;
+	display: block;
+	margin-left: 1485px;
+}
+#kkk{
+	color: orangered;
+}

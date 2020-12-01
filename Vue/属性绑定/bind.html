@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+<!--        <a v-bind:="page">https://www.baidu.com</a>-->
+        <a :href="page">https://www.baidu.com</a>
+    </div>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            page:'https://www.baidu.com'
+        }
+    })
+</script>
+</body>
+</html>

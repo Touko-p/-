@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!-- 伪类选择器  css3之后把一些之前只能在js中做的事情
+			我们让css也可以简单的做到
+		-->
+		<style type="text/css">
+			.box{
+				width: 100px;
+				height: 100px;
+				background-color: darkgray;
+				text-align: center;
+				line-height: 50px;
+			}
+			/*鼠标过度 伪类选择器   选择器:(操作){
+			 * 	
+			 * }*/
+			
+			/*.box:hover{
+				color: yellow;
+			}*/
+			
+			p:hover{
+				color: yellow;
+			}
+			
+			/*只要我的鼠标放在盒子里了 p标签就要发生颜色改变*/
+			.box:hover p{
+				color: yellow;
+			}
+			
+			/*伪元素*/
+			/*p::after  p::before*/
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="box">
+			今天学的如何
+			<p>学的还可以</p>
+		</div>
+		
+	</body>
+</html>

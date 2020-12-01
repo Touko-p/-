@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="d1" align="center" class="abc">hello HTML DOM</div>
+    <script>
+        var div=document.getElementById("d1");//一个元素对应的Id是唯一的
+        var content=div.childNodes[0];
+        var div1=document.getElementsByClassName("abc");
+        var div2=document.getElementsByTagName("div");
+        var as=div.attributes;//通过元素节点的attributes获取其下所有的属性节点。
+        document.write("通过Id获取元素节点："+div+"<br>");
+        document.write("通过ClassName获取元素节点："+div1[0]+"<br>");
+        document.write("通过标签名称获取元素节点："+div2[0]+"<br>");
+        document.write("div总共有"+as.length +" 个属性");
+        document.write("分别是:");
+        for(i=0;i<as.length;i++){
+            document.write("<br>");
+            document.write(as[i].nodeName);
+            document.write(":");
+            document.write(as[i].nodeValue);
+        }
+        document.write("<br>");
+        document.write("div的id属性值是："+ as["id"].nodeValue+"<br>");
+        document.write("div的内容节点名是:"+content.nodeName+"<br>");
+        document.write("div的内容节点值是:"+content.nodeValue);
+    </script>
+</body>
+</html>

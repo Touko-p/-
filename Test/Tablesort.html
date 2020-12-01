@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border-collapse:collapse;
+            width:90%;
+        }
+        tr{
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-bottom-color: lightgray;
+            height:35px;
+        }
+
+        td{
+            width:25%;
+            text-align:center;
+        }
+    </style>
+    <script>
+        var col=0;
+        var reverse=false;
+        function comparator(tr1,tr2) {
+            var td1=tr1.children[col].innerHTML;
+            var td2=tr2.children[col].innerHTML;
+            if(reverse)
+                return td1.localeCompare(td2);
+            else
+                return td2.localeCompare(td1);
+        }
+        function sort(column) {
+            if(column==col)
+                reverse=!reverse;
+            col=column;
+            var tbody=document.getElementById("tbody");
+            var trsCollection=document.getElementsByTagName("tr");
+            var trs=new Array();
+            for(var i=1;i<trsCollection.length;i++){
+                trs.push(trsCollection[i]);
+            }
+            trs.sort(comparator);
+            for (var i=0;i<trs.length;i++){
+                tbody.appendChild(trs[i])
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <table>
+            <tbody id="tbody">
+                <tr>
+                    <td ><a  href="javascript:void(0)"  onclick="sort(0)">id</a></td>
+                    <td ><a  href="javascript:void(0)"  onclick="sort(1)">名称</a></td>
+                    <td ><a  href="javascript:void(0)"  onclick="sort(2)">血量</a></td>
+                    <td ><a  href="javascript:void(0)"  onclick="sort(3)">伤害</a></td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>gareen</td>
+                    <td>340</td>
+                    <td>58</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>teemo</td>
+                    <td>320</td>
+                    <td>76</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>annie</td>
+                    <td>380</td>
+                    <td>38</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>deadbrother</td>
+                    <td>400</td>
+                    <td>90</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#b1").click(
+                function () {
+                    $("#d").hide();
+                    document.write($("#d"));
+                    document.close();
+                }
+            );
+            $("#b2").click(
+                function () {
+                    $("#d").show();
+                }
+            );
+        });
+    </script>
+</head>
+<body>
+    <button id="b1">隐藏</button>
+    <button id="b2">显示</button>
+    <br>
+    <div id="d">
+        My Frist Jqueryfile!!!
+    </div>
+</body>
+</html>

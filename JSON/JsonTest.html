@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--JSON JavaScript 对象表示法（JavaScript Object Notation） 是一种存储数据的方式。-->
+</head>
+<body>
+    <script>
+        //创建JSON对象
+        document.write("创建JSON对象:"+"<br>");
+        var yaso={"name":"亚索","hp":"100"};
+        document.write("这是一个JSON对象:"+yaso+"<br>");
+        document.write("<br>");
+        //访问JSON对象
+        document.write("访问JSON对象:"+"<br>");
+        document.write("英雄名称:"+yaso.name+"<br>");
+        document.write("英雄血量:"+yaso.hp+"<br>");
+        document.write("<br>");
+        //创建JSON数组
+        document.write("创建JSON数组:"+"<br>");
+        var heros= [
+            {"name":"亚索","hp":"100"},
+            {"name":"德玛","hp":"100"},
+            {"name":"剑圣","hp":"100"},
+            {"name":"锐雯","hp":"100"}
+        ]
+        document.write("JSON数组的大小:"+heros.length+"<br>");
+        document.write("<br>");
+        //访问JSON数组
+        document.write("访问JSON数组:"+"<br>");
+        document.write("第二个英雄是:"+heros[1].name+"hp为:"+heros[1].hp+"<br>");
+        document.write("<br>");
+        //字符串转为JSON对象
+        document.write("JSON对象转字符串:"+"<br>");
+        var s1="{\"name\":\"盖伦\"";
+        var s2=",\"hp\":100}";
+        var s3=s1+s2;
+        document.write("字符串转为JSON对象:"+s3+"<br>");
+        var gareen=eval("("+s3+")");
+        document.write("这是一个JSON对象："+gareen+"<br>");
+        document.write("<br>");
+        //JSON对象转字符串
+        document.write("JSON对象转字符串:"+"<br>");
+        var hero={"name":"提莫","hp":"100"};
+        document.write("这是一个JSON对象:"+hero+"<br>");
+        var heroString=JSON.stringify(hero);
+        document.write("这是一个JSON字符串："+heroString);
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    圆的半径:<input type="text" id="t1"><br>
+    圆的周长:<input type="text" id="t2"><br>
+    圆的面积:<input type="text" id="t3">
+    <script>
+        var num=prompt("请输入圆的半径","");
+        if(num.length==0){
+            alert("数值不应为空，请输入数据")
+        }
+        else if(parseInt(num)!=num){
+            alert("请输入数字")
+        }
+        else {
+            document.getElementById("t1").value = num;
+            document.getElementById("t2").value = num * 2 * Math.PI.toFixed(2);
+            document.getElementById("t3").value = Math.pow(num, 2) * Math.PI.toFixed(2);
+        }
+    </script>
+</body>
+</html>

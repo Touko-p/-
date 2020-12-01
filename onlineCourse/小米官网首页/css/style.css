@@ -1,0 +1,15 @@
+/* 通配选择器 *通配符 */
+*{
+	margin: 0px;
+	padding: 0px;
+}
+div{
+	margin: 0px;
+	padding: 0px;
+}
+#app{
+	height: 4000px;
+	/*最小宽度*/
+	min-width: 1226px;
+	background-color: #333;
+}

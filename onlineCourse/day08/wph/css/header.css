@@ -1,0 +1,71 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.header{
+	min-width: 1000px;
+	height: 173px;
+	/*需要注释掉*/
+	background-color: tan;
+}
+
+.top_nav{
+	min-width: 1000px;
+	height: 30px;
+	background-color: #f5f5f5;
+}
+
+.header .top_nav .content{
+	width: 1000px;
+	height: 100%;
+	/*需要注释掉*/
+	/*background-color: teal;*/
+	margin: 0 auto;
+}
+.header .top_nav .content .left{
+	width: 86px;
+	height: 30px;
+	/*需要注释掉*/
+	/*background-color: thistle;*/
+	float: left;
+	padding-left: 10px;
+	box-sizing: border-box;
+}
+.header .top_nav .content .left p{
+	width: 46px;
+	height: 27px;
+	line-height: 27px;
+	color: #333333;
+	font-size: 12px;
+	float: left;
+}
+.header .top_nav .content .left img{
+	float: left;
+	margin-top: 7px;
+}
+
+.header .top_nav .content ul{
+	display: inline-block;
+	height: 30px;
+	float: right;
+	list-style: none;
+	/*需要注释掉*/
+	/*background-color: teal;*/
+}
+.header .top_nav .content ul li{
+	line-height: 30px;
+	float: right;
+	font-size: 12px;
+	color: lightgray;
+}
+.header .top_nav .content ul li a{
+	color: #666666;
+	margin: 0 20px 0 13px;
+}
+
+
+
+
+
+

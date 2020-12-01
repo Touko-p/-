@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+
+        }
+        #app{
+            min-width: 1200px;
+            background:url("img/1.png") no-repeat;
+        }
+        .panel{
+            width: 1200px;
+            height: 640px;
+            margin: 0 auto;
+            /*border: 1px solid black;*/
+        }
+        .panel div{
+            float: left;
+        }
+        .left{
+            width: 400px;
+            height: 600px;
+            /*background-color: #3e8f3e;*/
+        }
+        .left #ipa{
+            width: 120px;
+            height: 30px;
+            margin-top: 257px;
+            margin-left: 180px;
+        }
+        .left #ipb{
+            width: 40px;
+            height: 35px;
+        }
+        .left #ipd{
+            width: 120px;
+            height: 30px;
+            margin-top: 10px;
+            margin-left: 180px;
+        }
+        .left #ipDa{
+            width: 40px;
+            height: 35px;
+        }
+        .left #ipc{
+            width: 100px;
+            height: 40px;
+            margin-left: 180px;
+            margin-top: 10px;
+        }
+        .center{
+            width: 400px;
+            height: 600px;
+            /*background-color: #ffd6b3;*/
+        }
+        .center span{
+            display: block;
+        }
+        #box{
+            width: 220px;
+            height: 90px;
+            background-color: #95ff7d;
+            text-align: center;
+            line-height: 90px;
+            font-size: 30px;
+            margin: 257px auto 0 108px;
+        }
+        #btn{
+            width: 220px;
+            height: 60px;
+            background-color: #a6e1ec;
+            text-align: center;
+            line-height: 60px;
+            font-size: 30px;
+            margin: 87px auto 0 108px;
+        }
+        .right{
+            width: 400px;
+            height: 600px;
+        /*background-color: #a6e1ec;*/
+        }
+    </style>
+    <script>
+        var Class=["亚索","德玛","提莫","安妮","剑圣"];
+        var Color=["red","green","blue","yellow","pink"];
+        var time=null;
+        function getId(id) {
+            return document.getElementById(id);
+        }
+        function f() {
+            var box=getId("box");
+            var num=Math.floor(Math.random()*Class.length);
+            var colorNum=Math.floor(Math.random()*Color.length);
+            box.innerHTML=Class[num];
+            // box.style.color=Color[num];
+            box.style.backgroundColor=Color[colorNum];
+            time=setTimeout("f()",100);
+        }
+        function f1() {
+            var bt=getId("btn");
+            if(time==null){
+                bt.innerHTML="停止点名";
+                f();
+            }else {
+                bt.innerHTML="开始点名";
+                clearTimeout(time);
+                var name=getId("box").innerText;
+                alert(name+"同学请回答")
+                time=null;
+            }
+        }
+        function unique(arr){
+            for(let i=0; i<arr.length; i++){
+                for(let j=i+1; j<arr.length; j++){
+                    if(arr[i]==arr[j]){         //第一个等同于第二个，splice方法删除第二个
+                        arr.splice(j,1);
+                        j--;
+                    }
+                }
+            }
+            return arr;
+        }
+        function f2() {
+            var name=getId("ipa").value;
+            if(name.length==0) {
+                alert('不允许为空')
+            }
+            else{
+                Class.push(name);
+                alert("学生"+name+"已添加")
+            }
+            unique(Class);
+            getId("ipa").value=null;
+        }
+        function f3() {
+            var name=getId("ipd").value;
+            if(name.length==0) {
+                alert('不允许为空')
+            }
+            else
+            for(let i=0;i<Class.length;i++){
+                if(name==Class[i]){
+                    Class.splice(i,1);
+                    alert("学生"+name+"已移除")
+                    getId("ipd").value=null;
+                }
+            }
+        }
+        function f4() {
+            alert(Class)
+        }
+    </script>
+</head>
+<body>
+    <div id="app">
+        <div class="panel">
+            <div class="left">
+                <input type="text" placeholder="添加学生" id="ipa">
+                <input type="button" value="添加" id="ipb" onclick="f2()">
+                <input type="text" placeholder="移除学生" id="ipd">
+                <input type="button" value="移除" id="ipDa" onclick="f3()">
+                <input type="button" value="查看名单" id="ipc" onclick="f4()">
+            </div>
+            <div class="center">
+                <span id="box">
+                    准备好点名没
+                </span>
+                <span id="btn" onclick="f1()">开始点名</span>
+            </div>
+            <div class="right"></div>
+        </div>
+    </div>
+</body>
+</html>

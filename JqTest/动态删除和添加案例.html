@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <div>
+            <input type="button" value="添加数据" class="btnAdd" id="btnAddDate">
+        </div>
+        <table>
+            <thead>
+                <th>课程名称</th>
+                <th>所属学院</th>
+                <th>操作</th>
+            </thead>
+            <tbody id="j_tb">
+            <tr>
+                <td>javascript</td>
+                <td>信息工程学院</td>
+                <td><a href="javascript:;" class="del">删除</a></td>
+            </tr>
+            <tr>
+                <td>css</td>
+                <td>信息工程学院</td>
+                <td><a href="javascript:;" class="del">删除</a></td>
+            </tr>
+            <tr>
+                <td>html</td>
+                <td>信息工程学院</td>
+                <td><a href="javascript:;" class="del">删除</a></td>
+            </tr>
+            <tr>
+                <td>jquery</td>
+                <td>信息工程学院</td>
+                <td><a href="javascript:;" class="del">删除</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="mask" id="j_mask"></div>
+    <div class="form-add" id="formAdd">
+        <div class="form-add-title">
+            <span>添加数据</span>
+            <div id="hideForm">x</div>
+        </div>
+        <div class="form-item">
+            <label for="j_lesson" class="lb">课程名称：</label>
+            <input type="text" class="txt" placeholder="请输入课程名称" id="j_lesson">
+        </div>
+        <div class="form-item">
+            <label for="j_sch" class="lb">所属学院</label>
+            <input type="text" class="txt" id="j_sch" value="信息工程学院" readonly>
+        </div>
+        <div class="form-submit">
+            <input type="button" value="添加" id="j_btn">
+        </div>
+    </div>
+    <script>
+        $('#btnAddDate').click(function () {
+            $('#j_mask').css('display','block');
+            $('#formAdd').css('display','block');
+        });
+        $('#hideForm').click(function () {
+            $('#j_mask').css('display','none');
+            $('#formAdd').css('display','none');
+        });
+        $('#j_btn').click(function () {
+            var lesson=$('#j_lesson').val();
+            var sch=$('#j_sch').val();
+            $('<tr><td>'+lesson+'</td><td>'+sch+'</td><td><a href="javascript:;" class="del">删除'+'</a></td></tr>').appendTo($('#j_tb'));
+            $('#j_mask').css('display','none');
+            $('#formAdd').css('display','none');
+            $('#j_lesson').val('');
+
+        });
+        $('#j_tb').on('click','.del',function () {
+            $(this).parent().parent().remove();
+        })
+    </script>
+</body>
+</html>

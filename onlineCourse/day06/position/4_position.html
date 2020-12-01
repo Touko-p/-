@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box1{
+				width: 300px;
+				height: 3000px;
+				background: red;
+				margin: 300px;
+				position: relative;
+			}
+			.box2{
+				width: 100px;
+				height: 100px;
+				background: yellow;
+				/*固定 只想对于body 并且 页面的滚动与其无关*/
+				position: fixed;
+				top: 0;
+				right: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<div class="box2"></div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div.product{
+            float:left;
+            border:1px solid lightGray;
+            width:200px;
+            margin:10px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="../vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <product v-for="i in products" v-bind:product="i"></product>
+    </div>
+    <script>
+        Vue.component('product',{
+            props:['product'],
+            template:'<div class="product" @click="increaseSale">{{product.name}}销量：{{product.sale}}</div>',
+            methods:{
+                increaseSale:function(){
+                    this.product.sale++
+                }
+            }
+        })
+        new Vue({
+            el:'#app',
+            data:{
+                products:[
+                    {"name":"MAXFEEL休闲男士手包真皮手拿包大容量信封包手抓包夹包软韩版潮","sale":"18"},
+                    {"name":"宾度 男士手包真皮大容量手拿包牛皮个性潮男包手抓包软皮信封包","sale":"35"},
+                    {"name":"唯美诺新款男士手包男包真皮大容量小羊皮手拿包信封包软皮夹包潮","sale":"29"}
+                ]
+            }
+        })
+    </script>
+</body>
+</html>

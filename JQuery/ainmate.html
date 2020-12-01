@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        div#d{
+            width: 300px;
+            height: 100px;
+            background-color: aqua;
+            border:1px solid black;
+            position:relative;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("#b1").click(
+                function () {
+                    $("#d").toggle(1000);
+                }
+            );
+            $("#b2").click(
+                function () {
+                    $("#d").slideUp(1000);
+                }
+            );
+            $("#b3").click(
+                function () {
+                    $("#d").slideDown(1000);
+                }
+            );
+            $("#b4").click(
+                function () {
+                    $("#d").slideToggle(1000)
+                }
+            );
+            $("#b5").click(
+                function () {
+                    $("#d").fadeIn(1000);
+                }
+            );
+            $("#b6").click(
+                function () {
+                    $("#d").fadeOut(1000);
+                }
+            );
+            $("#b7").click(
+                function () {
+                    $("#d").fadeToggle(1000);
+                }
+            );
+            $("#b8").click(
+                function () {
+                    $("#d").fadeTo("slow",0.5);
+                }
+            );
+            $("#b9").click(
+                function () {
+                    $("#d").animate({left:"100px"},2000);
+                    $("#d").animate({top:"50px",left:"150px"},2000,function () {
+                        alert("动画演示完毕");
+                    })
+                }
+            )
+            }
+        )
+    </script>
+</head>
+<body>
+    <button id="b1">切换按钮</button>
+    <button id="b2">向上滑动</button>
+    <button id="b3">向下滑动</button>
+    <button id="b4">滑动切换</button>
+    <button id="b5">淡入</button>
+    <button id="b6">淡出</button>
+    <button id="b7">淡入淡出切换</button>
+    <button id="b8">fadeto</button>
+    <button id="b9">自定义动画</button>
+    <div id="d">演示盒子</div>
+</body>
+</html>

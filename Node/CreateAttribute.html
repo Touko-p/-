@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function f() {
+            var a=document.createElement("a");
+            var content=document.createTextNode("http://1233.com");
+            a.appendChild(content);
+            var herf=document.createAttribute("href");
+            herf.nodeValue="http://4399.com";//地址
+            a.setAttributeNode(herf);
+            var div=document.getElementById("fk");
+            div.appendChild(a);
+        }
+    </script>
+</head>
+<body>
+    <div id="fk">Hello HTML DOM!</div>
+    <button onclick="f()">创建一个属性节点</button>
+</body>
+</html>

@@ -1,0 +1,48 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    /*height: 100vh;*/
+    background-color: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.world{
+    animation: move 4s linear infinite;
+}
+.world img{
+    width: 200px;
+    height: 550px;
+}
+@keyframes move {
+    0%{
+        transform: rotate(0deg);
+    }
+    25%{
+        transform: rotate(7deg);
+    }
+    50%{
+        transform: rotate(0deg);
+    }
+    75%{
+        transform: rotate(-7deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+/*.world:hover{*/
+/*    animation: f 1s linear infinite;*/
+/*}*/
+/*@keyframes f {*/
+/*    from{*/
+/*        transform: rotate(0deg);*/
+/*        width: 80%;*/
+/*    }*/
+/*    to{*/
+/*        transform: rotate(360deg);*/
+/*        width: 40%;*/
+/*    }*/
+/*}*/

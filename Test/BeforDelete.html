@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            width:70%;
+            border:solid 2px black;
+            border-collapse:collapse;
+        }
+        td{
+            width:50%;
+            border:solid 2px black;
+        }
+    </style>
+    <script>
+        function f(num) {
+            var d=confirm("是否删除");
+            if(d==true){
+               var son=num.parentNode.parentNode;
+               var father=son.parentNode;
+               father.removeChild(son);
+               /*var table = document.getElementById("tb");
+                var td = num.parentNode;
+                var tr = td.parentNode;
+                var index=tr.rowIndex;
+                table.deleteRow(index);*/
+            }
+        }
+        function f1() {
+            if(document.getElementById("name").value.length==0||document.getElementById("password").value.length==0) {
+                alert("id或密码未输入");
+                return false;
+            }
+                return true;
+        }
+        function f2() {
+            var num=document.getElementById("num").value;
+            var email=document.getElementById("email").value;
+            if(document.getElementById("id").value.length<3) {
+                alert("用户名长度请大于三");
+                return false;
+            }
+            else if(isNaN(num)||num.length==0||num.indexOf(".")>-1) {
+                alert("年龄不为空且为数字");
+                return false;
+            }
+            else if(email.length==0){
+                alert("email为空或格式不对");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <table id="tb">
+        <tr id="t1">
+            <td>英雄名称</td>
+            <td>操作</td>
+        </tr>
+        <tr id="t2">
+            <td>盖伦</td>
+            <td><a href="#" onclick="f(this)">删除</a></td>
+        </tr>
+        <tr id="t3">
+            <td>提莫</td>
+            <td><a href="#" onclick="f(this)">删除</a></td>
+        </tr>
+        <tr id="t4">
+            <td>亚索</td>
+            <td><a href="#" onclick="f(this)">删除</a></td>
+        </tr>
+    </table>
+     <div>
+        <form method="post">
+            账号：<input type="text" id="name"> <br/>
+            密码：<input type="password" id="password" > <br/>
+            <input type="submit" value="登录" onclick="f1()">
+        </form>
+    </div>
+    <div>
+        <form method="post" action="/study/register.jsp" onsubmit="return f2()">
+            账号：<input type="text" id="id"><br>
+            年龄：<input type="text" id="num"><br>
+            Email：<input type="text" id="email">
+        <input type="submit" value="注册">
+        </form>
+    </div>
+</body>
+</html>

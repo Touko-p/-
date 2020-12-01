@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{margin: 0;padding: 0;}
+		#content{
+			width: 230px;
+			height: 250px;
+			margin:15px 15px;
+			display: inline-block;
+		}
+		#head{
+			width: 100%;
+			background-color: lightgrey;
+			height: 25px;
+			color: black;
+			text-align: center;
+			line-height: 25px;
+
+		}
+		ul{
+			list-style: none;
+		}
+		ul li{
+			width: 15px;
+			height: 20px;
+			float: left;
+			margin: 8px;
+			text-align: center;
+		}
+	</style>
+	<script type="text/javascript">
+		var head = document.getElementById("head");
+		var weeks = ['日','一','二','三','四','五','六'];
+		var t = parseInt(prompt("请输入年份："));
+		var x = '';
+		var y = '';
+		if(isNaN(t)){
+			alert("请输入整数")
+		}
+		else {
+		for(var i = 1;i<=12;i++){
+			document.write('<div id="content">'+'<div id="head">'+t+'年'+i+'月'+'</div>'+'<ul class="week">'+'</ul>'+'<ul class="date">'+'</ul>'+'</div>');
+
+		}
+
+		for(let i in weeks){
+			x+='<li>'+weeks[i]+'</li>';
+		}
+		for(let i = 0;i<12;i++){
+			document.getElementsByClassName("week")[i].innerHTML=x;
+		}
+
+		for(var i = 0;i<12;i++){
+			var firstDay = new Date(t,i,1).getDay();
+			var days = new Date(t,i+1,-1).getDate()+1;
+			for(var j =0; j<firstDay; j++){
+				y+='<li></li>';
+			}
+			for(var k=1;k<=days;k++){
+				y+='<li>'+k+'</li>';
+			}
+			document.getElementsByClassName("date")[i].innerHTML=y;
+			y='';
+		}
+		}
+	</script>
+	<body>
+	</body>
+</html>

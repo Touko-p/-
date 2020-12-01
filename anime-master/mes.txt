@@ -1,0 +1,43 @@
+css选择器 如：'div','#el path';
+DOM元素 如： document.querySelector('.item')
+节点列表 如： document.querySelectorAll('.item')
+对象
+数组 如：['div', '.item', domNode]
+
+opacity 透明度 0~1
+backgroundColor
+fontSize
+borderRadius
+backgroundColor
+transforms变换：
+
+translateX (x轴的值)
+translateY y轴的值
+rotate 旋转
+scale 大小变换 例：scale:2
+rotate 旋转 例：rotate:'1turn'（旋转一周）
+duration（持续时间）
+delay（延迟）
+endDelay（末端延迟）
+easing（时间曲线）
+round（数字格式）将值向上舍入为x小数。
+direction (方向）:'normal'	正方向动画
+                 'reverse'	反方向动画
+                 'alternate'	往返
+loop（循环）: Number	循环次数
+            true	无限循环
+autoplay（自动播放）:true	开启自动播放
+                   false	关闭自动播放
+
+强制动画以指定值开始:
+
+TYPE	EXAMPLE
+Array	['50%', '100%']
+translateX: [100, 250], // from 100 to 250
+
+
+
+
+
+
+

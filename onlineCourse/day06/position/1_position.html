@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			div{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+				position: relative;
+			}
+			/*
+			 *定位流  设置了position属性的元素 定位流
+			 * 
+			 * 关于定位的其他属性
+			 * top
+			 * left
+			 * bottom
+			 * right 定位属性必须配合这四个值才有效果
+			 * 
+			 * 1.相对定位 
+			 * 
+			 * a、相对定位 是相对与自己以前的标准流的位置进行定位的
+			 * （没有任何变化）
+			 * 
+			 * b、可以用来微调元素
+			 * 
+			 * 
+			 *  */
+			
+			p{
+				width: 100px;
+				height: 100px;
+				background-color: yellow;
+				position: relative;
+				top: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+		<p class="p1"></p>
+	</body>
+</html>

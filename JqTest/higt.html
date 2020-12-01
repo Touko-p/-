@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            width: 240px;
+            height: 160px;
+        }
+        .wrap{
+            width: 750px;
+            height: 350px;
+            /*background-color: #a6e1ec;*/
+            margin: 0 auto;
+        }
+        .wrap ul{
+            list-style: none;
+        }
+        .wrap ul li{
+            float: left;
+            margin: 5px 5px;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function () {
+            $(".wrap ul li").mouseenter(
+                function () {
+                    $(this).css("opacity","1").siblings().css("opacity","0.1")
+                }
+            )
+            $(".wrap").mouseleave(
+                function () {
+                    // $(this).children().children()
+                    $(this).find("li").css("opacity","1")
+                }
+            )
+        })
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <ul>
+            <li><a href="#"><img src="img/1.jpg"></a></li>
+            <li><a href="#"><img src="img/2.jpg"></a></li>
+            <li><a href="#"><img src="img/3.jpg"></a></li>
+            <li><a href="#"><img src="img/4.jpg"></a></li>
+            <li><a href="#"><img src="img/5.jpg"></a></li>
+            <li><a href="#"><img src="img/6.jpg"></a></li>
+        </ul>
+    </div>
+</body>
+</html>

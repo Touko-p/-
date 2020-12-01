@@ -1,0 +1,205 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+#app{
+	min-width: 1000px;
+	/*需要注释掉*/
+	/*background-color: tan;*/
+}
+
+.header{
+	width: 1000px;
+	height: 100px;
+	/*需要注释掉*/
+	/*background-color: yellow;*/
+	margin: 0 auto;
+}
+
+.header .logo{
+	width: 243px;
+	height: 22px;
+	float: left;
+	margin-top: 39px;
+	margin-left: 20px;
+	background: url(../img/logo.jpg);
+}
+.header form{
+	width: 227px;
+	height: 28px;
+	border: 1px solid #e5e5e5;
+	float: right;
+	margin-right: 20px;
+	margin-top: 36px;
+}
+.header form .txt{
+	width: 183px;
+	height: 28px;
+	/*取消默认边框*/
+	border: none;
+	float: left;
+	background-color: #f1f1f1;
+	padding-left: 14px;
+	/*取消默认选择边框*/
+	outline: none;
+	border-right: 1px solid #E5E5E5;
+}
+.header form .btn{
+	width: 29px;
+	height: 28px;
+	border: none;
+	outline: none;
+	float: left;
+	background: #F1F1F1 url(../img/search.jpg) no-repeat center center;
+}
+
+.navBar{
+	width: 1000px;
+	height: 59px;
+	background-color: #323232;
+	margin: 0 auto;
+}
+
+/*第一中方法*/
+/*.navBar a{
+	display: block;
+	width: 119px;
+	height: 59px;
+	float: left;
+	color: white;
+	font-size: 14px;
+	line-height: 59px;
+	text-align: center;
+	text-decoration: none;
+	border-right: 1px solid #4a4a4a;
+	
+}
+.navBar a:nth-child(1){
+	margin-left: 20px;
+}
+.navBar a:nth-child(8){
+	border: none;
+}*/
+
+/*第二种方式*/
+.navBar ul{
+	width: 960px;
+	height: 59px;
+	margin-left: 20px;
+	list-style: none;
+}
+
+/*.navBar ul li{
+	float: left;
+	width: 119px;
+	height: 59px;
+	line-height: 59px;
+	text-align: center;
+	font-size: 14px;
+	border-right: 1px solid #4a4a4a;
+}
+.navBar ul li:nth-child{
+	border: none;
+}
+.navBar ul li a{
+	color: white;
+	text-decoration: none;
+}*/
+
+.navBar ul li{
+	float: left;
+	width: 120px;
+	height: 59px;
+}
+.navBar ul li a{
+	display: block;
+	width: 119px;
+	height: 59px;
+	line-height: 59px;
+	text-align: center;
+	font-size: 14px;
+	border-right: 1px solid #4a4a4a;
+	color: white;
+	text-decoration: none;
+}
+.navBar ul li:last-child a{
+	border: none;
+}
+
+
+/*banner*/
+.banner{
+	width: 1000px;
+	height: 463px;
+	margin: 0 auto;
+}
+
+/*news-list*/
+.news-list{
+	width: 1000px;
+	height: 240px;
+	/*需要注释掉*/
+	/*background-color: teal;*/
+	margin: 0 auto;
+}
+.news-list .left{
+	width: 500px;
+	height: 100%;
+	float: left;
+	/*需要注释掉*/
+	/*background-color: thistle;*/
+}
+.news-list .center{
+	width: 240px;
+	height: 100%;
+	float: left;
+	background-color: #F1F1F1;
+}
+
+.news-list .right{
+	width: 260px;
+	height: 100%;
+	float: left;
+	/*需要注释掉*/
+	background-color: tomato;
+}
+
+/*left*/
+.news-list .left .box{
+	width: 452px;
+	height: 190px;
+	margin-top: 32px;
+	margin-left: 20px;
+	/*background: tan;*/
+}
+.news-list .left .box div{
+	height: 46px;
+}
+.news-list .left .box div h3{
+	float: left;
+	color: #1a1a1a;
+	font-size: 18px;
+	font-weight: normal;
+}
+.news-list .left .box div a{
+	float: right;
+}
+.news-list .left .box ul{
+	width: 100%;
+	list-style: none;
+}
+.news-list .left .box ul li{
+	font-size: 12px;
+	line-height: 24px;
+	background: url(../img/list.png) no-repeat left center;
+	padding-left: 13px;
+}
+.news-list .left .box ul li a{
+	color: #505050;
+	text-decoration: none;
+}
+.news-list .left .box ul li time{
+	float: right;
+	color: #8f8f8f;
+}

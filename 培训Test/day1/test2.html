@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .num{
+            background-color: #95ff7d;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <button id="a">切换样式</button>
+    <script>
+        $("li:first-child").attr("id","1");
+        $(function () {
+            $("li").click(function () {
+                    $(this).css("background-color","pink").siblings().css("background-color","darkred");
+            })
+            $("#a").click(function () {
+                $("li:first-child").toggle(500);
+            })
+        })
+</script>
+</body>
+</html>

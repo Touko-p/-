@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #app{
+            width: 500px;
+            height: 80px;
+            font-size: 26px;
+            text-align: center;
+            line-height: 80px;
+            background-color: #5bc0de;
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+        function f() {
+            var fDate=new Date(2020,5,1);
+            var s="今天离2020年6月1日只有";
+            var nDate=new Date();
+            var time=fDate.getTime()-nDate.getTime();
+            var day=Math.floor(time/(1000*60*60*24));
+            var hour=nDate.getHours();
+            var minute=nDate.getMinutes();
+            var second=nDate.getSeconds();
+            var app=document.getElementById("app");
+            if(minute<10)
+                minute="0"+minute;
+            if(second<10)
+                second="0"+second;
+            app.innerHTML=s+day+"天"+(24-hour)+':'+(60-minute)+":"+(60-second);
+            if(day<0)
+                app.innerHTML="已经过了哦";
+            Time=setTimeout("f()",1000);
+        }
+    </script>
+</head>
+<body onload="f()">
+    <div id="app">
+
+    </div>
+</body>
+</html>

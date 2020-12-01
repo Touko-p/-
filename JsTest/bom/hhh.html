@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>页面滚动事件</title>
+    <script src="../jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //获取nav距离顶部的距离
+            var navtop=$("#nav").offset().top;
+            $(document).scroll(function(){
+                //获取滚动条滚动的高度
+                var scroltop=$(document).scrollTop();
+                if (scroltop > navtop){
+                    $("#nav").css({
+                        "position":"fixed",
+                        "left":"0px",
+                        "top":"0px",
+                        "width":"100%"
+                    })
+                }else {
+                    $("#nav").css({
+                        "position":"",
+                        "left":"",
+                        "top":"",
+                        "width":""
+                    })
+                }
+            })
+        })
+    </script>
+    <style type="text/css">
+        *{margin: 0px; padding: 0px;}
+        #nav{height:50px;
+            background: #dddddd;}
+        #f{
+            height: 2000px; background:orange;
+        }
+    </style>
+</head>
+<body>
+<div style="height:100px; background:yellow;"></div>
+<div id="nav">
+    <p>nav</p>
+</div>
+<div id="f">
+    <p>内容区</p>
+</div>
+</body>
+</html>

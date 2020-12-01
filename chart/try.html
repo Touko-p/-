@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="chart.min.js"></script>
+</head>
+<body>
+    <div style="width: 900px;margin: 0 auto">
+        <canvas id="myChart"></canvas>
+    </div>
+    <script>
+        var ctx=document.getElementById('myChart').getContext('2d');
+        var myChart=new Chart(ctx,{
+            type:'line',
+            data:{
+                labels:['红','黄','蓝','紫','粉','黑'],
+                datasets:[{
+                    label:'示例',
+                    data:[12,14,4,2,4,11],
+                    borderColor:'blue',
+                    borderWidth:1,
+                    fill:false,
+                }]
+            },
+            options:{
+                tooltips:{
+                    intersect:false,
+                    mode:'index'
+                }
+            }
+        });
+    </script>
+</body>
+</html>

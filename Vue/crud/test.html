@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" xmlns: xmlns: xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.min.js"></script>
+    <script src="../../JQuery/jquery.min.js"></script>
+    <style type="text/css">
+        td{
+            border:1px solid gray;
+        }
+
+        table{
+            border-collapse:collapse;
+        }
+
+        div#app{
+            margin:20px auto;
+            width:400px;
+            padding:20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <table id="heroListTable" >
+            <thead>
+            <tr>
+                <th>英雄名称</th>
+                <th>血量</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="hero in heros ">
+                <td>{{hero.name}}</td>
+                <td>{{hero.hp}}</td>
+                <td>
+                    <a href="#nowhere" @click="edit(hero)">编辑</a>
+                    <a href="#nowhere" @click="deleteHero(hero.id)">删除</a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    英雄名称:
+                    <input type="text"    v-model="hero4Add.name" />
+                    <br>
+                    血量：
+                    <input type="number"    v-model="hero4Add.hp" />
+                    <br>
+                    <button type="button"  v-on:click="add">增加</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <div id="div4Update">
+
+            英雄名称:
+            <input type="text"    v-model="hero4Update.name" />
+            <br>
+            血量：
+            <input type="number"    v-model="hero4Update.hp" />
+            <input type="hidden"    v-model="hero4Update.id" />
+            <br>
+            <button type="button"  v-on:click="update">修改</button>
+            <button type="button"  v-on:click="cancel(hero4UpdateOldValue)">取消</button>
+
+        </div>
+    </div>
+    <script>
+        $("#div4Update").hide();
+        var data={
+            heros:[
+                { id: 1, name: '盖伦', hp: 318},
+                { id: 2, name: '提莫', hp: 320},
+                { id: 3, name: '安妮', hp: 419},
+                { id: 4, name: '死歌', hp: 325},
+                { id: 5, name: '米波', hp: 422},
+            ],
+            hero4Add: { id: 0, name: '', hp: '0'},
+            hero4Update: { id: 0, name: '', hp: '0'},
+            hero4UpdateOldValue: {name: '', hp: 0}
+        }
+        var maxId=5;
+        for (var i=0;i<data.heros.length;i++){
+            if(data.heros[i].id>maxId)
+                maxId=this.data.heros[i].id;
+        }
+        var vue=new Vue({
+            el:'#app',
+            data:data,
+            methods:{
+                add:function (event) {
+                    maxId++;
+                    this.hero4Add.id=maxId;
+                    if(this.hero4Add.name.length==0)
+                        this.hero4Add.name="Hero#"+this.hero4Add.id;
+                    this.heros.push(this.hero4Add);
+                    this.hero4Add= { id: 0, name: '', hp: '0'}
+                },
+                deleteHero: function (id) {
+                    console.log("id"+id);
+                    for (var i=0;i<this.heros.length;i++){
+                        if (this.heros[i].id == id) {
+                            this.heros.splice(i, 1);
+                            break;
+                        }
+                    }
+                },
+                edit: function (hero) {
+                    $("#heroListTable").hide();
+                    $("#div4Update").show();
+                    this.hero4Update = hero;
+                    this.hero4UpdateOldValue.name = hero.name;
+                    this.hero4UpdateOldValue.hp = hero.hp;
+                },
+                update:function(){
+                    //因为v-model，已经同步修改了，所以只需要进行恢复显示就行了
+                    $("#heroListTable").show();
+                    $("#div4Update").hide();
+                },
+                cancel:function(hero4UpdateOldValue){
+                    //其实就是恢复显示
+                    this.hero4Update.name = hero4UpdateOldValue.name;
+                    this.hero4Update.hp = hero4UpdateOldValue.hp;
+                    $("#heroListTable").show();
+                    $("#div4Update").hide();
+                }
+            }
+        })
+    </script>
+</body>
+</html>

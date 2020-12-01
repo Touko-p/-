@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../anime-master/lib/anime.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: #b2bec3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <svg width="640" height="480" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+        <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+        <g>
+            <title>Layer 1</title>
+            <polyline fill="none" stroke="#000000" stroke-width="5" stroke-linecap="round" opacity="0.5" points="-2,34 " id="svg_3"/>
+            <polyline id="svg_12" points="101,49 " opacity="0.5" stroke-linecap="round" stroke-width="5" stroke="#000000" fill="none"/>
+            <polygon stroke-width="5" stroke="#56ffff" points="328.64906573685414,137 250.81047571314855,244.1356280235962 124.86499141842442,203.21345952464821 124.86499141842441,70.78654047535183 250.8104757131485,29.864371976403774 328.64906573685414,136.99999999999997 " strokeWidth="5" strokecolor="#000000" fill="#ff5656" edge="132.42692" orient="x" sides="5" shape="regularPoly" id="svg_37" cy="137" cx="216"/>
+        </g>
+    </svg>
+    <script>
+        anime({
+            targets: 'svg polygon',
+            points: [
+                { value: [
+                        '70 24 119.574 60.369 100.145 117.631 50.855 101.631 3.426 54.369',
+                        '70 41 118.574 59.369 111.145 132.631 60.855 84.631 20.426 60.369']
+                },
+                { value: '70 6 119.574 60.369 100.145 117.631 39.855 117.631 55.426 68.369' },
+                { value: '70 57 136.574 54.369 89.145 100.631 28.855 132.631 38.426 64.369' },
+                { value: '70 24 119.574 60.369 100.145 117.631 50.855 101.631 3.426 54.369' }
+            ],
+            easing: 'easeOutQuad',
+            duration: 2000,
+            loop: true
+        });
+    </script>
+</body>
+</html>

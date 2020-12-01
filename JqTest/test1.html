@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 100px;
+            height: 40px;
+            position: relative;
+            background: #5bc0de;
+            overflow: hidden;
+        }
+        span{
+            width: 100px;
+            height: 40px;
+            position: absolute;
+            top: 0px;
+            left: -100px;
+            display: block;
+            background: #95ff7d;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div>111
+        <span>111</span>
+    </div>
+    <script>
+        $(function () {
+            $("div").mouseenter(function () {
+                $(this).children("span").stop().animate({top:0,left:0},1000)
+            })
+        })
+    </script>
+</body>
+</html>

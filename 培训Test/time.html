@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="a">
+
+    </div>
+<script>
+    function getTime() {
+        var time=new Date();
+        var hour=time.getHours();
+        var min=time.getMinutes();
+        var s=time.getSeconds();
+        document.getElementById("a").innerHTML=hour+":"+min+":"+s;
+    }
+    var f=setInterval(getTime,1000)
+    document.getElementById("a").onmouseenter=function () {
+        clearInterval(f)
+    }
+    document.getElementById("a").onmouseout=function () {
+        setInterval(getTime,1000)
+    }
+</script>
+</body>
+</html>

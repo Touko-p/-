@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        img{
+            width: 420px;
+            height: 493px;
+        }
+        div{
+            width: 420px;
+            height: 493px;
+            margin: 0 auto;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            function getId(id) {
+                return document.getElementById(id);
+            }
+            let nowIndex = 1;
+            let sum = 3;
+            getId("next").onclick=function () {
+                nowIndex=nowIndex+1>sum?1:nowIndex+1;
+                getId("img").src="kk/"+"a"+nowIndex+".jpg";
+            }
+            getId("pre").onclick=function () {
+                nowIndex=nowIndex-1<=0?sum:nowIndex-1;
+                getId("img").src="kk/"+"a"+nowIndex+".jpg";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div">
+        <img src="kk/a1.jpg" id="img"/>
+        <button id="pre" title="上一张">pre</button>
+        <button id="next" title="下一张" style="float: right">next</button>
+    </div>
+</body>
+</html>

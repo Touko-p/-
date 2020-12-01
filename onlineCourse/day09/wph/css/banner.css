@@ -1,0 +1,21 @@
+.banner{
+	min-width: 1000px;
+	height: 500px;
+	/*需要注释掉*/
+	background-color: tan;
+	position: relative;
+}
+.banner .banner_bg{
+	position: absolute;
+	top: 0;
+	left: 50%;
+	margin-left: -960px;
+}
+.banner .content{
+	width: 1000px;
+	height: 500px;
+	position: absolute;
+	left: 50%;
+	margin-left: -500px;
+	background-color: tan;
+}

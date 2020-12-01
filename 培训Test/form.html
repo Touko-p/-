@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        window.onload=function () {
+            var age=11;
+            add(age);
+        }
+        function add(value) {
+            value++;
+            j(value);
+            show(value);
+        }
+        function j(value) {
+            value--;
+            return value;
+        }
+        function show(value) {
+            document.write(value)
+        }
+    </script>
+</body>
+</html>

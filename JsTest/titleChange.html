@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var message="欢迎来到英雄联盟!上吧英雄们，为了德莱联盟...";
+        function f() {
+            document.title=message;
+            message=message.substring(1,message.length)+message.substring(0,1);
+        }
+        f()
+        setInterval("f()",200)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

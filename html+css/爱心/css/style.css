@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.heart{
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+    position: relative;
+    transform: rotate(45deg);
+}
+.heart::before{
+    content: "";
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: pink;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.heart::after{
+    content: "";
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: pink;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.heart::before{
+    left: -100px;
+}
+.heart::after{
+    top: -100px;
+}
+

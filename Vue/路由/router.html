@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #app{
+            width: 400px;
+            height: 182px;
+            background-color: #95ff7d;
+        }
+        #app div{
+            float: left;
+        }
+        .left{
+            width: 120px;
+            height: 182px;
+            background-color: #5bc0de;
+        }
+        .left div{
+            width: 120px;
+            height: 60px;
+            background-color: #2b669a;
+            line-height: 60px;
+            text-align: center;
+            border-bottom: 1px solid yellow;
+        }
+        .right{
+            width: 280px;
+            height: 182px;
+            background-color: #a6e1ec;
+            font-size: 20px;
+            line-height: 152px;
+            text-align: center;
+        }
+        a{
+            text-decoration: none;
+            color: whitesmoke;
+            font-size: 20px;
+        }
+    </style>
+    <script src="../vue.min.js"></script>
+    <script src="../vue-router.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div class="left">
+            <div>
+                <router-link to="/user">用户管理</router-link>
+            </div>
+            <div>
+                <router-link to="/product">产品管理</router-link>
+            </div>
+            <div>
+                <router-link to="/order">订单管理</router-link>
+            </div>
+        </div>
+        <div class="right">
+            <router-view></router-view>
+        </div>
+    </div>
+    <script>
+        // 申明三个模板( html 片段 )
+        var user={template: '<p>用户管理页面的内容</p>'};
+        var product={template: '<p>产品管理页面的内容</p>'};
+        var order={template: '<p>订单管理页面的内容</p>'};
+
+        //定义路由
+        var routes=[
+            {path:'/',redirect:'/user'},
+            {path:'/user',component:user},
+            {path:'/product',component: product},
+            {path:'/order',component:order}
+        ]
+
+        //创建VueRouter实例
+        var router=new VueRouter({
+            routes:routes
+        })
+
+        //给vue对象绑定路由
+        new Vue({
+            el:"#app",
+            router
+        })
+    </script>
+</body>
+</html>

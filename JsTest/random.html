@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var min=Number(prompt("请输入范围的最小值"));
+        var max=Number(prompt("请输入范围的最大值"));
+        while(min%1!=0||max%1!=0||max<=min||min==null||max==null||min<=0) {
+            alert("最小数和最大数都得为整数哦")
+            min = Number(prompt("请输入范围的最小值"));
+            max = Number(prompt("请输入范围的最大值"));
+        }
+        function getRandom(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        var random = getRandom(min, max);
+        // alert(random)
+        function getTimes(s) {
+            if (parseInt(s) != s) {
+                alert('没用' + s + '种次数的说法哟');
+                var x = confirm("再输入一次吧");
+                if (x == true) {
+                    getTimes(prompt("你想猜几次我给你几次机会"))
+                } else
+                    alert('还没开始就结束了，白激动了')
+            } else {
+                for (i = 0; i < s; i++) {
+                    var num = prompt('你来猜？ 输入' + min + '~' + max + '之间的一个整数');
+                    if (num.length == 0) {
+                        alert('不能为空哦,浪费一次机会了还剩' + parseInt(s - (i + 1)) + "次机会了")
+                    } else if (num < min || num > max) {
+                        alert('范围在' + min + '~' + max + '之间啊，浪费掉一次机会了还剩' + parseInt(s - (i + 1)) + "次机会了");
+                    } else if (parseInt(num) != num) {
+                        alert(num + '不是一个整数，浪费掉一次机会了还剩' + parseInt(s - (i + 1)) + "次机会了");
+                    } else if (num > random) {
+                        alert('大了大了还剩' + parseInt(s - (i + 1)) + "次机会了");
+                    } else if (num < random) {
+                        alert('小了小了还剩' + parseInt(s - (i + 1)) + "次机会了");
+                    } else {
+                        alert('猜对了，还是不错的');
+                        i = s;
+                    }
+                }
+                var c = confirm("还想要再来一次吗")
+                if (c == true) {
+                    getTimes(prompt("你想猜几次我给你几次机会"));
+                } else
+                    alert('即将关闭游戏');
+            }
+        }
+        getTimes(prompt("你想猜几次我给你几次机会"));
+    </script>
+</head>
+<body>
+</body>
+</html>

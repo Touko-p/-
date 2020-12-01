@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            padding:20px;
+        }
+        .b{
+            border: 2px solid black;
+        }
+        .c{
+            border: 2px solid yellow;
+        }
+        .d{
+            border: 2px solid red;
+        }
+        .blue{
+            background-color: aquamarine;
+        }
+        .yellow{
+            background-color: purple;
+        }
+        .red{
+            background-color: red;
+        }
+        div#grandParentDiv{
+            background-color: yellow;
+        }
+        div#parentDiv{
+            background-color: red;
+        }
+        div#currentDiv{
+            background-color: green;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#b1").click(
+                function () {
+                    $("div").first().toggleClass("blue");
+                }
+            );
+            $("#b2").click(
+                function () {
+                    $("div").last().toggleClass("yellow")
+                }
+            );
+            $("#b3").click(
+                function () {
+                    $("div").eq(1).toggleClass("red");
+                }
+            )
+            $("#b4").click(
+                function () {
+                    $("#currentDiv").parent().toggleClass("b");
+                }
+            );
+            $("#b5").click(
+                function () {
+                    $("#currentDiv").parents().toggleClass("b");
+                }
+            );
+            $("#b6").click(
+                function () {
+                    $("#currentDiv1").children().toggleClass("c");
+                }
+            );
+            $("#b7").click(
+                function () {
+                    $("#currentDiv1").find("div").toggleClass("c");
+                }
+            );
+            $("#b8").click(
+                function () {
+                    $("#childrenDiv").siblings().toggleClass("d");
+                }
+            )
+        })
+    </script>
+</head>
+<body>
+    <button id="b1">切换第一个div的背景色</button>
+    <button id="b2">切换最后一个div的背景色</button>
+    <button id="b3">切换第二个div的背景色</button>
+    <div>Hello JQuery 1</div>
+    <div>Hello JQuery 2</div>
+    <div>Hello JQuery 3</div>
+    <div>Hello JQuery 3</div>
+    <hr>
+    <button id="b4">改变父类的边框</button>
+    <button id="b5">改变所有父类的边框</button>
+    <hr>
+    <div id="grandParentDiv">
+        祖先元素
+        <div id="parentDiv">
+            父元素
+            <div id="currentDiv">当前元素</div>
+        </div>
+    </div>
+    <hr>
+    <button id="b6">改变儿子的边框</button>
+    <button id="b7">改变所有div后代的边框</button>
+    <button id="b8">给同级元素加上边框</button>
+    <hr>
+    <div id="currentDiv1" style="background-color: aqua">当前元素
+        <div id="childrenDiv" style="background-color: chocolate">儿子元素
+            <div id="grandChildrenDiv" style="background-color: blue">后代元素</div>
+        </div>
+        <div id="childrendiv1" style="background-color: rebeccapurple">儿子元素
+            <div id="grandChildrenDiv1" style="background-color: darkcyan">后代元素</div>
+        </div>
+    </div>
+</body>
+</html>

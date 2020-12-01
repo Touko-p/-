@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			form 表単
+			作用 收集信息并提交
+			
+			属性：
+			action 地址（提交的地址）
+			method 提交方式 get(www.baidu.com) post(www.baidu.com?username=hanyuan&password=adfadfasf)
+			
+			name  表単名字
+			target 新窗口打开
+			
+			1.输入框 input
+				a. type值不同 功能就不一样
+				b. input属性 
+					type 类型
+					name 表単名
+					value 值
+					placeholder 提示信息
+		-->
+		
+		<form action="http://www.taobao.com" method="post" target="_blank">
+			用户名:<input type="text" name="username" placeholder="请输入用户名" /><br/>
+			密&nbsp;&nbsp;&nbsp;码:<input type="password" name="password" placeholder="请输入密码" /><br/>
+			<input type="reset" value="重填"/>
+			<input type="submit" value="提交"/>
+		</form>
+		
+		
+	</body>
+</html>

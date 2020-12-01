@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <style>
+        *{
+			margin:0px; padding:0px;
+			}
+        table{
+            border-collapse:collapse;
+        }
+        tr{
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-bottom-color: lightgray;
+            height:35px;
+        }
+
+        td{
+            width:16%;
+            text-align:center;
+        }
+
+        img{
+            float:left;
+        }
+        #box{
+            width:900px;
+        }
+
+        #cart{
+            float:left;
+            border-collapse:collapse;
+        }
+        .cart-title{
+            width: 900px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 20px;
+            font-weight: bold;
+            background-color: #95ff7d;
+            text-align: center;
+        }
+        #head{
+            background:#F0FFFF;
+        }
+        #settlement{
+            margin-top:20px;
+            width:900px;
+            height:40px;
+            border:1px solid #EBEBEB;
+            float:left;
+            background: #EBEBEB;
+            font-size:10px;
+            line-height:40px ;
+        }
+        #settlement div{
+            float:right;
+        }
+        #addupto{
+            color:#ff0000;
+            font-weight:700;
+        }
+        #NumofGoods{
+            color:#ff0000;
+            font-weight:700;
+        }
+
+        .goods{
+            padding:5px;
+            text-align: left;
+        }
+        .number{
+            position:relative;
+            left:19px;
+            width:60px;
+            height:10px;
+            border:1px solid #cccccc;
+        }
+
+        .acc{
+            width:40px;
+            height:10px;
+            border-left:0px solid #cccccc;
+            border-right:0px solid #cccccc;
+            line-height: 10px;
+            float:left;
+        }
+        .desymbol{
+            width:10px;
+            height:10px;
+            line-height: 10px;
+            background:#ccc;
+            float:left;
+            cursor:pointer;
+        }
+        .adsymbol{
+            width:10px;
+            height:10px;
+            line-height: 10px;
+            background:#ccc;
+            float:right;
+            cursor: pointer;
+        }
+        .total{
+            color:#ff0000;
+            font-weight:700;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <table id="cart">
+    <div class="cart-title"> 我的购物车</div>
+        <tr id="head">
+            <td width="50px"><input class="allSelect" type="checkbox">  全选</td>
+            <td width="400px;">商品</td>
+            <td width="100px">单价</td>
+            <td width="100px">数量</td>
+            <td width="100px">小计</td>
+            <td width="50px">操作</td>
+        </tr>
+        <tr>
+            <td><input class="select" type="checkbox"></td>
+            <td class="goods">javascript 实战</td>
+            <td class="price">45.80</td>
+            <td>
+                <div class="number">
+                    <div class="desymbol">-</div>
+                    <div class="acc">1</div>
+                    <div class="adsymbol">+</div>
+                </div>
+            </td>
+            <td class="total"></td>
+            <td class="dele">删除</td>
+        </tr>
+        <tr>
+            <td><input class="select" type="checkbox"></td>
+            <td class="goods">php基础案例教程</td>
+            <td class="price">49.80</td>
+            <td>
+                <div class="number">
+                    <div class="desymbol">-</div>
+                    <div class="acc">1</div>
+                    <div class="adsymbol">+</div>
+                </div>
+            </td>
+            <td class="total"></td>
+            <td class="dele">删除</td>
+        </tr>
+        <tr>
+            <td><input class="select" type="checkbox"></td>
+            <td class="goods">html+css网页制作</td>
+            <td class="price">45.20</td>
+            <td>
+                <div class="number">
+                    <div class="desymbol">-</div>
+                    <div class="acc">1</div>
+                    <div class="adsymbol">+</div>
+                </div>
+            </td>
+            <td class="total"></td>
+            <td class="dele">删除</td>
+        </tr>
+        <tr>
+            <td><input class="select" type="checkbox"></td>
+            <td class="goods">java基础入门</td>
+            <td class="price">45.00</td>
+            <td>
+                <div class="number">
+                    <div class="desymbol">-</div>
+                    <div class="acc">1</div>
+                    <div class="adsymbol">+</div>
+                </div>
+            </td>
+            <td class="total"></td>
+            <td class="dele">删除</td>
+        </tr>
+    </table>
+
+    <div id="settlement">
+<!--        <div style="width:550px"><input class="allSelect" type="checkbox">    全选</div>-->
+        <div style="width:120px">全选商品<span id="NumofGoods"></span>件</div>
+        <div style="width:80px">合计：¥<span id="addupto"></span></div>
+        <div style="width:50px;text-align: center;border-left:1px solid #000000;">结算</div>
+    </div>
+
+</div>
+
+<script>
+var prices = getClasses("price"),
+    cart = document.getElementById("cart");
+    acc = getClasses("acc"),
+    totals = getClasses("total"),
+    detracts = getClasses("desymbol"),
+    adds = getClasses("adsymbol"),
+    NumofGoods = document.getElementById("NumofGoods"),
+    addupto = document.getElementById("addupto"),
+    allSelect = getClasses("allSelect"),
+    select = getClasses("select"),
+    dele = getClasses("dele");
+
+count();
+countAll();
+
+for(var i=0; i<allSelect.length; i++ ){
+    allSelect[i].onclick = function(){
+        for(var j=0; j<select.length; j++){
+            select[j].checked = this.checked;
+        }
+        for(j=0; j<allSelect.length; j++){
+            allSelect[j].checked = this.checked;
+        }
+        //每次点击选框就计算一次总价
+        countAll();
+    }
+}
+
+for(i=0; i<select.length; i++){
+    select[i].onclick = function(){
+        if(ifAllSelected()){
+            for(j=0; j<allSelect.length; j++){
+                allSelect[j].checked = true;
+            }
+        }
+        if(ifNotAllSelected()){
+            for(j=0; j<allSelect.length; j++){
+                allSelect[j].checked = false;
+            }
+        }
+        countAll();
+    }
+}
+
+for(i=0; i<adds.length; i++){
+
+    adds[i].onclick = function(){
+        console.log(this.parentNode.childNodes[3].innerHTML);
+        var num = parseInt(this.parentNode.childNodes[3].innerHTML);
+        num += 1;
+        this.parentNode.childNodes[3].innerHTML = num;
+        count();
+        countAll();
+    }
+    detracts[i].onclick = function(){
+        var num = parseInt(this.parentNode.childNodes[3].innerHTML);
+        num -= 1;
+        if(num<1){
+            num=1;
+        }
+        this.parentNode.childNodes[3].innerHTML = num;
+        count();
+        countAll();
+    }
+    //删除时也应该重新计算总价，或者先判断商品是否被选中，有选中则重新计算
+    dele[i].onclick = function(){
+        cart.childNodes[1].removeChild(this.parentNode);
+        countAll();
+    }
+}
+
+//避免兼容性问题，自行封装classname
+function getClasses(className){
+    var arr = [],
+        nodes = document.getElementsByTagName("*");
+    for(var i=0; i<nodes.length; i++){
+        if(nodes[i].className == className){
+            arr.push(nodes[i]);
+        }
+    }
+    return arr;
+}
+
+//进行单价的计算，保留两位小数
+function count(){
+    for(var i=0; i<prices.length; i++){
+        totals[i].innerHTML = (prices[i].innerHTML*acc[i].innerHTML).toFixed(2);
+    }
+}
+//计算总价的函数
+function countAll(){
+    var num1=0;
+    var num2=0;
+    //注意，每次计算总价应该重新取得一次select,acc和totals，因为执行删除操作时，会让这几个值发生变化
+    var select = getClasses("select"),
+        acc = getClasses("acc"),
+        totals = getClasses("total");
+    for(var i=0; i<select.length; i++){
+        if(select[i].checked == true){
+            num1 += parseInt(acc[i].innerHTML);
+            num2 += parseFloat(totals[i].innerHTML);
+        }
+    }
+    NumofGoods.innerHTML = num1;
+    addupto.innerHTML = num2;
+}
+
+//判断是否全部选中或者全部没有选中的函数
+function ifAllSelected(){
+    var allSelected = true;
+
+    for(var i=0; i<select.length; i++){
+        if(select[i].checked == false){
+            allSelected = false;
+        }
+    }
+    return allSelected;
+}
+function ifNotAllSelected(){
+    var notAllSelected = false;
+    for(var i=0; i<select.length; i++){
+        if(select[i].checked == false){
+            notAllSelected = true;
+        }
+    }
+    return notAllSelected;
+}
+
+</script>
+</body>
+</html>

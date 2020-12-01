@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #app{
+            width: 60%;
+            height: 300px;
+            background-color: #b2dba1;
+            margin: 20px auto;
+        }
+        .header{
+            width: 100%;
+            height: 40px;
+            background-color: #a6e1ec;
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 40px;
+            color: darkred;
+        }
+        .center{
+            width: 100%;
+            margin: 0 auto;
+        }
+        .count{
+            width: 33%;
+            margin: 0 auto;
+        }
+        .count span,input{
+            margin-top: 30px;
+
+        }
+        .show{
+            width: 100%;
+            height: 50px;
+            background-color: #95ff7d;
+            font-size: 20px;
+            line-height: 50px;
+            text-align: center;
+            color: darkred;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="header">九职商店</div>
+        <div class="center">
+            <div class="count">
+                <span>身&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;份：</span><input type="text" placeholder="会员or普通用户" id="status"><br>
+                <span>消费额度：</span><input type="number" id="pay"><br>
+                <input type="button" value="结算" onclick="count()">
+            </div>
+            <div class="show">
+
+            </div>
+        </div>
+    </div>
+<script>
+    function count() {
+        var status=document.getElementById("status"),
+            pay=document.getElementById("pay"),
+            info=document.getElementsByClassName("show"),
+            sum;
+        if(status.value.length==0||pay.value.length==0){
+            info[0].innerText="身份和消费金额不为空";
+            return false;
+        }else if(status.value=="会员"){
+            sum=pay.value*0.8;
+            info[0].innerText="尊敬的会员，您一共消费"+sum+"元";
+            }else
+                sum=pay.value*0.9;
+                info[0].innerText="尊敬的用户，您一共消费"+sum+"元";
+    }
+</script>
+</body>
+</html>

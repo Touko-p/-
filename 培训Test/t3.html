@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #app{
+            width: 60%;
+            height: 300px;
+            margin: 30px auto;
+        }
+        .info{
+            width: 100%;
+        }
+        textarea{
+            width: 400px;
+            height: 150px;
+            margin-left: 200px;
+        }
+        input{
+            width: 100px;
+            height: 30px;
+            margin-left: 350px;
+        }
+        .mes{
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="info">
+            <textarea id="info"></textarea><br>
+            <input type="button" value="发送" onclick="send()">
+        </div>
+        <div class="mes">
+
+        </div>
+    </div>
+    <script>
+        function send() {
+            var info=document.getElementById("info"),
+                mes=document.getElementsByClassName("mes");
+
+            if(info.value.length==0){
+                mes[0].innerHTML="<p style='color: darkred'>发送失败，请填写短信再发送</p>"
+                return false;
+            }else if (info.value.length>64){
+                mes[0].innerHTML="<p style='color: darkred'>发送失败，文字过长</p>"
+                return false;
+            }else {
+                mes[0].innerHTML="<p style='color: green'>发送成功</p>"
+            }
+        }
+    </script>
+</body>
+</html>

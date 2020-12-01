@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        th{
+            border:1px solid gray;
+            background-color: lightgray;
+        }
+        table tr td{
+            border:1px solid gray;
+            text-align: center;
+        }
+        table{
+            border-collapse:collapse;
+            width:300px;
+            margin: 0 auto;
+        }
+    </style>
+    <script src="../vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <table>
+            <tr>
+                <th>number</th>
+                <th>name</th>
+                <th>age</th>
+            </tr>
+            <tr v-for="i,index in heros">
+                <td>{{index+1}}</td>
+                <td>{{i.name}}</td>
+                <td>{{i.age}}</td>
+            </tr>
+        </table>
+        <div v-for="i in 10">
+            <p v-if="i<8">{{i}},</p>
+            <p v-else>{{i}}</p>
+        </div>
+    </div>
+    <script>
+        var hero=[
+            {name:"亚索",age:27},
+            {name:"提莫",age: 13},
+            {name:"盖伦",age:32},
+            {name:"剑圣",age:28}
+        ]
+        new Vue({
+            el:'#app',
+            data:{
+                heros:hero
+            }
+        })
+    </script>
+</body>
+</html>

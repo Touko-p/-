@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .blue{
+            background-color: cadetblue;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#b1").click(
+                function () {
+                    $("#d1").addClass("blue");
+                }
+            );
+            $("#b2").click(
+                function () {
+                    $("#d2").removeClass("blue");
+                }
+            );
+            $("#b3").click(
+                function () {
+                    $("#d3").toggleClass("blue")
+                }
+            );
+            $("#b4").click(
+                function () {
+                    $("#d4").css("backgroundColor","red");
+                }
+            );
+            $("#b5").click(
+                function () {
+                    $("#d5").css({"backgroundColor":"green","color":"yellow"})
+                }
+            );
+        });
+    </script>
+</head>
+<body>
+    <button id="b1">增加背景色</button>
+    <button id="b2">删除背景色</button>
+    <button id="b3">切换背景色</button>
+    <button id="b4">设置单一样式</button>
+    <button id="b5">设置多种样式</button>
+    <div id="d1">
+        Hello jQuery!!!
+    </div>
+    <div id="d2" class="blue">
+        Hello world!!!
+    </div>
+    <div id="d3">
+        Hello The World!!!
+    </div>
+    <div id="d4">
+        设置单一样式
+    </div>
+    <div id="d5">
+        设置多种样式
+    </div>
+</body>
+</html>

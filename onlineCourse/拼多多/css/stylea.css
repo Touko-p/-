@@ -1,0 +1,436 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#app{
+	min-width: 1000px;
+	background-color: #FAFAFA;
+}
+
+/*header*/
+.header{
+	width: 100%;
+	height: 100px;
+	background-color: #FAFAFA;
+	border-bottom: 4px solid #ED435B;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+}
+.header .header_head{
+	width: 1200px;
+	height: 100px;
+	margin: 0 auto;
+	background-color: white;
+}
+.header .header_head .logo{
+	width: 233px;
+	height: 84px;
+	float: left;
+	margin-top: 8px;
+	margin-left: 0px;
+	background: url(../img/img/logo.jpg);
+	cursor: pointer;
+}
+.header .header_head .header_right{
+	width: 930px;
+	height: 22px;
+	float: right;
+	margin-top: 39px;
+	margin-right: -6.5px;
+}
+.header .header_head .header_right a{
+	float: left;
+	font-size: 20px;
+	line-height: 20px;
+	padding: 0 8px;
+	color: #808080;
+	border-right: 1px solid #808080;
+	text-decoration: none;
+}
+.header .header_head .header_right a:nth-child(10){
+	border: none;
+}
+.header .header_head .header_right a:hover{
+	color: red;
+}
+.header .header_head .header_right a:focus{
+	color: red;
+}
+
+/*banner*/
+.banner{
+	width: 1200px;
+	height: 294px;
+	margin: 104px auto;
+	background: url(../img/img/banner_v2.jpg) no-repeat;
+}
+
+/*middle*/
+.middle{
+	width: 1200px;
+	height: 1405px;
+	margin: -85px auto;
+	background-color: #FAFAFA;
+}
+.middle .middle_left{
+	width: 390px;
+	height: 1235px;
+	float: left;
+	margin-top: 0px;
+	margin-left: 0px;
+	background-color: white;
+}
+.middle .middle_left .wen{
+	width: 180px;
+	height: 60px;
+	background-color: #F04055;
+	float: left;
+	margin-top: 40px;
+	margin-left: -20px;
+}
+.middle .middle_left .wen h2{
+	font-size: 30px;
+	text-align: center;
+	font-weight: normal;
+	margin-top: 9px;
+	margin-left: 18px;
+	color: white;
+}
+.middle .middle_left h3{
+	width: 100px;
+	margin-top: 34px;
+	margin-left: 50px;
+}
+.middle .middle_left .xin{
+	width: 360px;
+	height: 140px;
+	float: left;
+	margin-left: 15px;
+	border-bottom: 1px solid #c1c1c1;
+}
+.middle .middle_left .xin a{
+	font-size: 14px;
+	line-height: 40px;
+	float: left;
+	width: 290px;
+	height: 40px;
+	padding: 20px 0;
+	margin-left: 68px;
+	text-decoration: none;
+	color: red;
+}
+.middle .middle_left .jiao{
+	width: 360px;
+	height: 475px;
+	float: left;
+	margin-left: 15px;
+	border-bottom: 1px solid #c1c1c1;
+}
+.middle .middle_left .jiao ul{
+	list-style: none;
+	float: left;
+	margin-top: 19px;
+	margin-left: 68px;
+}
+.middle .middle_left .jiao ul li{
+	width: 290px;
+	height: 34px;
+	font-size: 15px;
+	padding: 7px 0;
+}
+.middle .middle_left .jiao ul li a{
+	text-decoration: none;
+	color: black;
+}
+.middle .middle_left .jiao ul li a:hover{
+	color: red;
+	text-decoration: underline;
+}
+.middle .middle_left .jiao ul li a:focus{
+	color: red;
+}
+.middle .middle_left .tui{
+	width: 360px;
+	height: 235px;
+	float: left;
+	margin-left: 15px;
+	border-bottom: 1px solid #c1c1c1;
+}
+.middle .middle_left .tui ul{
+	list-style: none;
+	float: left;
+	margin-top: 19px;
+	margin-left: 68px;
+}
+.middle .middle_left .tui ul li{
+	width: 290px;
+	height: 34px;
+	font-size: 15px;
+	padding: 7px 0;
+}
+.middle .middle_left .tui ul li a{
+	text-decoration: none;
+	color: black;
+}
+.middle .middle_left .tui ul li a:hover{
+	color: red;
+	text-decoration: underline;
+}
+.middle .middle_left .tui ul li a:focus{
+	color: red;
+}
+.middle .middle_left .zhang{
+	width: 360px;
+	height: 140px;
+	float: left;
+	margin-left: 15px;
+	border-bottom: 1px solid #c1c1c1;
+}
+.middle .middle_left .zhang ul{
+	list-style: none;
+	float: left;
+	margin-top: 19px;
+	margin-left: 68px;
+}
+.middle .middle_left .zhang ul li{
+	width: 290px;
+	height: 34px;
+	font-size: 15px;
+	padding: 7px 0;
+}
+.middle .middle_left .zhang ul li a{
+	text-decoration: none;
+	color: black;
+}
+.middle .middle_left .zhang ul li a:hover{
+	color: red;
+	text-decoration: underline;
+}
+.middle .middle_left .zhang ul li a:focus{
+	color: red;
+}
+.middle .middle_left .lian{
+	width: 360px;
+	height: 140px;
+	float: left;
+	margin-left: 15px;
+}
+.middle .middle_left .lian ul{
+	list-style: none;
+	float: left;
+	margin-top: 19px;
+	margin-left: 68px;
+}
+.middle .middle_left .lian ul li{
+	width: 290px;
+	height: 34px;
+	font-size: 15px;
+	padding: 7px 0;
+}
+.middle .middle_left .lian ul li a{
+	text-decoration: none;
+	color: black;
+}
+.middle .middle_left .lian ul li a:hover{
+	color: red;
+	text-decoration: underline;
+}
+.middle .middle_left .lian ul li a:focus{
+	color: red;
+}
+
+.middle .middle_right{
+	width: 790px;
+	height: 295px;
+	float: right;
+	margin-top: 0px;
+	margin-right: 0px;
+	background-color: white;
+}
+.middle .middle_right .gou{
+	width: 790px;
+	height: 72px;
+	border-bottom: 1px solid #C1C1C1;
+}
+.middle .middle_right .gou .gou_left{
+	width: 75px;
+	margin-top: 50px;
+	margin-left: 50px;
+	font-weight: normal;
+	color: #808080;
+}
+.middle .middle_right .gou .gou_right{
+	width: 100px;
+	margin-top: -25px;
+	margin-left: 128px;
+}
+.middle .middle_right .tup{
+	width: 646px;
+	height: 90px;
+	float: left;
+	margin-top: 41px;
+	margin-left: 71px;
+	background: url(../img/img/NewerGuide.png);
+}
+
+/*bottom*/
+.bottom{
+	width: 100%;
+	height: 638px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	background-color: white;
+}
+.bottom .bottom_top{
+	width: 100%;
+	height: 300px;
+	padding-top: 60px;
+	box-sizing: border-box;
+	/*需要注释掉*/
+	/*background-color: tan;*/
+}
+.bottom .bottom_top .content{
+	width: 1200px;
+	height: 240px;
+	margin: 0 auto;
+	/*需要注释掉*/
+	/*background-color: teal;*/
+}
+.bottom .bottom_top .content .left{
+	width: 700px;
+	height: 240px;
+	float: left;
+	border-right: 1px solid #5a5a5a;
+	/*需要注释掉*/
+	/*background-color: tan;*/
+}
+.bottom .bottom_top .content .left div{
+	float: left;
+	width: 173px;
+	height: 220px;
+	margin-top: 20px;
+	margin-right: 60px;
+}
+.bottom .bottom_top .content .left div img{
+	width: 162px;
+	height: 162px;
+}
+.bottom .bottom_top .content .left div p{
+	font-size: 15px;
+	line-height: 25px;
+	text-align: center;
+	margin-top: 5px;
+	margin-right: 12px;
+}
+.bottom .bottom_top .content .right{
+	width: 499px;
+	height: 240px;
+	float: right;
+	/*需要注释掉*/
+	/*background-color: thistle;*/
+}
+.bottom .bottom_top .content .right .title{
+	font-size: 24px;
+	line-height: 24px;
+	margin-left: 80px;
+	color: #4d4d4d;
+}
+.bottom .bottom_top .content .right .link{
+	font-size: 15px;
+	line-height: 16px;
+	margin-left: 80px;
+	margin-top: 27px;
+	color: #4d4d4d;
+}
+.bottom .bottom_center{
+	width: 100%;
+	height: 130px;
+	padding-top: 54px;
+	box-sizing: border-box;
+	/*需要注释掉*/
+	/*background-color: thistle;*/
+}
+.bottom .bottom_center .navBar{
+	width: 1200px;
+	height: 22px;
+	margin: 0 auto;
+	/*需要注释掉*/
+	/*background-color: tan;*/
+}
+.bottom .bottom_center .navBar ul{
+	display: inline-block;
+	height: 22px;
+	float: left;
+	list-style: none;
+}
+.bottom .bottom_center .navBar ul li{
+	line-height: 22px;
+	float: left;
+}
+.bottom .bottom_center .navBar ul li:nth-child(1){
+	margin-left: 15px;
+}
+.bottom .bottom_center .navBar ul li a{
+	font-size: 16px;
+	color: #6c6c6c;
+	margin: 0 8px;
+	text-decoration: none;
+}
+.bottom .bottom_center .navBar ul li a:hover{
+	color: red;
+}
+.bottom .bottom_center .navBar ul li a:focus{
+	color: red;
+}
+
+.bottom .bottom_botone{
+	width: 100%;
+	height: 130px;
+	/*padding-top: 15px;
+	box-sizing: border-box;*/
+	background-color: #3f3e3e;
+}
+.bottom .bottom_botone .content{
+	width: 1000px;
+	height: 130px;
+	margin: 0 auto;
+	/*需要改颜色*/
+	background-color: #3f3e3e;
+}
+.bottom .bottom_botone .content div{
+	width: 1000px;
+	height: 30px;
+	padding: 18px 0;
+	box-sizing: border-box;
+	text-align: center;
+}
+.bottom .bottom_botone .content div span{
+	font-size: 14px;
+	color: #b1b1b1;
+}
+.bottom .bottom_botone .content div a{
+	font-size: 14px;
+	color: #b1b1b1;
+	text-decoration: none;
+}
+
+.bottom .bottom_bottwo{
+	width: 100%;
+	height: 78px;
+	padding-top: 4.5px;
+	box-sizing: border-box;
+	background-color: white;
+}
+.bottom .bottom_bottwo div{
+	width: 1027px;
+	height: 69px;
+	margin: 0 auto;
+	cursor: pointer;
+}
+.bottom .bottom_bottwo div img{
+	width: 1027px;
+	height: 69px;
+}

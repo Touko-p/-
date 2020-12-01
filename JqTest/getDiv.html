@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-size: 15px;
+        }
+        .fontColor{
+            color:red;
+        }
+        .border{
+            border: 1px solid black;
+        }
+        .pink{
+            background-color: pink;
+        }
+        .size{
+            font-size: 16px;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function () {
+            $("#dv p:nth-of-type(2)").addClass("fontColor")
+        })
+        $(function () {
+            $("p:nth-child(2)").addClass("border")
+        })
+        $(function () {
+            $("p:last").addClass("pink")
+        })
+        $(function () {
+            $("p:odd").addClass("size")
+        })
+    </script>
+</head>
+<body>
+    <div id="dv">
+        <p>这是div中的第1个p元素</p>
+        <p>这是div中的第2个p元素</p>
+    </div>
+</body>
+</html>

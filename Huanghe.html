@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            font-family: "宋体";
+        }
+        span{
+            display: inline-block;
+            border: 1px solid lightgray;
+            width: 120px;
+        }
+        textarea{
+            width: 100%;
+            height: 300px;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        function f(id) {
+            var value=document.getElementById(id).value;
+            return value;
+        }
+        function f1() {
+            var location=f("location");
+            var companyType=f("companyType");
+            var companyName=f("companyName");
+            var bossName=f("bossName");
+            var money=f("money");
+            var product=f("product");
+            var unit=f("unit");
+            var result=location +"最大"+companyType+companyName+"倒闭了，王八蛋老板"+bossName+"吃喝嫖赌，欠下了"+money+"个亿，"
+                + "带着他的小姨子跑了!我们没有办法，拿着"+product+"抵工资!原价都是一"+unit+"多、两"+unit+"多、三"+unit+"多的"+product+"，"
+                + "现在全部只卖二十块，统统只要二十块!"+bossName+"王八蛋，你不是人!我们辛辛苦苦给你干了大半年，"
+                + "你不发工资，你还我血汗钱，还我血汗钱!";
+            document.getElementById("result").value=result;
+        }
+    </script>
+</head>
+<body>
+    <span>地名:</span>
+    <input type="text" id="location">
+    <span>公司类型:</span>
+    <input type="text" id="companyType">
+    <br>
+    <span>公司名称:</span>
+    <input type="text" id="companyName">
+    <span>老板姓名:</span>
+    <input type="text" id="bossName">
+    <br>
+    <span>money:</span>
+    <input type="text" id="money">
+    <span>产品:</span>
+    <input type="text" id="product">
+    <br>
+    <span>价格计量单位:</span>
+    <input type="text" id="unit">
+    <br>
+    <div align="center">
+        <input type="button" value="生成" id="text" onclick="f1()">
+        <br>
+        <textarea id="result"></textarea>
+    </div>
+</body>
+</html>

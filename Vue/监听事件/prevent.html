@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <a href="https://www.baidu.com" @click="jump" >正常的链接 https://www.baidu.com</a>
+        <br>
+        <a href="https://www.baidu.com" @click.prevent="jump" >prevent jump()之后的链接 https://www.baidu.com</a>
+        <br>
+        <a href="https://www.baidu.com" @click.prevent >纯prevent之后的链接 https://www.baidu.com</a>
+        <br>
+        <form @submit="jump" action="https://www.baidu.com">
+            <button type="submit">正常的form</button>
+        </form>
+        <form @submit.prevent="jump" action="https://www.baidu.com">
+            <button type="submit">prevent jump()之后的form</button>
+        </form>
+        <form @submit.prevent action="https://www.baidu.com">
+            <button type="submit">纯prevent之后的form</button>
+        </form>
+    </div>
+    <script>
+        /*事件修饰符 阻止提交 .prevent */
+        /*只有超链和form这种会导致页面刷新的操作，.prevent 才有用。 普通的不导致页面刷新的按钮，加上这个没有任何变化。*/
+        new Vue({
+            el:'#app',
+            data:{
+
+            },
+            methods:{
+                jump:function () {
+                    alert("jump（）函数被调用")
+                }
+            }
+        })
+    </script>
+</body>
+</html>

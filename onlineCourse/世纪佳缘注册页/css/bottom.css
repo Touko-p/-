@@ -1,0 +1,13 @@
+.bottom{
+	width: 100%;
+	padding: 20px 0;
+	font-size: 12px;
+	color: #666666;
+}
+.bottom a{
+	cursor: pointer;
+}
+.bottom .bottom_1,.bottom .bottom_2,.bottom .bottom_3{
+	height: 27px;
+	line-height: 27px;
+}

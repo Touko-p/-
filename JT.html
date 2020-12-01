@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function f() {
+            alert("我爱你");
+        }
+    </script>
+    <script>
+        var day=new Date().getDay();
+        var today;
+        if(day==0){
+            today="星期日";
+        }
+        else if(day==1){
+            today="星期一";
+        }else if(day==2){
+            today="星期二";
+        }
+        else if(day==3){
+            today="星期三"
+        }
+        else if(day==4){
+            today="星期四";
+        }
+        else if(day==5){
+            today="星期五";
+        }
+        else if(day==6){
+            today="星期六";
+        }
+        alert("今天是"+today);
+    </script>
+</head>
+<body>
+    <input type="button" value="点我一下" onclick="f()">
+</body>
+</html>

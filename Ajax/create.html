@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            width: 500px;
+            height: 30px;
+            background: yellow;
+            border-bottom: 1px solid black;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <input type="text" id="keyword">
+    <div id="contain" style="width: 100px;height: 100px;background: #5bc0de">
+        <ul id="list"> </ul>
+    </div>
+    <script>
+        var k=0;
+        var array=new Array(9);
+        $("#keyword").keyup(function () {
+            var text=document.getElementById("keyword").value;
+            $.get('books.json',function (data) {
+                for (var i=0;i<data.length;i++){
+                    for (var key in data[i]){
+                        array[k]=data[i][key];
+                        k++;
+                        if(array[i].search(text)!=-1){
+                            $.getScript('createEle.js',function () {
+                                var style={
+
+                                };
+                                var divBox=createEle('li',style);
+                                var txt=document.createTextNode(array[k]);
+                                divBox.appendChild(txt);
+                                $('#list').append(divBox);
+                            })
+                        }
+                    }
+                }
+            },'json')
+            })
+        // if(data[i][key].search(text)!=-1){
+        //     $.getScript('createEle.js',function () {
+        //         var styleObj={
+        //         };
+        //         var divBox=createEle('li',styleObj);
+        //         var text=document.createTextNode(data[i][key]);
+        //         divBox.appendChild(text);
+        //         $('#list').append(divBox);
+        //     })
+        // }
+    </script>
+</body>
+</html>

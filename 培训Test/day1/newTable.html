@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            color: darkred;
+            font-weight: bold;
+        }
+        #app{
+            width: 800px;
+            margin: 30px auto;
+            text-align: center;
+        }
+        .upInfo table{
+            width: 800px;
+            margin: 30px auto;
+            text-align: center;
+        }
+        .addInfo table{
+            width: 800px;
+            margin: 30px auto;
+            text-align: center;
+        }
+        .use{
+            width: 800px;
+            margin: 30px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<table border="1px" id="app">
+    <thead>
+    <tr>
+        <td>名称</td>
+        <td>单价</td>
+        <td>数量</td>
+        <td>类型</td>
+        <td colspan="2">操作</td>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<div class="use">
+    <button onclick="showInfo()">新增商品</button>
+<!--    <button onclick="showUpInfo()">修改商品</button>-->
+</div>
+<div class="upInfo">
+    <table>
+        <tr>
+            <td colspan="4" style="font-weight: bold;color: darkred">修改信息part</td>
+            <td><button onclick="hideUpInfo()">X</button></td>
+        </tr>
+        <tr>
+            <td>名称</td>
+            <td>单价</td>
+            <td>数量</td>
+            <td>类型</td>
+        </tr>
+        <tr>
+            <p class="shopId" style="display: none"></p>
+            <td><input type="text" class="info" name="shopName"></td>
+            <td><input type="text" class="info" name="price"></td>
+            <td><input type="text" class="info" name="num"></td>
+            <td><input type="text" class="info" name="type"></td>
+            <td><button class="saveUpdate">修改</button></td>
+        </tr>
+    </table>
+</div>
+<div class="addInfo">
+    <table>
+        <tr>
+            <td colspan="4" style="font-weight: bold;color: darkred">添加信息part</td>
+            <td><button onclick="hideInfo()">X</button></td>
+        </tr>
+        <tr>
+            <td>名称</td>
+            <td>单价</td>
+            <td>数量</td>
+            <td>类型</td>
+        </tr>
+        <tr>
+            <td><input type="text" class="adInfo"></td>
+            <td><input type="text" class="adInfo"></td>
+            <td><input type="text" class="adInfo"></td>
+            <td><input type="text" class="adInfo"></td>
+            <td><button onclick="update()">添加</button></td>
+        </tr>
+    </table>
+</div>
+<script>
+    var shopList=[
+        {"id":"1","name":"月饼","price":"12","count":"1","type":"零食"},
+        {"id":"2","name":"哇哈哈","price":"2","count":"1","type":"饮料"},
+        {"id":"3","name":"奥利给","price":"10","count":"1","type":"零食"},
+        {"id":"4","name":"小憨包","price":"12","count":"1","type":"零食"}
+    ];
+    var inMes=document.getElementsByClassName("info"),
+        adMes=document.getElementsByClassName("adInfo"),
+        newMes=new Array(),
+        addMes=new Array(),
+        num=0;
+    window.onload=function () {
+        loadShop();
+        hideInfo();
+        hideUpInfo();
+    }
+
+    //刷新
+    function loadShop() {
+        $("#app tbody").empty();
+        var html="";
+        for (var i=0;i<shopList.length;i++){
+            html+="<tr>";
+            html+="<td>"+shopList[i].name+"</td>";
+            html+="<td>"+shopList[i].price+"</td>";
+            html+="<td>"+shopList[i].count+"</td>";
+            html+="<td>"+shopList[i].type+"</td>";
+            html+='<td><a href="javascript:updateInfo('+shopList[i].id+')">修改</a> </td>';
+            html+='<td><a href="javascript:deleteShop('+shopList[i].id+')">删除</a> </td>';
+            html+="</tr>";
+        }
+        $("#app tbody").append(html);
+    }
+
+    //增加
+    function update() {
+        for (var i=0;i<adMes.length;i++){
+            var n=shopList.length;
+            if(adMes[i].value.length==0){
+                alert("信息填写完毕方可添加");
+                return false;
+            }else{
+                addMes[i]=adMes[i].value;
+                // shopList[n].name=addMes[0];
+                // shopList[shopList.length].price=addMes[1];
+                // shopList[shopList.length].count=addMes[2];
+                // shopList[shopList.length].type=addMes[3];
+            }
+        }
+        shopList.push({
+            "id":shopList.length+1,
+            "name":addMes[0],
+            "price":addMes[1],
+            "count":addMes[2],
+            "type":addMes[3]
+        })
+        for (var i=0;i<adMes.length;i++){
+            adMes[i].value="";
+        }
+        loadShop();
+    }
+
+    //删除
+    function deleteShop(id) {
+        var p=confirm("是否删除？");
+        if(p==true){
+            for(var i=0;i<shopList.length;i++){
+                if(shopList[i].id==id){
+                    shopList.splice(i,1);
+                }
+            }
+            loadShop();
+        }else
+            alert("操作取消！")
+    }
+
+    //修改
+    function updateInfo(id) {
+        showUpInfo(id);
+    }
+    //修改添加
+    $('.saveUpdate').click(function () {
+        var name=$('.upInfo input[name="shopName"]').val();
+        var price=$('.upInfo input[name="price"]').val();
+        var num=$('.upInfo input[name="num"]').val();
+        var type=$('.upInfo input[name="type"]').val();
+        var id=$(".shopId").text();
+        var obj={id,name,price,num,type};
+        if(name.length!=0&&price.length!=0&&num.length!=0&&type.length!=0){
+            for (var i=0;i<shopList.length;i++){
+                if(shopList[i].id==id){
+                    shopList[i].name=name;
+                    shopList[i].price=price;
+                    shopList[i].count=num;
+                    shopList[i].type=type;
+                }
+            }
+            loadShop();
+        }else
+            alert("信息填写完毕方可修改");
+        return false;
+    })
+    function upAdd(id) {
+
+    }
+    function showInfo() {
+        $(".addInfo").show();
+    }
+    function hideInfo() {
+        $(".addInfo").hide();
+    }
+    function showUpInfo(id) {
+        $(".upInfo").show();
+        for (var i=0;i<shopList.length;i++){
+            if(shopList[i].id==id){
+                $(".upInfo input[name='shopName']").val(shopList[i].name);
+                $(".upInfo input[name='price']").val(shopList[i].price);
+                $(".upInfo input[name='num']").val(shopList[i].count);
+                $(".upInfo input[name='type']").val(shopList[i].type);
+                $(".shopId").text(shopList[i].id);
+            }
+        }
+    }
+    function hideUpInfo() {
+        $(".upInfo").hide();
+    }
+</script>
+</body>
+</html>

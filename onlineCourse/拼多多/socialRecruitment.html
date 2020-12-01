@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="css/style1.css">
+    <script src="js/jquery.min.js"></script>
+    <script>
+        $(function () {
+            $(".leftContent table thead td:nth-of-type(1)").addClass("color")
+        })
+        $(function () {
+            $(".bg").addClass("background")
+        })
+        $(function () {
+            $(".leftContent table thead td:nth-of-type(n)").mousedown(
+                function () {
+                    $(".leftContent table thead td:nth-of-type(n)").removeClass("color");
+                    $(this).addClass("color");
+                }
+            );
+        })
+    </script>
+</head>
+<body>
+    <div id="app">
+        <div class="head">
+            <div class="header">
+                <a href="#" class="logo"></a>
+                <ul>
+                    <li><a href="#">首页</a></li>
+                    <li><a href="#">商家入驻</a></li>
+                    <li><a href="news.html">热点资讯</a></li>
+                    <li><a href="拼多多_爱心扶贫.html">爱心扶贫</a></li>
+                    <li><a href="#">社会招聘</a></li>
+                    <li><a href="#">校园招聘</a></li>
+                    <li><a href="#">商务合作</a></li>
+                    <li><a href="bangzhuzhongxin.html">帮助中心</a></li>
+                    <li><a href="jubaopingtai.html">举报平台</a></li>
+                    <li><a href="#">分享赚钱</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="body">
+            <div class="bodyLogo">
+                <img src="img/bodyLogo1.jpg"/>
+            </div>
+            <div class="bodyContent">
+                <div class="leftContent">
+                    <form>
+                        <input type="button" class="btn" />
+                        <input type="text" placeholder="搜索职位名称" class="txt" />
+                    </form>
+                    <table>
+                        <thead>
+                            <td>全部</td>
+                            <td>技术</td>
+                            <td>产品</td>
+                            <td>设计</td>
+                            <td>市场营销</td>
+                            <td>招商运营</td>
+                            <td>平台管理</td>
+                            <td>综合</td>
+                            <td>客服</td>
+                        </thead>
+                        <tr class="bg">
+                            <td colspan="5">职位名称</td>
+                            <td>职位类别</td>
+                            <td colspan="2">工作地点</td>
+                            <td>招聘人数</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">商品运营专家-母婴</td>
+                            <td>招商运营类</td>
+                            <td colspan="2">上海</td>
+                            <td>若干</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">商品运营专家-运动户外</td>
+                            <td>招商运营类</td>
+                            <td colspan="2">上海</td>
+                            <td>若干</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">招商运营经理（大家电+白电）</td>
+                            <td>招商运营类</td>
+                            <td colspan="2">上海</td>
+                            <td>若干</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">测试开发-支付团队</td>
+                            <td>技术类</td>
+                            <td colspan="2">上海</td>
+                            <td>若干</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">服务工具产品运营专家</td>
+                            <td>客服类</td>
+                            <td colspan="2">上海</td>
+                            <td>若干</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">维权业务分析运营专家</td>
+                            <td>客服类</td>
+                            <td colspan="2">上海</td>
+                            <td>若干</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">客服经理（现场管控）</td>
+                            <td>客服类</td>
+                            <td colspan="2">上海</td>
+                            <td>若干</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">疫情防控专家</td>
+                            <td>客服类</td>
+                            <td colspan="2">上海</td>
+                            <td>若干</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">客服经理（出行/虚拟/跨境）</td>
+                            <td>客服类</td>
+                            <td colspan="2">上海</td>
+                            <td>若干</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">产品经理（品牌业务增长方向）</td>
+                            <td>产品类</td>
+                            <td colspan="2">上海</td>
+                            <td>若干</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">B端产品</td>
+                            <td>产品类</td>
+                            <td colspan="2">上海</td>
+                            <td>若干</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">风控合规高级经理</td>
+                            <td>综合类</td>
+                            <td colspan="2">上海</td>
+                            <td>若干</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">产品运营</td>
+                            <td>招商运营类</td>
+                            <td colspan="2">上海</td>
+                            <td>若干</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">招商运营（个人护理保健）</td>
+                            <td>招商运营类</td>
+                            <td colspan="2">上海</td>
+                            <td>若干</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5">招商运营（厨房电器）</td>
+                            <td>招商运营类</td>
+                            <td colspan="2">上海</td>
+                            <td>若干</td>
+                        </tr>
+                        <tr>
+                            <td colspan="9">
+                                <div title="上一页"></div>
+                                <div title="1">1</div>
+                                <div title="2">2</div>
+                                <div title="3">3</div>
+                                <div title="4">4</div>
+                                <div title="5">5</div>
+                                <div title="向后五页"></div>
+                                <div title="40">40</div>
+                                <div title="下一页"></div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="rightContent">
+                    <div class="rightContentTop">
+                        最新职位
+                    </div>
+                    <div class="rightContentBody1">
+                        <ul>
+                            <li><a href="#">商品运营专家-母婴</a></li>
+                            <li><a href="#">商品运营专家-运动户外</a></li>
+                            <li><a href="#">跨界品牌营销经理</a></li>
+                            <li><a href="#">测试开发-支付团队</a></li>
+                            <li><a href="#">服务工具产品运营专家</a></li>
+                            <li><a href="#">产品经理（品牌业务增长方向）</a></li>
+                            <li><a href="#">B端产品</a></li>
+                        </ul>
+                    </div>
+                    <div class="rightContentTop">
+                        热招职位
+                    </div>
+                    <div class="rightContentBody2">
+                        <ul>
+                            <li><a href="#">Java研发工程师（多多进宝方向）</a></li>
+                            <li><a href="#">新媒体运营</a></li>
+                            <li><a href="#">数据分析</a></li>
+                            <li><a href="#">Java开发工程师（新媒体业务）</a></li>
+                            <li><a href="#">客服主管</a></li>
+                            <li><a href="#">品牌/大客户营销策划</a></li>
+                            <li><a href="#">用户运营</a></li>
+                        </ul>
+                    </div>
+                    <div class="rightContentTop">
+                        招聘小程序
+                    </div>
+                    <div class="rightContentBottom">
+                        <img src="img/rcbqr.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <div class="footTop"></div>
+            <div class="footBody">
+                <div class="footBodyTop">
+                    <div class="footBodyLeft">
+                        <div class="qr">
+                            <img src="img/foot1.png">
+                            <p>扫描二维码微信关注</p>
+                        </div>
+                        <div class="qr">
+                            <img src="img/foot2.png">
+                            <p>扫描二维码下载app</p>
+                        </div>
+                        <div class="qr">
+                            <img src="img/foot3.png">
+                            <p>微信扫码免费领取</p>
+                            <p>拼多多店铺</p>
+                        </div>
+                    </div>
+                    <div class="footBodyRight">
+                        <p>联系我们</p>
+                        <p>客服&举报电话：<span>021-53395288</span>（推荐）</p>
+                        <p>400-8822-528</p>
+                        <p>商家热线：<span>021-5339-5088</span></p>
+                        <p>商家客服服务时间：8:00-20:30</p>
+                        <p>消费者客服服务时间：8:00-21:30</p>
+                        <p>上海寻梦信息技术有限公司</p>
+                    </div>
+                </div>
+                <div class="footBottom">
+                    <ul>
+                        <li><a href="#">入驻多多国际</a></li>
+                        <li><a href="#">校园招聘</a></li>
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">帮助中心</a></li>
+                        <li><a href="#">下载App</a></li>
+                        <li><a href="#">消费者保障</a></li>
+                        <li><a href="#">维权投诉指引</a></li>
+                        <li><a href="#">廉政举报</a></li>
+                        <li><a href="#">服务协议</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">征求意见</a></li>
+                        <li><a href="#">Investor Relations</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer">
+                <p>Copyright 2015-2020 pinduoduo.com 版权所有 <a href="#">(增值电信业务经营许可证：沪B2-20170215)</a></p>
+                <p><a href="#">互联网药品信息服务资格证书：（沪）-经营性-2019-0052</a></p>
+                <p><a href="#" class="aa">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a><a href="#">沪公网安备 31010502000392号</span></a>&nbsp;&nbsp;&nbsp;&nbsp;（沪）网械平台备字[2018]第00003号&nbsp;&nbsp;&nbsp;&nbsp;沪ICP备15010535号-13&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" style="border-left: 1px solid rgb(177,177,177)">&nbsp;&nbsp;&nbsp;&nbsp;营业执照</a></p>
+            </div>
+            <div class="footers">
+                <div class="imgS">
+                    <img src="img/footb1.png">
+                    <img src="img/footb2.jpg">
+                    <img src="img/footb3.png">
+                    <img src="img/footb4.jpg">
+                    <img src="img/footb5.jpg">
+                    <img src="img/footb6.png">
+                    <img src="img/footb7.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

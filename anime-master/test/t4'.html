@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../anime-master/lib/anime.js" ></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #ff6348;
+        }
+        .demo div{
+            width: 50px;
+            height: 50px;
+            background: #2ed573;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo">
+        <div class="demoA"></div>
+        <div class="demoB"></div>
+        <div class="demoC"></div>
+    </div>
+    <script>
+        // 使用默认参数创建时间轴
+        var tl = anime.timeline({
+            easing: 'easeOutExpo',
+            duration: 750
+        });
+
+        // 增加子项
+        tl
+            .add({
+                targets: '.demo .demoA',
+                translateX: 250,
+            })
+            .add({
+                targets: '.demo .demoB',
+                translateX: 250,
+            },'-=600')// 相对偏移量
+            .add({
+                targets: '.demo .demoC',
+                translateX: 250,
+            },0);// 绝对偏移量
+    </script>
+</body>
+</html>

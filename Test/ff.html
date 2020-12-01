@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var citys=[
+            ["九江市","南昌市","赣州市"],
+            ["长沙市","岳阳市","衡阳市"],
+            ["南宁市","柳州市","梧州市"]
+        ]
+        var countys=[
+            [["濂溪区","浔阳区","都昌县"],["东湖区","西湖区","新建区"],["章贡区","南康区","赣县区"]],
+            [["芙蓉区","天心区","开福区"],["云溪区","君山区","岳阳楼区"],["雁峰区","石鼓区","南岳区"]],
+            [["兴宁区","青秀区","江南区"],["城中区","鱼峰区","柳南区"],["万秀区","长洲区","龙圩区"]]
+        ]
+        function addCitysOpt(text,value){
+            var city = document.getElementById("city");
+            var opt = document.createElement("option");
+            opt.text = text;
+            opt.value = value;
+            city.options.add(opt);
+        }
+        function addCountyOpt(text,value){
+            var county = document.getElementById("county");
+            var opt = document.createElement("option");
+            opt.text = text;
+            opt.value = value;
+            county.options.add(opt);
+        }
+        function addCity(value){
+            var city = document.getElementById("city");
+            var county = document.getElementById("county");
+            city.options.length = 1;
+            county.options.length = 1;
+            for(var i = 0 ; i< citys[value].length; i++){
+                addCitysOpt(citys[value][i],i);
+            }
+        }
+        function addCounty(value){
+            var province = document.getElementById("province");
+            var county = document.getElementById("county");
+            pValue = province.value;
+            county.options.length = 1;
+            for(var i = 0;i<countys[pValue][value].length;i++){
+                addCountyOpt(countys[pValue][value][i],i);
+            }
+        }
+    </script>
+</head>
+<body>
+    <select id="province" onchange="addCity(this.value)">
+        <option value="-1">请选择</option>
+        <option value="0">江西省</option>
+        <option value="1">湖南省</option>
+        <option value="2">广西省</option>
+    </select>
+    <select id="city" onchange="addCounty(this.value)">
+        <option value="-1">请选择</option>
+    </select>
+    <select id="county">
+        <option value="-1">请选择</option>
+    </select>
+</body>
+</html>

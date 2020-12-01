@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: black;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .bg{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background: white;
+        }
+        .bg::after{
+            content: "";
+            position: absolute;
+            background: yellow;
+            width: 200px;
+            height: 200px;
+            left:-200px;
+            animation: show 2s;
+        }
+        @keyframes show {
+            from{
+                left: -200px;
+            }
+            to{
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg"></div>
+</body>
+</html>

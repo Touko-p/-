@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        li{
+            float: left;
+            font-size: 50px;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        var k="☆";
+        var s="★";
+        $(function () {
+            $(".app li").mouseenter(
+                function () {
+                    $(this).text(s).prevAll().text(s);
+                    $(this).nextAll().text(k);
+                }
+            )
+            $(".app").mouseleave(
+                function () {
+                    $(this).children().text(k);
+                    $("li.c").text(s).prevAll().text(s);
+                }
+            )
+            $(".app li").mousedown(
+                function () {
+                    $(this).addClass("c").siblings().removeClass("c");
+                }
+            )
+        })
+    </script>
+</head>
+<body>
+    <ul class="app">
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+        <li>☆</li>
+    </ul>
+</body>
+</html>

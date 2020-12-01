@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            width: 300px;
+            height: 300px;
+            border-collapse:collapse
+        }
+        tr{
+
+        }
+        td{
+            border: 1px solid black;
+        }
+
+    </style>
+</head>
+    <div id ="d">
+
+    </div>
+
+    <script>
+        function createTD(text){
+            var td=document.createElement("td");
+            var text= document.createTextNode(text);
+            td.appendChild(text);
+            return td;
+        }
+
+        function createTR(texts){
+            var tr=document.createElement("tr");
+            for(var i=0;i<texts.length;i++){
+                var td = createTD(texts[i]);
+                tr.appendChild(td);
+            }
+            return tr;
+        }
+        function createTable(rows){
+            var table=document.createElement("table");
+            for(var i=0;i<rows.length;i++){
+                var tr= createTR(rows[i]);
+                table.appendChild(tr);
+            }
+            return table;
+        }
+        var row0=new Array("","","","","","","");
+        var row1=new Array("日","一","二","三","四","五","六");
+        var row2=new Array("","","","","","","");
+        var row3= new Array("","","","","","","");
+        var row4= new Array("","","","","","","");
+        var row5= new Array("","","","","","","");
+        var row6= new Array("","","","","","","");
+        var row7= new Array("","","","","","","");
+        var rows=new Array(row0,row1,row2,row3,row4,row5,row6,row7);
+
+        var div = document.getElementById("d");
+        var table=createTable(rows);
+        div.appendChild(table);
+
+    </script>
+</html>

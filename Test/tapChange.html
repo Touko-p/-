@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #app{
+            min-width: 1200px;
+        }
+        .head{
+            width: 604px;
+            height: 50px;
+            border: 1px solid grey;
+            margin: 0 auto;
+            background-color: #5bc0de;
+        }
+        ul{
+            list-style: none;
+        }
+        ul li{
+            width: 150px;
+            text-align: center;
+            border-right: 1px solid whitesmoke;
+            line-height: 50px;
+            float: left;
+        }
+        ul li:first-child{
+            background-color: white;
+        }
+        ul li a:first-child{
+            color: black;
+        }
+        ul li:last-child{
+            border: none;
+        }
+        ul li a{
+            font-size: 20px;
+            text-decoration: none;
+            color: white;
+        }
+        .headBox{
+            width: 603px;
+            height: 80px;
+            margin: 0 auto;
+            border: 1px solid grey;
+            text-align: center;
+            line-height: 80px;
+        }
+        .bg{
+            background-color: white;
+        }
+        .f{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="head">
+            <ul>
+                <li><a href="#">标签一</a></li>
+                <li><a href="#">标签二</a></li>
+                <li><a href="#">标签三</a></li>
+                <li><a href="#">标签四</a></li>
+            </ul>
+        </div>
+        <div class="headBox">1</div>
+    </div>
+    <script>
+        var lis=document.getElementsByTagName("li");
+        var as=document.getElementsByTagName("a");
+        for (i=0;i<lis.length;i++){
+            var a=lis[i];
+            a.index=i;
+            lis[i].onmouseover=function () {
+                this.style.backgroundColor = "white";
+
+            }
+        }
+    </script>
+</body>
+</html>

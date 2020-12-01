@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--列表 ul ol  表格table-->
+		<!--
+			表格组成 table tr(行) td(列)
+			表头 tr th表头的标题默认居中加粗
+			
+			bordercolor 边框颜色
+			bgcolor 背景颜色
+			cellspacing 指的是单元格与单元格之间的间隙
+			cellpadding 指的是内容到边框的距离
+			
+			align 水平对齐方式
+			1.设置在table上面时表示整个表格水平对齐方式
+			2.设置在tr上时 表示的是整行文本的对齐方式
+			3.设置在td上时 表示的是整列的对齐方式
+			
+			
+			行分组
+			thead 表头 tbody 表体  tfoot表尾
+			
+			规定：写表格时行分组必须写，但是开发中一般情况可以根据
+			情况可以不写
+			
+			colspan 合并列 合并的是左右
+			
+			rowspan 合并行 合并是上下
+		-->
+		
+		<table border="" cellspacing="" cellpadding="">
+			<tr>
+				<td rowspan="2">Data</td>
+				<td>Data</td>
+				<td>Data</td>
+				<td>Data</td>
+				<td>Data</td>
+			</tr>
+			<tr>
+				<td>Data</td>
+				<td>Data</td>
+				<td>Data</td>
+				<td>Data</td>
+			</tr>
+		</table>
+		<!--分割线-->
+		<hr/>
+		
+		<table bordercolor="red" border="1" width="500" height="200">
+			<tr bgcolor="aqua" align="center">
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td bgcolor="aquamarine">2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+		</table>
+		
+		<hr />
+		
+		
+		<table border="1" width="500" height="200" cellspacing="20" cellpadding="">
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+		</table>
+		
+		<hr />
+		<table border="1" width="500" height="200" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+			</tr>
+		</table>
+		
+		
+	</body>
+</html>

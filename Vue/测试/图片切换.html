@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 100vh;
+            background: #0c5460;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .app{
+            width: 450px;
+            height: 300px;
+            position: relative;
+        }
+        a{
+            display: inline-block;
+            width: 30px;
+            height: 50px;
+            position: absolute;
+        }
+        img{
+            width: 450px;
+            height: 300px;
+        }
+        .left{
+            left: 0px;
+            top: 125px;
+            background: whitesmoke url("img/arrow-left.png") no-repeat center center;
+        }
+        .right{
+            right: 0;
+            top: 125px;
+            background: whitesmoke url("img/arrow-right.png") no-repeat center center;
+        }
+    </style>
+    <script src="../vue.min.js"></script>
+</head>
+<body>
+    <div class="app">
+        <img :src="imgArr[index]">
+        <a class="left" @click="prev" v-show="index!=0"></a>
+        <a class="right" @click="next" v-show="index<imgArr.length-1"></a>
+    </div>
+    <script>
+        new Vue({
+            el:'.app',
+            data:{
+                imgArr:[
+                    'img/1.jpg',
+                    'img/2.jpg',
+                    'img/3.jpg',
+                    'img/4.jpg',
+                    'img/5.jpg',
+                    'img/6.jpg',
+                ],
+                index:0
+            },
+            methods:{
+                prev:function (){
+                    this.index--;
+                },
+                next:function (){
+                    this.index++;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

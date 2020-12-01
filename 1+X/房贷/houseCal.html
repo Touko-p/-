@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="style.css" type="text/css" />
+		<script src="houseCal.js"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<h3>贷款方式</h3>
+			<select id="selectedBox">
+				<option value="0" selected>等额本息</option>
+				<option value="1">等额本金</option>
+			</select>
+			<div class="cal-form">
+				<div class="cal-item">
+					<span class="cal-name">贷款金额：</span>
+					<input type="text" name="amount" placeholder="贷款金额" class="cal-select" id="loansAmount" />
+					<span>万元</span>
+				</div>
+			</div>
+			<div class="cal-form">
+				<div class="cal-item">
+					<span class="cal-name">贷款年限：</span>
+					<input type="text" name="year" placeholder="贷款年限" class="cal-select" id="loansYear" value=""/>
+					<span>年</span>
+				</div>
+			</div>
+			<div class="cal-form">
+				<div class="cal-item">
+					<span class="cal-name">年利率：</span>
+					<select id="loansRate" class="cal-select">
+						<option value ="0.049">4.9%</option>
+						<option value ="0.0539">5.39%</option>
+						<option value ="0.0588">5.88%</option>
+						<option value ="0.0637">6.37%</option>
+						<option value ="0.0586">5.86%</option>
+					</select>
+				</div>
+			</div>
+			<button id="calButton" onclick="calResult()">计算房贷</button>
+			<table id="calResult">
+				<tr>
+					<th>项目</th>
+					<th>金额</th>
+				</tr>
+			</table>
+		</div>
+	</body>
+</html>

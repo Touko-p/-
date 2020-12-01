@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			p{
+				font-family: "微软雅黑";
+				font-size: 30px;
+			}
+			
+			/*派生选择器 后代选择器（包含选择器）*/
+			#box3 p{
+				color: red;
+			}
+			.box p{
+				color: pink;
+			}
+			/*派生的写法 标签与标签或者类型或者id之间一定要有空格 代表从属关系
+			 * 可以是标签 可以是类型 可以是id  */
+			
+			
+			/*子代选择器 只找第一代*/
+			.box > p{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<p>某某人，你现在怎么样</p>
+		<div id="box3">
+			<p>过得不是太好</p>
+		</div>
+		<div class="box">
+			<p>听到你过得不好，我就放心了</p>
+			<div class="box1">
+				<p>你这厮怎么🦆</p>
+			</div>
+		</div>
+	</body>
+</html>

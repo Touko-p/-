@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*通配选择器 找到所有标签 将外边距置为0*/
+			*{
+				margin: 0;
+			}
+			
+			/*群组选择器*/
+			div,p{
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				line-height: 100px;
+				background-color: red;
+			}
+			p{
+				background-color: yellow;
+			}
+			
+			/*交集选择器*/
+			/*a标签有个a1的类名*/
+			a.a1{
+				color: blue;
+			}
+			a.a2{
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div>你好</div>
+		<p>再见</p>
+		<a class="a1">百度</a>
+	</body>
+</html>

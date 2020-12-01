@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			
+			/*权重 id > class > 标签
+			 * 是每个选择器自带的特性  作用:可以帮我们覆盖一些样式
+			 * 
+			 * 当样式发生冲突时 已权重最高的为准 （权重高的覆盖权重低的）
+			 * 
+			 * 权重对于选择器来说 优先级相对于css样式表来说
+			 * 
+			 * 如果css是的是样式表的话 层叠就是优先级 当放生冲突时 
+			 * 已权重高的为主
+			 * 
+			 * */
+			
+			/*#box{
+				color: yellow;
+			}*/
+			
+			
+			.box{
+				color: blue;
+			}
+			
+			.box1{
+				color: green;
+			}
+			
+			div{
+				color: red;
+				font-size: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box box1" id="box">hello world</div>
+	</body>
+</html>

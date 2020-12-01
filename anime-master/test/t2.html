@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #2d3436;
+        }
+        .demo div{
+            width: 30px;
+            height: 30px;
+            background-color: #95ff7d;
+            margin-top: 10px;
+        }
+    </style>
+    <script type="text/javascript" src="../anime-master/lib/anime.js" ></script>
+</head>
+<body>
+    <div class="demo">
+        <div class="demoA"></div>
+        <div class="demoA"></div>
+        <div class="demoA"></div>
+        <div class="demoB"></div>
+        <div class="demoC"></div>
+        <div class="demoD"></div>
+        <div class="demoD"></div>
+        <div class="demoD"></div>
+        <div class="demoD"></div>
+        <div class="demoD"></div>
+    </div>
+    <script>
+        // var el=document.querySelectorAll('.demoA');
+        // anime({
+        //     targets:el,
+        //     translateX: function(el,i) {
+        //         return 200*i;
+        //     },
+        //     translateY: function(el, i) {
+        //         return 50 + (-50 * i);
+        //     },
+        //     scale: function(el, i, l) {
+        //         return (l - i) + .25;
+        //     },
+        //     rotate: function() { return anime.random(-360, 360); },
+        //     borderRadius: function() { return ['50%', anime.random(10, 35) + '%']; },
+        //     duration: function() { return anime.random(1200, 1800); },
+        //     delay: function() { return anime.random(0, 400); },
+        //     direction: 'alternate',
+        //     loop: true
+        // })
+        // anime({
+        //     targets: '.demo .demoB',
+        //     keyframes: [
+        //         {translateX: -250},
+        //         {translateX: 250}
+        //     ],
+        //     duration: 4000,
+        //     easing: 'easeOutElastic(1, .8)',
+        //     loop: true
+        // });
+        // anime({
+        //     targets: '.demoC',
+        //     translateX: [
+        //         { value: 250, duration: 1000, delay: 500 },
+        //         { value: 0, duration: 1000, delay: 500 }
+        //     ],
+        //     translateY: [
+        //         { value: -40, duration: 500 },
+        //         { value: 40, duration: 500, delay: 1000 },
+        //         { value: 0, duration: 500, delay: 1000 }
+        //     ],
+        //     scaleX: [
+        //         { value: 4, duration: 100, delay: 500, easing: 'easeOutExpo' },
+        //         { value: 1, duration: 900 },
+        //         { value: 4, duration: 100, delay: 500, easing: 'easeOutExpo' },
+        //         { value: 1, duration: 900 }
+        //     ],
+        //     scaleY: [
+        //         { value: [1.75, 1], duration: 500 },
+        //         { value: 2, duration: 50, delay: 1000, easing: 'easeOutExpo' },
+        //         { value: 1, duration: 450 },
+        //         { value: 1.75, duration: 50, delay: 1000, easing: 'easeOutExpo' },
+        //         { value: 1, duration: 450 }
+        //     ],
+        //     easing: 'easeOutElastic(1, .8)',
+        //     loop: true
+        // });
+        anime({
+            targets:'.demoD',
+            translateX:200,
+            delay:anime.stagger(200,{from:'center'}),
+            rotate:anime.stagger([-360,360]),
+            // direction:'alternate',
+            easing: 'easeInOutQuad'
+        })
+    </script>
+</body>
+</html>

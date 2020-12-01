@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border-collapse:collapse;
+            width:90%;
+        }
+        tr{
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-bottom-color: lightgray;
+            height:35px;
+        }
+
+        td{
+            width:25%;
+            text-align:center;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function () {
+
+            $("#clean").click(
+                function () {
+                    $("#body").empty();
+                }
+            )
+            $("#body").on("click",".d",function () {
+                $(this).parent().parent().remove();
+            })
+            $("#add").click(
+                function () {
+                    $("#body").append("<tr>\n" +
+                        "                    <td>未知英雄</td>\n" +
+                        "                    <td>未知职业</td>\n" +
+                        "                    <td><a href=\"#\" class=\"d\">DELETE</a> </td>\n" +
+                        "                </tr>")
+                }
+            )
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <input type="button" value="清空内容" id="clean">
+        <input type="button" value="添加" id="add">
+        <table>
+            <thead>
+                <tr>
+                    <th>英雄</th>
+                    <th>职业</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody class="body">
+                <tr>
+                    <td>安度因</td>
+                    <td>牧师</td>
+                    <td><a href="#" class="d">DELETE</a> </td>
+                </tr>
+                <tr>
+                    <td>古尔丹</td>
+                    <td>术士</td>
+                    <td><a href="#" class="d">DELETE</a> </td>
+                </tr>
+                <tr>
+                    <td>吉安娜</td>
+                    <td>法师</td>
+                    <td><a href="#" class="d">DELETE</a> </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: mintcream;
+}
+h2{
+    font-size: 6em;
+    position: absolute;
+}
+h2:nth-child(1){
+    -webkit-text-stroke: pink 2px;
+    color: transparent;
+}
+h2:nth-child(2){
+    color: pink;
+    animation: bowen 3s ease-in-out infinite;
+}
+@keyframes bowen {
+    0%,100%{
+        clip-path: polygon(0 61%, 19% 51%, 44% 54%, 62% 67%, 83% 65%, 100% 42%, 100% 100%, 0 100%);
+    }
+    50%{
+        clip-path: polygon(0 61%, 20% 67%, 43% 75%, 58% 59%, 82% 54%, 100% 74%, 100% 100%, 0 100%);
+    }
+}

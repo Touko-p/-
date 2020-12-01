@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../anime-master/lib/anime.js" ></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .grid-container{
+            display: grid;
+            grid-template-columns: repeat(15,50px);
+            grid-template-rows: repeat(5,50px);
+            grid-gap: 10px;
+            margin: 100px auto;
+            width: 80%;
+            height: 45vh;
+        }
+        .grid-item{
+            background: #5bc0de;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-container">
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+        <div class="grid-item"></div>
+    </div>
+    <script>
+        anime({
+            targets: '.grid-item',
+            scale: [
+                {value: .1, easing: 'easeOutSine', duration: 500},
+                {value: 1, easing: 'easeInOutQuad', duration: 1200}
+            ],
+            keyframes:[
+                {translateX:100},
+                {translateX:0}
+            ],
+            delay: anime.stagger(100, {grid: [15, 5], from: 'center'}),
+            loop:true
+        });
+        anime({
+            targets: '.grid-item',
+            translateX: anime.stagger(10, {grid: [15, 5], from: 'center', axis: 'x'}),
+            translateY: anime.stagger(10, {grid: [15, 5], from: 'center', axis: 'y'}),
+            rotate:anime.stagger([-360, 360]),
+            // rotateZ: anime.stagger([0, 90], {grid: [14, 5], from: 'center', axis: 'x'}),
+            // delay: anime.stagger(200, {grid: [14, 5], from: 'center'}),
+            borderRadius: ['50%'],
+            easing: 'easeInOutQuad',
+        });
+    </script>
+</body>
+</html>

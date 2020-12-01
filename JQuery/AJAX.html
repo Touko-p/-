@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    输入账号:<input type="text" id="value">
+    <span id="checkResult"></span>
+    <script src="jquery.min.js"></script>
+    <script>
+        var xmlhttp;
+        $(function () {
+            $("#value").keyup(
+                function () {
+                    xmlhttp=new XMLHttpRequest();//创建XHR对象
+                    var url="https://how2j.cn/study/checkName.jsp?name="+$("#value").val();
+                    xmlhttp.onreadystatechange=checkResult;//设置响应函数
+                    xmlhttp.open("GET",url,true);//设置访问页面
+                    xmlhttp.send(null);//执行访问
+                }
+            )
+        })
+        function checkResult() {
+            if(xmlhttp.readyState==4&&xmlhttp.status==200)
+                $("#checkResult").html(xmlhttp.responseText);
+        }
+    </script>
+</body>
+</html>

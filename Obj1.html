@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function Hero(name){
+            this.name = name;
+            this.kill = function(){
+                document.write(this.name + "正在杀敌<br>");
+            }
+        }
+        var gareen = new Hero("盖伦");
+        gareen.kill();
+        var teemo = new Hero("提莫");
+        teemo.kill();
+        Hero.prototype.srt=function () {
+            document.write(this.name+"正在送人头<br>")
+        }
+        gareen.srt();
+        teemo.srt();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

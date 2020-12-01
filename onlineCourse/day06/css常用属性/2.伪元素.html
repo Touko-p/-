@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*伪元素  ::  伪类 :*/
+			/*在内容后面添加内容*/
+			div::after{
+				content: "\E623";
+			}
+			div a{
+				margin-right: 50px;
+			}
+			/*在内容前添加内容*/
+			div::before{
+				content: "静姐";
+			}
+		</style>
+	</head>
+	<body>
+		<div><a>今天晚上吃什么</a></div>
+	</body>
+</html>

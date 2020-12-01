@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 100vh;
+            background: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .app{
+            width: 300px;
+            background: white;
+        }
+        .app input{
+            border: none;
+            outline: none;
+            width: 300px;
+        }
+        table{
+            width: 300px;
+            border-collapse: collapse;
+        }
+        table tr,td{
+            border-bottom: 1px solid black;
+        }
+        table tr{
+            height: 40px;
+        }
+        table td:first-child{
+            width: 50px;
+        }
+        button{
+            float: right;
+            display: none;
+        }
+        tr:hover button{
+            display: block;
+        }
+    </style>
+    <script src="../vue.min.js"></script>
+</head>
+<body>
+    <div class="app">
+        <table>
+            <tr>
+                <td colspan="2"><input type="text" v-model="message" @keyup.enter="add"></td>
+            </tr>
+            <tr v-for="item,index in items">
+                <td>{{index+1}}</td>
+                <td>{{item}}<button @click="clear(index)">x</button></td>
+            </tr>
+            <tr v-if="items.length!=0">
+                <td>{{items.length+'item'}}</td>
+                <td align="right" @click="clearAll">clearAll</td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        new Vue({
+            el:'.app',
+            data:{
+                items:[
+                    '看书',
+                    'Code',
+                    '打游戏'
+                ],
+                message:''
+            },
+            methods:{
+                add:function (){
+                    this.items.push(this.message);
+                },
+                clear:function (index){
+                    this.items.splice(index,1)
+                },
+                clearAll:function (){
+                    this.items=[];
+                }
+            }
+        })
+    </script>
+</body>
+</html>

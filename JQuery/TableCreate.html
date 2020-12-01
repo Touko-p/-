@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border-collapse:collapse;
+            width:90%;
+        }
+        tr{
+            border-bottom-style: solid;
+            border-bottom-width: 1px;
+            border-bottom-color: lightgray;
+            height:35px;
+        }
+
+        td{
+            width:25%;
+            text-align:center;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div id="d">
+    </div>
+    <script>
+        $(function () {
+            $("tr:odd").css("background-color","red");
+        });
+    </script>
+    <script>
+        var row0= new Array("id","名称","血量","伤害");
+        var row1= new Array("1","gareen","340","58");
+        var row2= new Array("2","teemo","320","76");
+        var row3= new Array("3","annie","380","38");
+        var row4= new Array("4","deadbrother","400","90");
+        var rows=new Array(row0,row1,row2,row3,row4);
+        function createTD(text) {
+            var td=document.createElement("td");
+            var text=document.createTextNode(text);
+            td.appendChild(text);
+            return td;
+        }
+        function createTR(texts) {
+            var tr=document.createElement("tr");
+            for (var i=0;i<texts.length;i++){
+                var td=createTD(texts[i]);
+                tr.appendChild(td);
+            }
+            return tr;
+        }
+        function createTable(rows) {
+            var table=document.createElement("table");
+            for(var i=0;i<rows.length;i++){
+                var tr=createTR(rows[i]);
+                table.appendChild(tr);
+            }
+            return table;
+        }
+        var div=document.getElementById("d");
+        var table=createTable(rows);
+        div.appendChild(table);
+    </script>
+</body>
+</html>

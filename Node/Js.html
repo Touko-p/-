@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function loadJS(){
+            //创建一个script元素
+            var newScript = document.createElement('script');
+            //指定外部js文件
+            newScript.src = 'http://how2j.cn/study/test3041.js';
+            //获取第一个script元素
+            var firstScript = document.getElementsByTagName("script")[0];
+            //在第一个script元素前插入指定文件
+            firstScript.parentNode.insertBefore(newScript,firstScript);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="loadJS()">点击加载</button>
+</body>
+</html>

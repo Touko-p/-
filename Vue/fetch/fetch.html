@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../fetch.min.js"></script>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <script>
+        var url="../books.json"
+        fetch(url).then(function(response) {
+            response.json().then(function (jsonObject) {
+                var jsonString = JSON.stringify(jsonObject)
+                document.getElementById("app").innerHTML = "通过fetch获取到的json数据："+ jsonString;
+            })
+        }).catch(function(err){
+            console.log("Fetch错误:"+err);
+        })
+    </script>
+</body>
+</html>

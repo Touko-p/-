@@ -1,0 +1,25 @@
+.top{
+	width: 100%;
+	height: 58px;
+	background-color: rgb(240,59,110);
+}
+.top .box{
+	background-color: rgb(240,59,110);
+}
+/* 顶部左侧图片 */
+.top .box a{
+	width: 368px;
+	height: 58px;
+	float: left;
+	background-image: url(../img/logo2.png);
+	cursor: pointer;
+}
+/* 顶部右侧图片 */
+.top .box .img_right{
+	width: 340px;
+	height: 96px;
+	float: right;
+	position:relative;
+	right: 3px;
+	background-image: url(../img/top_ad.jpg);
+}

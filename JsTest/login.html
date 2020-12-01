@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function f() {
+            var t1=document.getElementById("txt").value;
+            var spA=document.getElementById("sp1");
+            var spB=document.getElementById("sp2");
+            spA.style.display="none";
+            spB.style.display="none";
+            if(!(t1.charAt(0)>='a'&&t1.charAt(0)<='z')||(t1.charAt(0)>='A'&&t1.charAt(0)<='Z')){
+                spB.style.display="inline";
+                return false;
+            }
+            if(t1.length<6){
+                spA.style.display="inline";
+                return false;
+            }
+            return true;
+        }
+        function f1() {
+            var t2=document.getElementById("psw").value;
+            var spC=document.getElementById("sp3");
+            spC.style.display="none";
+            if(t2.length<6||t2.length>15){
+                spC.style.display="inline";
+                return false;
+            }
+            return true;
+        }
+        function f2() {
+            var t1=document.getElementById("txt").value;
+            var t2=document.getElementById("psw").value;
+            if(t1.length!=0&&t2.length!=0&&f1()==true&&f()==true){
+                alert("登陆成功!")
+            }
+        }
+    </script>
+</head>
+<body>
+    <form method="post">
+        用户账户：<input type="text" id="txt" onkeyup="f()">
+        <span id="sp1" style="color: red;display: none;">用户名不少于6位</span>
+        <span id="sp2" style="color: red;display: none;">用户名第一字符需为字母</span><br>
+        用户密码：<input type="password" id="psw" onkeyup="f1()">
+        <span id="sp3" style="color: red;display: none;">密码长度需在6-15位之间</span><br>
+        <input type="submit" value="登录" onclick="f2()">
+    </form>
+</body>
+</html>

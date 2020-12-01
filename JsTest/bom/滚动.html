@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .d{
+            width: 100%;
+            height: 120px;
+            border: 1px solid pink;
+        }
+        #search{
+            position: fixed;
+            top: 0;
+            left: 0;
+            height:50px;
+            width: 100%;
+            border: 1px solid lawngreen;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="d">1</div>
+        <div class="d">2</div>
+        <div class="d">3</div>
+        <div class="d">4</div>
+        <div class="d">5</div>
+        <div class="d">6</div>
+        <div class="d">7</div>
+        <div class="d">8</div>
+        <div id="search">search</div>
+    </div>
+    <script>
+        window.onload=function () {
+            var search=document.getElementById('search');
+            window.onscroll=function () {
+                var height=document.documentElement.scrollTop||document.body.scrollTop;
+                search.innerHTML=height;
+                if(height>=200){
+                    search.style.display='block';
+                }else
+                    search.style.display='none';
+            }
+        }
+    </script>
+</body>
+</html>

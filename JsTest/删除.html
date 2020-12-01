@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <div>1</div>
+        <div>2</div>
+        <div><a id="a">3</a></div>
+    </div>
+    <button id="af">删除</button>
+<script>
+    var a=document.getElementById("af");
+    var v=document.getElementById("app");
+    a.onclick=function () {
+        v.firstChild.remove();
+    }
+    // var a=document.getElementById("af");
+    // var v=document.getElementById("app").children;
+    // a.onclick=function () {
+    //     v[0].remove();
+    // }
+</script>
+</body>
+</html>

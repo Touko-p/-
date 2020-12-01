@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function f() {
+            document.getElementById("input1").style.borderColor="red";
+
+        }
+        function f1() {
+            var text=document.getElementById("input1").value;
+            if(text.length!=4||isNaN(text)){
+                document.getElementById("message").innerHTML="输入错误，年份为四位数字表示";
+            }else {
+                document.getElementById("message").innerHTML="";
+            }
+        }
+        function f2() {
+            document.getElementById("input2").style.borderColor="green";
+        }
+        function f3() {
+            var text = document.getElementById("input2").value;
+            if (text> 12 || text < 1 || isNaN(text)||text.length>2||text.length<1) {
+                document.getElementById("message1").innerHTML = "输入错误，月份为2位数字表示,在1-12";
+            } else {
+                document.getElementById("message1").innerHTML = "";
+            }
+        }
+        function f4() {
+            var year=document.getElementById('input1').value;
+            var month=document.getElementById('input2').value;
+            alert(year+"年"+month+"月");
+        }
+    </script>
+</head>
+<body>
+    <form method="post">
+        年份：<input type="text" id="input1" onfocus="f()" onblur="f1()">
+        月份：<input type="text" id="input2" onfocus="f2()" onblur="f3()">
+        <input type="submit" value="查询" style="background: #5bc0de" onclick="f4()">
+        <div id="message"></div>
+        <div id="message1"></div>
+    </form>
+</body>
+</html>

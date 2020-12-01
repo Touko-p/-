@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script src="jquery.min.js"></script>
+    <div id="checkResult"></div>
+    输入账号 :<input id="name" type="text">
+<script>
+    $(function(){
+        $("#name").keyup(function(){
+            var value = $(this).val();
+            var page = "https://how2j.cn/study/checkName.jsp";
+            /*$.ajax({
+                url: page,//:page 表示访问的是page页面
+                data:{"name":value},//{name:value} 表示提交的参数
+                success: function(result){
+                    $("#checkResult").html(result);// function(){} 表示服务器成功返回后对应的响应函数
+                }
+            });*/
+            $.get(//post
+                page,
+                {"name":value},
+                function (result) {
+                    $("#checkResult").html(result);
+                }
+            )
+            /*var page="https://how2j.cn/study/checkName.jsp?name="+value;
+            $("#checkResult").load(page);*/
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(#ff7675,#fab1a0);
+}
+.text{
+    font-size: 48px;
+    color: white;
+}
+.text .light{
+    color: black;
+    animation: flash 0.5s linear infinite;
+}
+@keyframes flash {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}

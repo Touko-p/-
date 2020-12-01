@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="all.css">
+    <link rel="stylesheet" type="text/css" href="body.css">
+</head>
+<body>
+    <div id="app">
+        <div class="head">
+            <img src="img/head.jpg">
+        </div>
+        <div class="body">
+            <div class="bodyA">第一次来到世纪佳缘</div>
+            <div class="bodyB">已有世纪佳缘账号</div>
+            <div class="body1">
+                <div class="bHead">
+                    <h2>读懂之路透，欢迎你来到世纪佳缘</h2>
+                    <span>请花费一分钟的时间来完善个人资料，完善资料的用户会受到更多异性的青睐</span>
+                </div>
+                <div class="bBody1">
+                    <div class="bBodyHead">
+                        <input type="checkbox" checked="checked">&nbsp;<span>诚意宣言:</span>我承诺抱着严肃的态度，真诚寻找另一半。
+                    </div>
+                    <table>
+                        <tr>
+                            <td>我是：</td>
+                            <td><input type="radio" name="sex">男&nbsp;&nbsp;&nbsp;<input type="radio" name="sex">女</td>
+                            <td>*注册后不可更改</td>
+                        </tr>
+                        <tr>
+                            <td>生日：</td>
+                            <td>
+                                <select>
+                                    <option>--请选择--</option>
+                                    <script>
+                                        for (i=1991;i<2000;i++){
+                                            document.write("<option>"+i+"</option><br>");
+                                        }
+                                    </script>
+                                </select>
+                                年
+                                <select>
+                                    <option>--请选择--</option>
+                                    <script>
+                                        for (i=1;i<13;i++){
+                                            document.write("<option>"+i+"</option><br>");
+                                        }
+                                    </script>
+                                </select>
+                                月
+                                <select>
+                                    <option>--请选择--</option>
+                                    <script>
+                                        for (i=1;i<32;i++){
+                                            document.write("<option>"+i+"</option><br>");
+                                        }
+                                    </script>
+                                </select>
+                                日
+                            </td>
+                            <td>*注册后不可更改</td>
+                        </tr>
+                        <tr>
+                            <td>身高：</td>
+                            <td>
+                                <select>
+                                    <script>
+                                        for (i=170;i<186;i++){
+                                            document.write("<option>"+i+"</option><br>");
+                                        }
+                                    </script>
+                                </select>
+                            </td>
+                            <td>*注册后不可更改</td>
+                        </tr>
+                        <tr>
+                            <td>所在地区：</td>
+                            <td>
+                                <select>
+                                    <option>--请选择--</option>
+                                    <option>江西省</option>
+                                    <option>福建省</option>
+                                    <option>浙江省</option>
+                                    <option>广西省</option>
+                                </select>
+                                <select>
+                                    <option>--请选择--</option>
+                                    <option>九江市</option>
+                                    <option>南昌市</option>
+                                    <option>上饶市</option>
+                                    <option>萍乡市</option>
+                                </select>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>婚姻状况：</td>
+                            <td>
+                                <input type="radio" checked="checked" name="marry">未婚
+                                <input type="radio" name="marry">离婚
+                                <input type="radio" name="marry">丧偶
+                            </td>
+                            <td>*注册后不可更改</td>
+                        </tr>
+                        <tr>
+                            <td>学历：</td>
+                            <td>
+                                <select>
+                                    <option>本科</option>
+                                    <option>专科</option>
+                                    <option>初中</option>
+                                    <option>小学</option>
+                                </select>
+                            </td>
+                            <td>*注册后不可更改</td>
+                        </tr>
+                        <tr>
+                            <td>月薪：</td>
+                            <td>
+                                <select>
+                                    <option>5000-10000元</option>
+                                    <option>10000-15000元</option>
+                                    <option>15000-20000元</option>
+                                    <option>20000-50000元</option>
+                                </select>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="bBody2">
+                    <table>
+                        <tr>
+                            <td>注册方式：</td>
+                            <td><input type="radio">手机注册<span>*推荐使用手机注册，及时免费收取短信情书</span></td>
+                        </tr>
+                        <tr>
+                            <td>我的手机号：</td>
+                            <td><input type="text" style="width: 240px;height: 30px"></td>
+                        </tr>
+                        <tr>
+                            <td>手机验证码：</td>
+                            <td><input type="text" style="width: 100px;height: 30px"></td>
+                        </tr>
+                        <tr>
+                            <td>创建密码：</td>
+                            <td><input type="text" style="width: 240px;height: 30px"></td>
+                        </tr>
+                        <tr>
+                            <td>确认密码：</td>
+                            <td><input type="text" style="width: 240px;height: 30px"></td>
+                        </tr>
+                        <tr>
+                            <td>昵称：</td>
+                            <td><input type="text" style="width: 160px;height: 30px"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="bBody3">
+                    <table>
+                        <tr>
+                            <td class="b3">内心独白：</td>
+                            <td class="b3b">
+                                <input type="button" value="自己写">
+                                <input type="button" value="我帮你写">
+                                <span style="color: blue;padding-left: 240px;font-size: 13px">看看别人怎么写</span>
+                                <hr>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <textarea cols="61" rows="10"style="font-size: 15px">您知道吗？在网上，第一印象的建立除了形象照之外，就是内心独白了。您对于爱情的理解，以及对婚姻生活的期许都可以写在这里。
+                                </textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="padding-top: 10px">请输入5-1000字&nbsp;
+                                已输入<span style="color: red">0</span>字（为保证您的信息安全，请勿透露自己的姓名与联系方式）
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td style="padding-top: 15px">
+                                <input type="checkbox" checked="checked">同意<span style="color: blue">世纪佳缘注册条款</span>和<span style="color: blue">会员加入标准</span><br>
+                                <input type="button" value="免费注册&nbsp;开启寻爱之旅" style="width: 350px;height: 40px;background-color:#15b7ff; font-size: 20px;margin-top: 15px;color: white">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="foot">
+            <ul>
+                <li><a href="#">联系客服</a></li>
+                <li><a href="#">关于我们</a></li>
+                <li><a href="#">联系我们</a></li>
+                <li><a href="#">无线业务</a></li>
+                <li><a href="#">注册条款</a></li>
+                <li><a href="#">友情链接</a></li>
+                <li><a href="#">招聘信息</a></li>
+                <li><a href="#">交友信息</a></li>
+                <li><a href="#">隐私保护</a></li>
+                <li><a href="#">帮助中心</a></li>
+                <li><a href="#">安全中心</a></li>
+            </ul><br>
+            <p style="font-size: 14px;padding-left: 310px">中文实名：世纪佳缘&nbsp;ICP证书：泸B2-20100074增值电信业务经营许可证：泸B2-20073013&nbsp;ISO9001质量体系认证</p>
+            <p style="font-size: 14px;padding-left: 290px">&copy;2003-2016&nbsp;版权所有&nbsp;京公网安备110105002124号&nbsp;泸ICP备09045640号-1&nbsp;不良和违法信息举报专线：0316-5266032</p>
+        </div>
+    </div>
+</body>
+</html>

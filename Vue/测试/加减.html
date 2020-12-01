@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.min.js"></script>
+</head>
+<body>
+<div class="app">
+    <p><button @click="del">-</button><input type="text" v-model="num"><button @click="add">+</button></p>
+    <div class="a" v-text="num"></div>
+</div>
+
+    <script>
+        new Vue({
+            el:'.app',
+            data:{
+                num:0
+            },
+            methods:{
+                add:function (){
+                    this.num++;
+                },
+                del:function (){
+                    this.num--;
+                }
+            }
+        })
+    </script>
+</body>
+</html>

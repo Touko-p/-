@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .wrapper {
+            position: relative;
+            background: #a6e1ec;
+            display: inline-block;
+            font-size: 40px;
+        }
+
+        .base {
+            color: rgb(231,232,234);
+            padding: 10px;
+        }
+
+        .mask {
+            transform-origin: left;
+            overflow: hidden;
+            transition: width 1s;
+            width: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+        }
+
+        .mask .base {
+            color: rgb(255,255,255);
+        }
+
+        .wrapper:hover .mask  {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="base">home</div>
+    <div class="mask">
+        <div class="base">home</div>
+    </div>
+</div>
+</body>
+</html>

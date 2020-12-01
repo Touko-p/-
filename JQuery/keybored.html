@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        tr#action div{
+            height: 50px;
+            background-color: red;
+        }
+        tr#value div,tr#key div{
+            height:50px;
+            background-color:#d1d1d1;
+        }
+        td{
+            width: 25%;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        var order=0;
+        var clearTime=null;
+        function action(selector) {
+            $("#"+selector+"Action").css("background-color","green");
+            $("#"+selector+"Action").html("顺序："+(++order))
+        }
+        function value(selector,value) {
+            $("#"+selector+"Value").html(value);
+        }
+        function key(selector,e) {
+            $("#"+selector+"Key").html(e.which);
+        }
+        function clear() {
+            order=0;
+            $("tr#action div").css("background-color","red");
+            $("tr div").html("");
+        }
+        function show(selector,e,ivalue) {
+            clearTimeout(clearTime);
+            action(selector);
+            value(selector,ivalue);
+            key(selector,e);
+            clearTimer=setTimeout(clear,5000);
+        }
+        $(function () {
+            $("#i").keydown(
+                function (e) {
+                    var selector="keydown";
+                    show(selector,e,$(this).val());
+                }
+            );
+            $("#i").keypress(
+                function (e) {
+                    var selector="keypress";
+                    show(selector,e,$(this).val());
+                }
+            );
+            $("#i").keyup(
+                function (e) {
+                    var selector="keyup";
+                    show(selector,e,$(this).val());
+                }
+            );
+        })
+    </script>
+</head>
+<body>
+    输入框:
+    <input type="text" id="i">
+    <table width="100%">
+        <tr>
+            <td></td>
+            <td>keydown</td>
+            <td>keypress</td>
+            <td>keyup</td>
+        </tr>
+        <tr id="action">
+            <td>行为</td>
+            <td><div id="keydownAction"></div></td>
+            <td><div id="keypressAction"></div></td>
+            <td><div id="keyupAction"></div></td>
+        </tr>
+        <tr id="key">
+            <td>按键</td>
+            <td><div id="keydownKey"></div></td>
+            <td><div id="keypressKey"></div></td>
+            <td><div id="keyupKey"></div></td>
+        </tr>
+        <tr id="value">
+            <td>取值</td>
+            <td><div id="keydownValue"></div></td>
+            <td><div id="keypressValue"></div></td>
+            <td><div id="keyupValue"></div></td>
+        </tr>
+    </table>
+</body>
+</html>

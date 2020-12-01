@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            float: left;
+        }
+        div#div1{
+            padding-left: 50px;
+            padding-top: 100px;
+            width: 500px;
+            height: 300px;
+            font-size: 25px;
+            font-style: italic;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function getId(id) {
+            return document.getElementById(id);
+        }
+        function f() {
+            getId("div1").innerHTML=
+                "<font color='red'>人生，就像肥皂泡一样。风一吹就呼呼的飞上了天，" +
+                "<br>注意到的时候，却啪地一下消失了。就在即将破裂的瞬间，<br>" +
+                "想要自己飞得更高。但回过神来的时候，却总是来不及。</font>";
+        }
+        function f1() {
+            getId("div1").innerHTML=
+                "<font color='black'>太阳的光芒越是强烈，映射出的影子也会愈加黑暗！</font>";
+        }
+        function f2() {
+            getId("div1").innerHTML=
+                "<font color='#00bfff'>今宵之月，绝不西沉。只此美梦，不再苏醒。" +
+                "<br>从今往后，生生世世，长相厮守，为你立誓。</font>";
+        }
+        function f3() {
+            getId("div1").innerHTML=null;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <img src="111.jpg" onmouseover="f()" onmousedown="f1()" ondblclick="f2()" onmouseout="f3()" >
+    </div>
+    <div id="div1">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="rocket">
+        <img src="img/rocket.png">
+    </div>
+    <i>1</i>
+</div>
+<script>
+    function rand(m,n){
+        return Math.ceil(Math.random()*(n-m+1))+m-1;
+    }
+    let num=100;
+    for (let i=0;i<num;i++){
+        const i=document.createElement("i");
+        i.style.height=rand(30,100)+"px";
+        i.style.left=rand(1,99)+"vw";
+        i.style.animationDuration=rand(5,30)/10+"s";
+        document.querySelector('.container').append(i);
+    }
+</script>
+</body>
+</html>

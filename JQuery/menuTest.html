@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul,li{
+            list-style: none;
+            text-align: center;
+            width: 90px;
+        }
+        #u2{
+            display: none;
+        }
+
+        .menu{
+            background-color: yellow;
+        }
+        .c{
+            background-color: #2b542c;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(){
+            $('.menu>li').hover(function() {
+                $(this).children("ul").stop().slideToggle();
+            });
+        })
+    </script>
+</head>
+<body>
+    <div id="div">
+        <ul class="menu">
+            <li>一级菜单
+                <ul id="u2">
+                    <li class="c">二级菜单</li>
+                    <li class="c">二级菜单</li>
+                    <li class="c">二级菜单</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

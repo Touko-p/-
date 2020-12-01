@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button @click="toggle">切换显示隐藏</button>
+        <div v-if="show">默认显示</div>
+
+        <button @click="cj">中奖几率10%</button>
+        <div v-if="money">中了五百万！！！</div>
+        <div v-else>再抽亿把吧，少年!!!</div>
+
+        <button @click="tt"> 看看下辈子投胎是做什么的 </button>
+        <div v-if="number>98"> 神仙</div>
+        <div v-else-if="number>95"> 国家领导人</div>
+        <div v-else-if="number>90"> 大富商</div>
+        <div v-else-if="number>80"> 大企业主</div>
+        <div v-else-if="number>70"> 演艺明星</div>
+        <div v-else-if="number>60"> 小企业主</div>
+        <div v-else-if="number>50"> 普通公务员</div>
+        <div v-else-if="number>40"> 小个体户</div>
+        <div v-else-if="number>30"> 血汗工厂工人</div>
+        <div v-else-if="number>20"> 偏远山区农民</div>
+        <div v-else> 流浪汉</div>
+    </div>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                show:true,
+                money:false,
+                number:0
+            },
+            methods:{
+                toggle:function () {
+                    this.show=!this.show;
+                },
+                cj:function () {
+                    this.money=Math.random()<0.1
+                },
+                tt:function () {
+                    this.number=Math.random()*100
+                }
+
+            }
+        })
+    </script>
+</body>
+</html>

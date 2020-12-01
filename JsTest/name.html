@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #app{
+            background: url("img/1.png")no-repeat center top;
+        }
+        #box{
+            width: 220px;
+            height: 90px;
+            background-color: #3e8f3e;
+            text-align: center;
+            line-height: 90px;
+            font-size: 30px;
+            margin: 257px auto 0;
+        }
+        #bt{
+            width: 220px;
+            height: 60px;
+            background-color: #a6e1ec;
+            text-align: center;
+            line-height: 60px;
+            font-size: 30px;
+            /*margin-left: 570px;*/
+            /*margin-top: 90px;*/
+            margin: 90px auto 0;
+        }
+    </style>
+    <script>
+        var Class=["亚索","德玛","提莫","安妮","剑圣"];
+        var time=null;
+        function f() {
+            var box=document.getElementById("box");
+            var num=Math.floor(Math.random()*Class.length);
+            box.innerHTML=Class[num];
+            time=setTimeout("f()",100);
+        }
+        function f1() {
+            var bt=document.getElementById("bt");
+            if(time==null){
+                bt.innerHTML="停止点名";
+                f();
+            }else {
+                bt.innerHTML="开始点名";
+                clearTimeout(time);
+                time=null;
+            }
+        }
+    </script>
+</head>
+<body id="app">
+    <div id="box">
+        准备好点名没
+    </div>
+    <div id="bt" onclick="f1()">开始点名</div>
+</body>
+</html>

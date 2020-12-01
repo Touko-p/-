@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .app{
+            position: relative;
+            font-size: 40px;
+        }
+        div{
+            width: 150px;
+            height: 50px;
+        }
+        .base1 {
+            background: #5bc0de;
+            color: yellow;
+        }
+
+        .base2{
+            background: black;
+            color: grey;
+        }
+        .mask{
+            position: absolute;
+            overflow: hidden;
+            top:0;
+            width: 0;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div class="app">
+        <div class="base1">home</div>
+        <div class="mask">
+            <div class="base2">home</div>
+        </div>
+    </div>
+    <div class="app">
+        <div class="base1">我爱你</div>
+        <div class="mask">
+            <div class="base2">我爱你</div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $(".app").mouseenter(function () {
+                $(this).children(".mask").stop().animate({width:150},1000)
+            })
+        })
+    </script>
+</body>
+</html>

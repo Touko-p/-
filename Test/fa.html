@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .box {
+            width: 500px;
+            height: 100px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        ul {
+            width: 600px;
+            height: 40px;
+            margin-left: -1px;
+            list-style: none;
+        }
+        li {
+            float: left;
+            width: 126.5px;
+            height: 40px;
+            text-align: center;
+            font-size: 20px;
+            line-height: 40px;
+            border-right: 1px solid #ccc;
+            background-color: deepskyblue;
+            cursor: pointer;
+        }
+        span {
+            display: none;
+            width: 500px;
+            height: 100px;
+            background-color: white;
+            text-align: center;
+            font-size: 50px;
+        }
+        .show {
+            display: block;
+        }
+        .current {
+            background-color: white;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var boxArr = document.getElementsByClassName("box");
+            for(var i=0;i<boxArr.length;i++){
+                fn(boxArr[i]);
+            }
+            function fn(ele){
+                var liArr = ele.getElementsByTagName("li");
+                var spanArr = ele.getElementsByTagName("span");
+                for(var i=0;i<liArr.length;i++){
+                    liArr[i].index = i;
+                    liArr[i].onmouseover = function () {
+                        for(var j=0;j<liArr.length;j++){
+                            liArr[j].className = "";
+                            spanArr[j].className = "";
+                        }
+                        this.className = "current";
+                        spanArr[this.index].className = "show";
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li class="current">标签一</li>
+        <li>标签二</li>
+        <li>标签三</li>
+        <li>标签四</li>
+    </ul>
+    <span class="show">1</span>
+    <span>2</span>
+    <span>3</span>
+    <span>4</span>
+</div>
+</body>
+</html>

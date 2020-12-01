@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function getValue(id,value) {
+            return document.getElementById(id).value=value;
+        }
+        function getString(id) {
+            return document.getElementById(id).value;
+        }
+        function f() {
+            var String1=getString("String1");
+            var String2=getString("String2");
+            var String3=getString("String3");
+            var regS = new RegExp(String2,"g");
+            var z=String1.replace(regS,String3);
+            getValue("String4",z);
+        }
+    </script>
+</head>
+<body>
+    <span>原字符串:</span>
+    <input type="text" id="String1">
+    <br>
+    <span>查询：</span>
+    <input type="text" id="String2">
+    <br>
+    <span>替换为：</span>
+    <input type="text" id="String3">
+    <br>
+    <span>替换结果:</span>
+    <input type="text" id="String4">
+    <input type="button" id="bt" value="替换" onclick="f()">
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		/*类型选择器 .类型名{}*/
+		.box{
+			font-size: 30px;
+			font-family: "微软雅黑";
+			color: red;
+			width: 100px;
+			height: 200px;
+		}
+		.box1{
+			font-size: 20px;
+			font-family: "宋体";
+			color: green;
+			width: 50px;
+			height: 50px;
+		}
+		.box2{
+			background-color: black;
+		}
+		.box3{
+			background-color: tan;
+			border: 2px solid black;
+		}
+		
+	</style>
+	<body>
+		<!-- 前两个div假设 字号 字体 字体颜色都一样 标签的大小
+			最后一个 与前两个不同
+		-->
+		<!--class 类型 可以有一个也可以有多个 并且可以相同-->
+		<div id="box" class="box box2">今天中午吃什么</div>
+		<div class="box box3">蛋炒饭</div>
+		<div class="box1">爱吃什么吃什么</div>
+		
+		<a href="#box"></a>
+	</body>
+</html>

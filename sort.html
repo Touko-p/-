@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var x=new Array(5,7,3,8,3,6,4,4,3,3,4,7,8);
+        function f(s) {
+            document.write(s);
+            document.write("<br>");
+        }
+        function f1(v1,v2) {
+            return v2-v1;
+        }
+        x.sort(f1);
+        f(x);
+        for(i=0;i<x.length;i++){
+            for(j=x.length-1;j>i;j--){
+                if(x[i]==x[j])
+                    x.splice(j,1);
+            }
+
+        }
+        f(x);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

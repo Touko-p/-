@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box1,.box3{
+				width: 300px;
+				height: 300px;
+			}
+			.box2,.box4{
+				width: 100px;
+				height: 100px;
+			}
+			.box1{
+				background-color: tan;
+				position: relative;
+			}
+			.box2{
+				background-color: teal;
+				/*absolute 绝对定位
+				 * *
+				 *1、绝对定位 脱离原有的文档流 
+				 *2、当绝对定位 要相对与自己父级元素时 
+				 * 父级元素应有定位属性  自绝父相
+				 *3、当父级元素有定位属性时 相对于父级元素
+				 * 当父级元素没有定位属性时 向更高一级查找
+				 * 直到找到定位属性或者body为止
+				 */
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			.box3{
+				background-color: thistle;
+			}
+			.box4{
+				background-color: tomato;
+				position: absolute;
+				top: 0;
+				left: 500px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			<div class="box2"></div>
+		</div>
+			<div class="box3">
+				<div class="box4"></div>
+			</div>
+	</body>
+</html>

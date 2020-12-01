@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #app{
+            width: 300px;
+            height: 450px;
+            border: 1px solid black;
+            margin: 50px auto;
+            position: relative;
+        }
+        #app div{
+            width: 100px;
+            height: 120px;
+            border: 1px solid black;
+        }
+        .rel{
+            position: relative;
+            top:50px;
+            left: 300px;
+        }
+        .abs{
+            position: absolute;
+            top: 10px;
+            left: 50px;
+        }
+        .fix{
+            position: fixed;
+            left: 50px;
+            top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div style="background-color: #a6e1ec" class="rel">1</div>
+        <div style="background-color: #95ff7d" class="abs">2</div>
+        <div style="background-color: #b2dba1" class="fix">3</div>
+    </div>
+</body>
+</html>

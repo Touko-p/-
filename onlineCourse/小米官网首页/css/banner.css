@@ -1,0 +1,226 @@
+.banner{
+	width: 100%;
+	height: 460px;
+	background-color: white;
+}
+.banner .content{
+	width: 1226px;
+	height: 100%;
+	background-color: tan;
+	margin: 0 auto;
+	position: relative;
+}
+.banner .content .banner_image{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: teal;
+}
+.banner .content .banner_leftBar{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 234px;
+	height: 100%;
+	background-color: rgba(51,51,51,0.3);
+}
+
+.banner .content .banner_image img{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+}
+.banner .content .banner_image img:nth-child(1){
+	display: block;
+}
+
+.banner .content .banner_image .circular{
+	position: absolute;
+	right: 5%;
+	bottom: 5%;
+	list-style: none;
+}
+
+.banner .content .banner_image .circular li{
+	width: 10px;
+	height: 10px;
+	background-color: #000;
+	float: left;
+	/*圆角*/
+	border-radius: 50%;
+	/*间距*/
+	margin: 0 5px;
+	/*透明度*/
+	opacity: 0.6;
+	/*边框*/
+	border: 2px solid #A0A0A0;
+	/*鼠标悬停样式*/
+	cursor: pointer;
+}
+
+.banner .content .banner_image .circular li:hover{
+	background-color: white;
+}
+.banner .content .banner_image .circular li:first-child{
+	background-color: white;
+}
+
+.banner .content .banner_image div{
+	position: absolute;
+	width: 41.5px;
+	height: 69px;
+	top: 195.5px;
+	/*background-color: red;*/
+}
+.banner .content .banner_image div.leftBtn{
+	left: 234px;
+	/*背景图片*/
+	background-image: url(../img/newImage/icon-slides.png);
+	/*背景定位*/
+	background-position-x: -83px;
+	
+}
+.banner .content .banner_image div.rightBtn{
+	right: 0;
+	background-image: url(../img/newImage/icon-slides.png);
+	background-position-x: -124.5px;
+}
+
+.banner .content .banner_image div.leftBtn:hover{
+	background-position-x: 0;
+}
+.banner .content .banner_image div.rightBtn:hover{
+	background-position-x: -41.5px;
+}
+
+.banner .content .banner_leftBar ul{
+	list-style: none;
+	width: 100%;
+	height: 420px;
+	position: absolute;
+	top: 20px;
+	/*background-color: tan;*/
+}
+
+.banner .content .banner_leftBar ul li{
+	width: 234px;
+	height: 42px;
+	/*行高*/
+	line-height: 42px;
+	color: white;
+	font-size: 14px;
+}
+
+.banner .content .banner_leftBar ul li a{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	/*background-color: red;*/
+	/*向左的内边距*/
+	padding-left: 20px;
+	/*保持标签原有大小不变*/
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+.banner .content .banner_leftBar ul li a span{
+	float: right;
+	font-size: 22px;
+	margin-right: 20px;
+	font-family: "幼圆";
+	font-weight: bolder;
+}
+
+.banner .content .banner_leftBar ul li a:hover{
+	background-color: rgb(253,104,33);
+}
+
+.banner .content .banner_image .rightBar{
+	width: 30px;
+	height: 200px;
+	list-style: none;
+	border: 1px solid lightgray;
+	position: absolute;
+	top: 180px;
+	right: -30px;
+}
+.banner .content .banner_image .rightBar li{
+	width: 100%;
+	height: 39px;
+	border-bottom: 1px solid lightgray;
+}
+.banner .content .banner_image .rightBar li:last-child{
+	border-bottom: none;
+}
+
+.banner .content .banner_image .rightBar li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	
+}
+.banner .content .banner_image .rightBar li:nth-child(1) a{
+	background: url(../img/98a23aae70f25798192693f21c4d4039.png);
+	background-size: 60%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.banner .content .banner_image .rightBar li:nth-child(1):hover a{
+	background: url(../img/74c4fcb4475af8308e9a670db9c01fdf.png);
+	background-size: 60%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.banner .content .banner_image .rightBar li:nth-child(2) a{
+	background: url(../img/55cad219421bee03a801775e7309b920.png);
+	background-size: 60%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.banner .content .banner_image .rightBar li:nth-child(2):hover a{
+	background: url(../img/41f858550f42eb1770b97faf219ae215.png);
+	background-size: 60%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.banner .content .banner_image .rightBar li:nth-child(3) a{
+	background: url(../img/12eb0965ab33dc8e05870911b90f3f13.png);
+	background-size: 60%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.banner .content .banner_image .rightBar li:nth-child(3):hover a{
+	background: url(../img/95fbf0081a06eec7be4d35e277faeca0.png);
+	background-size: 60%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.banner .content .banner_image .rightBar li:nth-child(4) a{
+	background: url(../img/4f036ae4d45002b2a6fb6756cedebf02.png);
+	background-size: 60%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.banner .content .banner_image .rightBar li:nth-child(4):hover a{
+	background: url(../img/5e9f2b1b0da09ac3b3961378284ef2d4.png);
+	background-size: 60%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.banner .content .banner_image .rightBar li:nth-child(5) a{
+	background: url(../img/d7db56d1d850113f016c95e289e36efa.png);
+	background-size: 60%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.banner .content .banner_image .rightBar li:nth-child(5):hover a{
+	background: url(../img/692a6c3b0a93a24f74a29c0f9d68ec71.png);
+	background-size: 60%;
+	background-repeat: no-repeat;
+	background-position: center center;
+}

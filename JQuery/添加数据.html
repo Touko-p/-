@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table tr td{
+            border:1px solid gray;
+            padding:10px;
+
+        }
+        table{
+            border-collapse:collapse;
+            width:800px;
+            table-layout:fixed;
+            text-align: center;
+            margin: 0 auto;
+        }
+        thead{
+            background-color: lightGray;
+            border:1px solid gray;
+            padding:10px;
+        }
+        input{
+            margin-left: 620px;
+            margin-bottom: 10px;
+            width: 120px;
+            height: 30px;
+
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <input type="button" value="获取数据" id="top">
+    <table>
+        <thead>
+            <tr>
+                <th>书名</th>
+                <th>页数</th>
+                <th>售价</th>
+            </tr>
+        </thead>
+        <tbody id="tb">
+            <tr>
+                <td>jQuery</td>
+                <td>250</td>
+                <td>52</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var data=[
+            {name:'JavaScript',pages:'320',price:'64'},
+            {name:'HTML和CSS',pages:'120',price: '48'}
+        ];
+        $(function () {
+            $("#top").click(function () {
+                for(i=0;i<data.length;i++){
+                    $('<tr><td>'+data[i].name+'</td><td>'+data[i].pages+'</td><td>'+data[i].price+'</td></tr>').appendTo($('#tb'));
+                }
+            })
+        })
+    </script>
+</body>
+</html>

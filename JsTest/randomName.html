@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #app{
+            width: 500px;
+            height: 300px;
+            background-color: #3e8f3e;
+            margin: 0 auto;
+        }
+        #pan{
+            width: 400px;
+            height: 240px;
+            background-color: #a6e1ec;
+            margin: 0 auto;
+            font-size: 50px;
+            line-height: 240px;
+            text-align: center;
+        }
+        #btn{
+            width: 100px;
+            height: 40px;
+            margin-left: 200px;
+        }
+    </style>
+    <script>
+        var Class=["亚索","德玛","提莫","安妮","剑圣"];
+        var time=null;
+        function f() {
+            var p=document.getElementById("pan");
+            var num=Math.floor(Math.random()*Class.length);
+            p.innerHTML=Class[num];
+            time=setTimeout("f()",50);
+        }
+        function f1() {
+            var bt=document.getElementById("btn");
+            if(time==null){
+                bt.value="停止点名";
+                f();
+            }else {
+                bt.value="开始点名";
+                clearTimeout(time);
+                time=null;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="app">
+        <div id="pan">
+            亚索
+        </div>
+        <input type="button" value="开始点名" id="btn" onclick="f1()">
+    </div>
+</body>
+</html>

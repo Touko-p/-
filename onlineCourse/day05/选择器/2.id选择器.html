@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*id可以区分了 为什么还需要其他选择器*/
+			/*如果有那么几个标签具有相同属性和值得时候 id就做不到一起设置*/
+			/*id选择器   #id名+{}*/
+			#box1{
+				color: red;
+			}
+			#box2{
+				color: yellow;
+			}
+			
+			/*什么时候用id  什么时候不用*/
+			
+			/*最开始设置的时候都不会写id 除非提前预料到了我们在js中或者锚点
+			 中会访问到该标签 否则我们一般都会先写其他选择器 当遇到上述两种情况
+			 再回来补充id*/
+			
+		</style>
+	</head>
+	<body>
+		<!--id 唯一标示 有且只有一个 不可以重复-->
+		<div id="box1">今天中午吃什么</div>
+		<div id="box2">酱油炒饭</div>
+	</body>
+</html>

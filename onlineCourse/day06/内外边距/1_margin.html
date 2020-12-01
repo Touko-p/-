@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			div{
+				width: 100px;
+				height: 100px;
+				/*垂直反方向上的外边距重叠 并且识别最大的那一个（标准流）*/
+				margin: 50px;
+				/*浮动后 浮动流  垂直方向上的反方向外边距 叠加的 水平方向上也是叠加的*/
+				float: left;
+			}
+			.box1{
+				background-color: red;
+			}
+			.box2{
+				background-color: yellow;
+			}
+			
+			a{
+				/*水平 反方向上的外边距 叠加 （标准流）*/
+				/*margin-top: 50px;*/
+				margin: 30px;
+				background-color: green;
+				float: left;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+		
+		<div class="box2"></div>
+		
+		<a>你好</a><a>再见</a>
+	</body>
+</html>

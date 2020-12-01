@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.min.js"></script>
+</head>
+<body>
+<div id="div1">
+
+    <div>一共点击了  {{clickNumber}}次</div>
+    <button @click="count">点击</button>
+
+</div>
+
+<script>
+
+    new Vue({
+        el: '#div1',
+        data: {
+            clickNumber:0
+        },
+        methods:{
+            count: function(){
+                this.clickNumber++;
+            }
+        }
+    })
+
+</script>
+</body>
+</html>

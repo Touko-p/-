@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+        }
+        .app{
+            min-width: 1000px;
+        }
+        .pic{
+            width: 500px;
+            height: 332px;
+            margin: 0 auto;
+            position: relative;
+        }
+        img{
+            height: 332px;
+            width: 500px;
+        }
+        .pic ul{
+            list-style: none;
+        }
+        .pic .left{
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            top: 151px;
+            border-radius: 100%;
+            background: honeydew url("cImg/back.png") no-repeat center center;
+            display: none;
+        }
+        .pic .left:hover{
+            background: honeydew url("cImg/back1.png") no-repeat center center;
+        }
+        .pic .right{
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            top: 151px;
+            right: 0px;
+            border-radius: 100%;
+            background: honeydew url("cImg/next.png") no-repeat center center;
+            display: none;
+        }
+        .pic .right:hover{
+            background: honeydew url("cImg/next1.png") no-repeat center center;;
+        }
+        .cir{
+            width: 120px;
+            height: 30px;
+            background-color: #95ff7d;
+            border-radius: 15px;
+            position: absolute;
+            top: 280px;
+            left: 180px;
+        }
+        .cir ul li{
+            width: 10px;
+            height: 10px;
+            border-radius: 100%;
+            background-color: #fff;
+            float: left;
+            margin: 10px 10px;
+        }
+        .cir ul li:hover{
+            background-color: #2b542c;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        window.onload=function () {
+            let nowIndex = 1;
+            let sum = 4;
+            let time = window.setInterval(change, 3000);
+
+            function getId(id) {
+                return document.getElementById(id);
+            }
+            function change(){
+                nowIndex=nowIndex+1>sum?1:nowIndex+1;
+                getId("img").src="cImg/"+"h0"+nowIndex+".jpg";
+            }
+            getId("i").onmouseover=function () {
+                getId("l").style.display="block";
+                getId("r").style.display="block";
+                getId("l").onclick=function(){
+                    clearInterval(time);
+                    nowIndex=nowIndex-1<=0?sum:nowIndex-1;
+                    getId("img").src="cImg/"+"h0"+nowIndex+".jpg";
+                }
+                getId("r").onclick=function(){
+                    clearInterval(time);
+                    nowIndex=nowIndex+1>sum?1:nowIndex+1;
+                    getId("img").src="cImg/"+"h0"+nowIndex+".jpg";
+                }
+                $(function () {
+                    $(".cir ul li").mousedown(
+                        function () {
+                            clearInterval(time);
+                            num=$(this).index()+1;
+                            getId("img").src="cImg/"+"h0"+num+".jpg";
+                        }
+                    )
+                })
+                clearInterval(time);
+            }
+            getId("i").onmouseout=function () {
+                getId("l").style.display="none";
+                getId("r").style.display="none";
+                time=window.setInterval(change,3000);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="app">
+        <div class="pic" id="i">
+            <div class="left" id="l"></div>
+            <ul>
+                <li><a><img src="cImg/h01.jpg" id="img"></a></li>
+            </ul>
+            <div class="right" id="r"></div>
+            <div class="cir">
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

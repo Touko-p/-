@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        body{
+            min-width: 1200px;
+            padding-top: 50px;
+            padding-bottom: 70px;
+        }
+        #top{
+            background-color: #a6e1ec;
+        }
+        .app{
+            width: 140px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            position: relative;
+            margin: 0 auto;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: Algerian;
+        }
+        .base1 {
+            width: 140px;
+            height: 40px;
+            text-decoration: underline;
+            color: black;
+        }
+
+        .base2{
+            width: 140px;
+            height: 40px;
+            text-decoration: underline;
+            color: whitesmoke;
+        }
+        .mask{
+            height: 40px;
+            position: absolute;
+            overflow: hidden;
+            top:0;
+            width: 0;
+        }
+        .center{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .diary{
+            width: 1200px;
+            height: 400px;
+            background-color: #5bc0de;
+        }
+        .diary-head {
+            width: 1200px;
+            height: 50px;
+            font-size: 30px;
+            line-height: 50px;
+            font-weight: bold;
+            background-color: rgba(0,255,181,0.59);
+        }
+        .diary-head div{
+            float: left;
+        }
+        .h-left{
+            width:1150px;
+            height: 50px;
+            padding-left: 50px;
+        }
+        .h-right{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background:#b2dba1 url("file/img/jiahao.png") no-repeat center center;
+        }
+        .h-right:hover{
+            background: #0f0f0f url("file/img/jiahao1.png") no-repeat center center;
+        }
+        .centerAdd{
+            width: 1200px;
+            height: 40px;
+            background-color: #b2dba1;
+            margin: 0 auto;
+        }
+        .add{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin: 0 auto;
+            background:#2b669a url("file/img/jiahao.png") no-repeat center center;
+        }
+        .add:hover{
+            background:#2b669a url("file/img/jiahao1.png") no-repeat center center;
+        }
+
+    </style>
+    <link rel="icon" type="image/x-icon" href="file/img/youlanqi.png"/>
+    <link href="file/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+    <script src="file/js/jquery/2.0.0/jquery.min.js"></script>
+    <script src="file/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+    <script src="file/js/vue/vue.min.js"></script>
+    <script src="file/js/vue/Test.js"></script>
+    <script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+    <script src="file/js/cursor/mouse.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top" id="top">
+        <product v-for="item in products" v-bind:product="item"></product>
+    </nav>
+    <div class="center">
+        <div class="diary">
+            <div class="diary-head">
+                <div class="h-left">
+
+                </div>
+                <div class="h-right">
+
+                </div>
+            </div>
+            <div class="diary-body">
+
+            </div>
+        </div>
+    </div>
+    <div class="centerAdd">
+        <div class="add">
+        </div>
+    </div>
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div style="text-align:center">
+
+        </div>
+    </nav>
+</body>
+<script>
+    L2Dwidget.init({
+        "model": {
+            //jsonpath控制显示那个小萝莉模型，下面这个就是我觉得最可爱的小萝莉模型，替换时后面名字也要替换掉
+            jsonPath: "https://unpkg.com/live2d-widget-model-hijiki/assets/hijiki.model.json",
+            "scale": 1
+        },
+        "display": {
+            "position": "left", //看板娘的表现位置
+            "width": 150,  //小萝莉的宽度
+            "height": 300, //小萝莉的高度
+            "hOffset": 20,
+            "vOffset": -60
+        },
+        "mobile": {
+            "show": true,
+            "scale": 0.5
+        },
+        "react": {
+            "opacityDefault": 1,
+            "opacityOnHover": 0.2
+        }
+    });
+    Vue.component('product', {
+        props:['product'],
+        template: '<div class="app">\n' +
+            '            <div class="base1">{{product.name}}</div>\n' +
+            '            <div class="mask">\n' +
+            '                <div class="base2">{{product.name}}</div>\n' +
+            '            </div>\n' +
+            '        </div>'
+    })
+
+    new Vue({
+        el: '#top',
+        data:{
+            products:[
+                {"name":"Touko的小屋"}
+            ]
+        }
+    })
+    $(function () {
+        $(".app").mouseenter(function () {
+            $(this).children(".mask").stop().animate({width:150},200)
+        }).mouseleave(function () {
+            $(this).children(".mask").stop().animate({width:0},200)
+        })
+    })
+    var data=new Date(),
+        year=data.getFullYear(),
+        month=data.getMonth()+1,
+        day=data.getDate(),
+        h=data.getHours(),
+        m=data.getMinutes(),
+        s=data.getSeconds();
+    $('.h-left').text(year+"年"+month+"月"+day+"日")
+</script>
+</html>

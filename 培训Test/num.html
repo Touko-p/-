@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="font-awesome/font-awesome-4.7.0/css/font-awesome.css">
+    <style>
+        form{
+            width: 30%;
+            margin: 30px auto 0;
+        }
+        form input{
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<!--    <input type="text" placeholder="输入用户名" onblur="f()" id="a">-->
+<!--    <span id="b"></span>-->
+<!--    <script>-->
+<!--        function f() {-->
+<!--            var a=document.getElementById("a");-->
+<!--            var b=document.getElementById("b");-->
+<!--            b.innerText="daf";-->
+<!--            a.type="password"-->
+<!--        }-->
+<!--    </script>-->
+    <form action="form.html" method="get">
+        <span>账号：</span><input type="text" name="username" onblur="f()" value="aaa" id="a"><span class="mesA"></span><br/>
+        <span>密码：</span><input type="password" name="password"  id="b"><span class="fa fa-eye-slash" aria-hidden="true" onclick="ff(this)"></span>
+    </form>
+    <script>
+        function f() {
+            var a=document.getElementById("a");
+            var mes=document.getElementsByClassName("mesA")
+            if(a.value.length<=0){
+                mes[0].innerHTML="账号不为空";
+            }else if(a.value.length>6){
+                mes[0].innerHTML="账号长度大于6";
+            }
+        }
+        function ff(i) {
+            var classStyle=i.className;
+            var b=document.getElementById("b");
+            if(classStyle=="fa fa-eye-slash"){
+                i.className="fa fa-eye";
+                b.type="text";
+            }else {
+                i.className="fa fa-eye-slash";
+                b.type="password";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 1000px;
+        }
+        #top{
+            height: 80px;
+            background-color: #95ff7d;
+        }
+        #nav{
+            height: 50px;
+            background-color: #5bc0de;
+        }
+        #content{
+            height: 700px;
+            background-color: #b2dba1;
+        }
+    </style>
+</head>
+<body>
+    <div id="top">我来组成头部</div>
+    <div id="nav">我来组成眼睛</div>
+    <div id="content">我来组成身体</div>
+    <script>
+        window.onload=function () {
+            var navTop=document.getElementById("nav").offsetTop;
+            window.scroll(function () {
+                var scroltop=window.scrollTop();
+                if (scroltop > navtop){
+                    document.getElementById("nav").css({
+                        "position":"fixed",
+                        "left":"0px",
+                        "top":"0px",
+                        "width":"100%"
+                    })
+                }else {
+                    document.getElementById("nav").css({
+                        "position":"",
+                        "left":"",
+                        "top":"",
+                        "width":""
+                    })
+                }
+            })
+        }
+    </script>
+</body>
+</html>

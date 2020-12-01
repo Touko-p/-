@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        hero name:<input v-model="name">
+        <button @click="doClick">提交数据</button>
+    </div>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            name:'teemo'
+        },
+        methods:{
+            doClick:function () {
+                alert(this.name)
+            }
+        }
+
+    })
+</script>
+</body>
+</html>
